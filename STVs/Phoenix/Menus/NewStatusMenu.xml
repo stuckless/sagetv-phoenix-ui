@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd"[]>
+<menus>
+      <menu name="phoenix.menu.status" label="Universal Status Menu" background="GlobalMenuBackground.jpg">
+            <view name="phoenix.view.util.recentrecordings" label="Recent Recordings" contextVar="MediaFile" preload="true" limit="11" >
+                  <description>Recently recorded TV shows</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "TV" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <view name="phoenix.view.util.currentlyrecording" label="Currently Recording" contextVar="MediaFile" preload="false" limit="11" >
+                  <description>TV airings that are currently recording</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "TV" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <view name="phoenix.view.util.todaysrecordings" label="Today&apos;s Recordings" contextVar="MediaFile" preload="false" limit="11">
+                  <description>TV set to record today</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "EPG_AIRING" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <view name="phoenix.view.primary.scheduledrecordings" label="Scheduled Recordings" contextVar="MediaFile" preload="false" limit="11">
+                  <description>Full recording schedule</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "EPG_AIRING" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <view name="phoenix.view.util.conflicts" label="Recording Conflicts" contextVar="MediaFile" preload="false" limit="11" >
+                  <description>Recently watched movies</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "EPG_AIRING" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <view name="phoenix.view.util.recentimports" label="New Movies" contextVar="MediaFile" preload="false" limit="11" >
+                  <description>Recently imported or recorded movies</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "VIDEO" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <view name="phoenix.view.util.recentlywatchedtv" label="Recently Watched TV" contextVar="MediaFile" preload="false" limit="11" >
+                  <description>Recently watched TV shows</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "TV" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <view name="phoenix.view.util.recentlywatchedmovies" label="Recently Watched Movies" contextVar="MediaFile" preload="false" limit="11" >
+                  <description>Recently watched movies</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "VIDEO" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <menuItem name="phoenix.menu.status.systemstatus" label="System Status" /> 
+            <menuItem name="phoenix.menu.status.systemmessages" label="System Messages" />
+      </menu>
+</menus>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd"[]>
+<menus>
+      <menu name="StatusMenu" label="Status Menu" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"System Statue Menu"</description>
+            <menuItem label="Recent Recordings" name="RecentRecordings" visible="true">
+                  <eval>AddGlobalContext( "StatusSubmenu" , "Recordings" )</eval>
+                  <eval>Refresh()</eval>
+            </menuItem>
+            <menuItem label="Recently Watched" name="RecentlyWatched" visible="true">
+                  <eval>AddGlobalContext( "StatusSubmenu" , "RecentlyWatched" )</eval>
+                  <eval>Refresh()</eval>
+            </menuItem>
+            <menuItem label="Upcoming Recordings" name="UpcomingRecordings" visible="true">
+                  <eval>AddGlobalContext( "StatusSubmenu" , "Recordings" )</eval>
+                  <eval>Refresh()</eval>
+            </menuItem>
+            <menuItem label="Conflicts" name="Conflicts" visible="true">
+                  <eval>AddGlobalContext( "StatusSubmenu" , "Conflicts" )</eval>
+                  <eval>Refresh()</eval>
+            </menuItem>
+            <menuItem label="Newest Movies" name="NewMovies" visible="true">
+                  <eval>AddGlobalContext( "StatusSubmenu" , "NewMovies" )</eval>
+                  <eval>Refresh()</eval>
+            </menuItem>
+            <menuItem label="Newest Music" name="NewMusic" visible="true">
+                  <eval>AddGlobalContext( "StatusSubmenu" , "NewMusic" )</eval>
+                  <eval>Refresh()</eval>
+            </menuItem>
+            <menuItem label="Newest Pictures" name="NewPictures" visible="true">
+                  <eval>AddGlobalContext( "StatusSubmenu" , "NewPictures" )</eval>
+                  <eval>Refresh()</eval>
+            </menuItem>
+            <menuItem label="System Status" name="SystemStatus" visible="true">
+                  <eval>AddGlobalContext( "StatusSubmenu" , "SystemStatus" )</eval>
+                  <eval>Refresh()</eval>
+            </menuItem>
+            <menuItem label="System Messages" name="SystemMessages" visible="true">
+                  <eval>AddGlobalContext( "StatusSubmenu" , "SystemMessages" )</eval>
+                  <eval>Refresh()</eval>
+            </menuItem>
+      </menu>
+</menus>

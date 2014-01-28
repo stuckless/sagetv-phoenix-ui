@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="phoenix2" label="Phoenix 2.0">
+      <description>Phoenix Weather Config</description>
+      <group path="phoenix2/weather" label="Weather Options">
+            <field fullkey="phoenix/weather/weatherSupport" label="Weather provider" defaultValue="yahoo" type="choice">
+                  <description>Select the weather provider to use.</description>
+                  <options>
+                        <option name="Yahoo!" value="yahoo"/>
+                        <option name="Weather Underground" value="wunderground"/>
+                        <option name="World" value="world"/>
+                  </options>
+            </field>
+            <field label="Location" defaultValue="" type="string" key="location">
+                  <description>The location used for weather information.</description>
+            </field>
+            <field label="Units" defaultValue="s" type="choice" key="units">
+                  <description>The units used for weather information.</description>
+                  <options>
+                        <option name="Standard" value="s"/>
+                        <option name="Metric" value="m"/>
+                  </options>
+		  </field>
+	</group>
+</configuration>

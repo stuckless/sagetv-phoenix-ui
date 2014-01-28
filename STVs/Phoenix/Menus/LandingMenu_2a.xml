@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd"[]>
+<menus>
+   <menu label="Phoenix 2.0 Default Landing Menu" name="phoenix2.menu.lz" type="Options">
+      <menu label="TELEVISION" name="phoenix2.menu.lz.tv" type="TV">
+         <menuItem label="Now Playing" name="phoenix2.menu.lz.tv.nowplaying" visible="${HasMediaFile() &amp;&amp; IsMusicFile(GetCurrentMediaFile())==false}">
+            <eval>ExecuteWidgetChainInCurrentMenuContext("QISRJ-234858")</eval>
+         </menuItem>
+         <view contextVar="MediaFile" label="Currently Recording" limit="10" visible="${Size(GetCurrentlyRecordingMediaFiles())>0}" name="phoenix.view.util.currentlyrecording"
+            preload="true">
+            <description>List of the 6 most recently imported or recorded movies</description>
+            <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+            <eval>AddStaticContext( "MediaType" , "VIDEO" )</eval>
+            <eval>ExecuteWidgetChainInCurrentMenuContext("PHOENIX-4000")</eval>
+         </view>
+         <menuItem label="All TV Shows" name="phoenix2.menu.lz.tv.alltv" visible="false">
+            <description>All TV Shows</description>
+            <eval>AddGlobalContext("DefaultView", "phoenix.view.default.allTV" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+         <menuItem label="TV Shows" name="phoenix2.menu.lz.tv.tvshows" visible="true">
+            <description>Imported and recorded TV shows</description>
+            <eval>AddGlobalContext("DefaultView", "phoenix.view.default.TV" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+         <menuItem label="Archived TV Shows" name="phoenix2.menu.lz.v.archtv" visible="true">
+            <description>Archived imported and recorded TV shows</description>
+            <eval>AddGlobalContext("DefaultView","phoenix.view.default.archivedTV" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+         <menuItem label="Recording Schedule" name="phoenix2.menu.lz.tv.recordingschedule" visible="true">
+            <description>Scheduled recordings</description>
+            <eval>AddGlobalContext("DefaultView","phoenix.view.default.scheduledrecordings" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+         <menuItem label="Live TV" name="phoenix2.menu.lz.tv.livetv" visible="true">
+            <sageCommand name="Live TV"/>
+         </menuItem>
+         <menuItem label="Program Guide" name="phoenix2.menu.lz.tv.epg" visible="true">
+            <description>Electronic program guide</description>
+            <screen name="Program Guide"/>
+         </menuItem>
+         <menuItem label="Manage Favorites" name="phoenix2.menu.lz.tv.favorites" visible="true">
+            <description>Manage favorites</description>
+            <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+            <eval>AddGlobalContext("gTargetMenuName", "Favorites Manager")</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+            <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+         </menuItem>
+         <menuItem label="Resolve Conflicts" name="phoenix2.menu.lz.video.conflicts" visible="${AreThereUnresolvedConflicts()==true}">
+            <description>Resolve recording conflicts</description>
+            <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+            <eval>AddGlobalContext("gTargetMenuName", "Conflicting Recordings")</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+            <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+         </menuItem>
+      </menu>
+
+      <menu label="VIDEO" name="phoenix2.menu.lz.video" type="Video">
+         <menuItem label="Now Playing" name="phoenix2.menu.lz.video.nowplaying" visible="${HasMediaFile() &amp;&amp; IsMusicFile(GetCurrentMediaFile())==false}">
+            <eval>ExecuteWidgetChainInCurrentMenuContext("QISRJ-234858")</eval>
+         </menuItem>
+         <menuItem label="All Movies" name="phoenix2.menu.lz.video.movies" visible="true">
+            <description>Movies</description>
+            <eval>AddGlobalContext("DefaultView", "phoenix.view.default.allMovies" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+         <menuItem label="Family Videos" name="phoenix2.menu.lz.video.family" visible="true">
+            <description>Family Videos</description>
+            <eval>AddGlobalContext("DefaultView", "phoenix.view.default.homevideos" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+         <menuItem label="Sage Video Imports" name="phoenix2.menu.lz.video.imports" visible="true">
+            <description>Sage Imports</description>
+            <eval>AddGlobalContext("DefaultView", "phoenix.view.default.videofolders" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+         <menuItem label="uPnP Views" name="phoenix2.menu.lz.video.upnp" visible="true">
+            <description>uPnP Views</description>
+            <eval>AddGlobalContext("DefaultView", "phoenix.view.default.upnpdevices" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+         <menuItem label="Online Videos" name="phoenix2.menu.lz.video.onlineservices" visible="true">
+            <description>Default STV Online Services</description>
+            <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+            <eval>AddGlobalContext("gTargetMenuName", "Online Services Menu")</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVOnPlayback", GetProperty("phoenix2/ui/usePhoenixForPlayback",true))</eval>
+            <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+         </menuItem>
+         <menuItem label="Browse Views" name="phoenix2.menu.lz.video.browse" visible="true">
+            <description>View Browser</description>
+            <screen name="View Browser"/>
+         </menuItem>
+      </menu>
+      
+      <menu label="MEMORIES" name="phoenix.menu.lz.memories" type="Picture">
+         <menuItem label="Pictures" name="phoenix.menu.lz.memories.photos" visible="true">
+            <description>Browse the photo library (default UI)</description>
+            <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+            <eval>AddGlobalContext("gTargetMenuName", "Browser - Photos")</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+            <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+         </menuItem>
+         <menuItem label="Family Videos" name="phoenix2.menu.lz.video.family" visible="true">
+            <description>Family Videos</description>
+            <eval>AddGlobalContext("DefaultView", "phoenix.view.default.homevideos" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+      </menu>
+
+      <menu label="MEDIA VIEWS" name="phoenix2.menu.lz.media">
+         <view contextVar="MediaFile" label="New Movies" limit="7" icon="gMoviesMenuIcon" name="phoenix.view.util.recentimports" preload="true">
+            <description>List of the 6 most recently imported or recorded movies</description>
+            <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+            <eval>AddStaticContext( "MediaType" , "VIDEO" )</eval>
+            <eval>ExecuteWidgetChainInCurrentMenuContext("PHOENIX2-4389")</eval>
+         </view>
+         <view contextVar="MediaFile" label="Currently Recording" limit="7" icon="gMoviesMenuIcon" name="phoenix.view.util.currentlyrecording" preload="true"
+            visible="${Size(GetCurrentlyRecordingMediaFiles())>0}">
+            <description>List of the 6 most recently imported or recorded movies</description>
+            <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+            <eval>AddStaticContext( "MediaType" , "VIDEO" )</eval>
+            <eval>ExecuteWidgetChainInCurrentMenuContext("PHOENIX2-4389")</eval>
+         </view>
+         <view contextVar="MediaFile" label="Recording Today" limit="7" icon="gMoviesMenuIcon" name="phoenix.view.util.todaysrecordings" preload="true">
+            <description>List of the 6 most recently imported or recorded movies</description>
+            <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+            <eval>AddStaticContext( "MediaType" , "EPG_AIRING" )</eval>
+            <eval>ExecuteWidgetChainInCurrentMenuContext("PHOENIX2-4389")</eval>
+         </view>
+         <view contextVar="MediaFile" label="Recently Watched TV" limit="7" icon="gMoviesMenuIcon" name="phoenix.view.util.recentlywatchedtv" preload="true">
+            <description>List of the 6 most recently imported or recorded movies</description>
+            <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+            <eval>AddStaticContext( "MediaType" , "VIDEO" )</eval>
+            <eval>ExecuteWidgetChainInCurrentMenuContext("PHOENIX2-4389")</eval>
+         </view>
+         <view contextVar="MediaFile" label="Recently Watched Movies" limit="7" icon="gMoviesMenuIcon" name="phoenix.view.util.recentlywatchedmovies" preload="true">
+            <description>List of the 6 most recently imported or recorded movies</description>
+            <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+            <eval>AddStaticContext( "MediaType" , "VIDEO" )</eval>
+            <eval>ExecuteWidgetChainInCurrentMenuContext("PHOENIX2-4389")</eval>
+         </view>
+         <view contextVar="MediaFile" label="Featured Recordings" limit="7" icon="gMoviesMenuIcon" name="phoenix.view.util.featuredfavorite" preload="true">
+            <description>List of the 6 most recently imported or recorded movies</description>
+            <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+            <eval>AddStaticContext( "MediaType" , "VIDEO" )</eval>
+            <eval>ExecuteWidgetChainInCurrentMenuContext("PHOENIX2-4389")</eval>
+         </view>
+      </menu>
+
+
+      <menu label="MUSIC" name="phoenix2.menu.lz.music" type="Music">
+         <menuItem label="Now Playing" name="phoenix.menu.lz2.music.nowplaying" visible="${HasMediaFile() &amp;&amp; IsMusicFile(GetCurrentMediaFile())==true}">
+            <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-271214")</eval>
+         </menuItem>
+         <menuItem label="by Artist" name="phoenix2.menu.lz.music.artist" visible="true">
+            <description>Phoenix music</description>
+            <eval>AddGlobalContext("DefaultView","phoenix.view.default.music.artist" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+         <menuItem label="by Album" name="phoenix2.menu.lz.music.album" visible="true">
+            <description>Phoenix music</description>
+            <eval>AddGlobalContext("DefaultView","phoenix.view.default.music.album" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+         <menuItem label="by Genre" name="phoenix2.menu.lz.music.genre" visible="true">
+            <description>Phoenix music</description>
+            <eval>AddGlobalContext("DefaultView","phoenix.view.default.music.genre" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+         <menuItem label="Playlists" name="phoenix2.menu.lz.music.playlists" visible="true">
+            <description>Phoenix music</description>
+            <eval>AddGlobalContext("DefaultView","phoenix.view.default.playlists" )</eval>
+            <screen name="Media Browser"/>
+         </menuItem>
+      </menu>
+
+      <menu label="SETTINGS" name="phoenix2.menu.lz.settings" type="Options">
+         <menuItem name="pheonix2.menu.lz.settings.scan" label="${If(IsDoingLibraryImportScan(),&quot;Scanning Libraries...&quot;,&quot;Start Library Scan&quot;)}"
+            visible="true">
+            <eval>RunLibraryImportScan( false )</eval>
+            <eval>Refresh()</eval>
+         </menuItem>
+         <menuItem name="pheonix2.menu.lz.settings.full" label="Toggle Full Screen" visible="${IsRemoteUI()==false}">
+            <sageCommand name="Full Screen"/>
+         </menuItem>
+         <menuItem label="Parental Controls" visible="true" name="phoenix2.menu.lz.settings.parental">
+            <eval>ExecuteWidgetChainInCurrentMenuContext("PHOENIX-3790")</eval>
+         </menuItem>
+         <menuItem label="Phoenix 2.0 Configuration" name="phoenix2.menu.lz.settings.config" visible="true">
+            <screen name="Config Editor"/>
+         </menuItem>
+         <menuItem label="Reload Menus, Views, Config" visible="true">
+            <eval>phoenix_menu_ReloadMenus()</eval>
+            <eval>phoenix_umb_ReloadViews()</eval>
+            <eval>phoenix_config_ReloadConfiguration()</eval>
+            <eval>AddGlobalContext( "LandingMenu" , phoenix_menu_GetMenu( "phoenix2.menu.lz" ) )</eval>
+            <eval>AddGlobalContext( "LandingMenuItems" , phoenix_menu_GetVisibleItems( LandingMenu ) )</eval>
+            <eval>AddGlobalContext( "LandingMenuV" , phoenix_menu_GetMenu( "phoenix2.menu.lza" ) )</eval>
+            <eval>AddGlobalContext( "LandingMenuItemsV" , phoenix_menu_GetVisibleItems( LandingMenuV ) )</eval>
+            <eval>ExecuteWidgetChainInCurrentMenuContext("UVJWK-3284")</eval>
+         </menuItem>
+         <menu label="Setup" name="phoenix2.menu.lz.settings.setup" type="Options">
+            <menuItem label="Scale Fanart" visible="true" name="phoenix2.menu.lz.settings.fanart">
+               <eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to scale all of the fanart?" )</eval>
+               <eval>AddGlobalContext("gNativeConfirmYes", "Yes")</eval>
+               <eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
+               <eval>AddGlobalContext("gNativeConfirmYesAction",
+                  "ExecuteWidgetChainInCurrentMenuContext(\"PHNX-254176\")")</eval>
+               <eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
+               <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+            </menuItem>
+            <menuItem label="Calibrate Drop Shadow" visible="true" name="phoenix2.menu.lz.settings.dropshadow">
+               <screen name="Drop Shadow Calibration"/>
+            </menuItem>
+            <menuItem label="Sage Detailed Setup" visible="true">
+               <description>Default STV Setup Menu</description>
+               <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+               <eval>AddGlobalContext("gTargetMenuName", "Detailed Setup")</eval>
+               <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+               <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+               <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+            </menuItem>
+            <menuItem label="Sage Video Sources" visible="true">
+               <description>Default STV Video Setup Menu</description>
+               <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+               <eval>AddGlobalContext("gTargetMenuName", "Setup Wizard - Summary Page")</eval>
+               <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+               <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+               <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+            </menuItem>
+            <menuItem label="Sage Plugins" visible="true">
+               <description>Default STV Video Setup Menu</description>
+               <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+               <eval>AddGlobalContext("gTargetMenuName", "Plugin List")</eval>
+               <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+               <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+               <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+            </menuItem>
+            <menuItem name="phoenix2.menu.lz.settings.loadstv" label="Load STV..." visible="true">
+               <eval>CloseOptionsMenu()</eval>
+               <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-264074")</eval>
+            </menuItem>
+            <menuItem name="phoenix2.menu.lz.settings.reload" label="Reload Default UI" visible="true">
+               <eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to reload the default UI?" )</eval>
+               <eval>AddGlobalContext("gNativeConfirmYes", "Yes")</eval>
+               <eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
+               <eval>AddGlobalContext("gNativeConfirmYesAction",
+                  "ExecuteWidgetChainInCurrentMenuContext(\"PHNX2-4775\")")</eval>
+               <eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
+               <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+            </menuItem>
+         </menu>
+      </menu>
+
+      <menu background="GlobalMenuBackground.jpg" label="EXIT" name="phoenix2.menu.lz.exit" visible="${IsRemoteUI()==false}">
+         <menuItem label="Standby" name="phoenix2.menu.lz.exit.standby" visible="true">
+            <description>Standby command (equivalent to Power Off)</description>
+            <eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to enter standby?" )</eval>
+            <eval>AddGlobalContext("gNativeConfirmYes", "Standby")</eval>
+            <eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
+            <eval>AddGlobalContext("gNativeConfirmYesAction", "SageCommand(\"Power Off\")")</eval>
+            <eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
+            <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+         </menuItem>
+         <menuItem label="Exit" name="phoenix2.menu.lz.exit.exit" visible="true">
+            <description>Exit command (closes the application on full clients)</description>
+            <eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to exit?" )</eval>
+            <eval>AddGlobalContext("gNativeConfirmYes", "Exit")</eval>
+            <eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
+            <eval>AddGlobalContext("gNativeConfirmYesAction", "Exit()")</eval>
+            <eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
+            <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+         </menuItem>
+      </menu>
+   </menu>
+</menus>

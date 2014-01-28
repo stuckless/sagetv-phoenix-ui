@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="phoenix" label="Phoenix">
+      <description>Phoenix Weather Config</description>
+      <group path="phoenix/weather" label="Weather Options">
+            <field fullkey="phoenix/weather/weatherSupport" label="Weather provider" defaultValue="yahoo" type="choice">
+                  <description>Select the weather provider to use.</description>
+                  <options>
+                        <option name="Yahoo!" value="yahoo"/>
+                        <option name="World" value="world"/>
+                  </options>
+            </field>
+            <field label="Location" defaultValue="" type="string" key="location">
+                  <description>The location used for weather information.</description>
+            </field>
+            <field key="apply" label="Apply Changes" defaultValue="Apply" type="button" visible="true">
+                  <description>Apply the changes.</description>
+                  <options>
+                        <option name="CloseOptionsMenu(&quot;Single Configuration Group Editor&quot;, true)" value="eval.0"/>
+                        <option name="ExecuteWidgetChain(&quot;TQSCK-32279&quot;)" value="eval.1"/>
+                        <option name="RefreshArea(&quot;Weather Browser&quot;)" value="eval.2"/>
+                  </options>
+            </field>	
+		</group>
+</configuration>

@@ -1,0 +1,4 @@
+<plugin id="skin.serenity" name="Serenity for Phoenix" version="0.2">
+   <description>Serenity for Phoenix</description>
+   <depend id="skin.default"/>
+</plugin>

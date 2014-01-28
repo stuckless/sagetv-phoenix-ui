@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="phoenix2" label="Phoenix 2.0">
+   <description>Phoenix 2.0 Landing Zone Config</description>
+   <group path="phoenix2/lz" label="Landing Zone Options">
+      <description>Landing Zone Settings</description>
+      <field key="navigation" label="Navigation Direction" defaultValue="metro" type="choice">
+         <description>Selects the landing zone navigation scheme.</description>
+         <options>
+            <option name="Horizontal" value="metro"/>
+            <option name="Vertical" value="vertical"/>
+         </options>
+      </field>
+      <field key="queingarrows" label="Show Queuing Arrows" defaultValue="false" type="boolean" visible="${GetProperty(&quot;phoenix2/lz/navigation&quot;, &quot;metro&quot;) == &quot;metro&quot;}">
+         <description>Show arrows to help direct navigation.</description>
+         <options>
+            <option name="No" value="false"/>
+            <option name="Yes" value="true"/>
+         </options>
+      </field>
+      <field key="forecast" label="Weather Forecast" defaultValue="false" type="choice">
+         <description>When enabled, extended forecast and current conditions are shown on the landing zone.</description>
+         <options>
+            <option name="Disabled" value="off"/>
+            <option name="Current Conditions" value="current"/>
+            <option name="Forecast" value="forecast"/>
+            <option name="All" value="all"/>
+         </options>
+      </field>
+      <field key="weatherBackgrounds" label="Weather Backgrounds" defaultValue="false" type="boolean">
+         <description>When enabled, the wall paper in the landing zone is selected based on current weather conditions.</description>
+         <options>
+            <option name="Disabled" value="false"/>
+            <option name="Enabled" value="true"/>
+         </options>
+      </field>
+      <field key="fanart" label="Fanart Backgrounds" defaultValue="true" type="boolean">
+         <description>When enabled, fanart will be used if a Media item is selected.</description>
+         <options>
+            <option name="Disabled" value="false"/>
+            <option name="Enabled" value="true"/>
+         </options>
+      </field>
+   </group>
+
+</configuration>

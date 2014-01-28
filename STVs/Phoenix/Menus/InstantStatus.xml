@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd"[]>
+<menus>
+      <!--<menuItems> can have 4 different actions (mix and match)<screenname="Browser - Videos"/><eval>phoenix_api_SetProperty("phoenix/debug/enableLogging",true)</eval> <exec os="Windows" outputVariable="CmdOutput" cmd="cmd.exe" args="/c dir"/><sageCommand name="Back"/>-->
+      <menu name="phoenix.menu.lz.box.status" label="Instant Status Menu" background="GlobalMenuBackground.jpg" type="TV">
+            <view name="phoenix.view.util.instantstatus.recentrecordings" label="Recent Recordings" contextVar="MediaFile" preload="true" limit="5" >
+                  <description>Recently recorded TV shows</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "TV" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <view name="phoenix.view.util.instantstatus.todaysrecordings" label="Today&apos;s Recordings" contextVar="MediaFile" preload="true" limit="5">
+                  <description>TV set to record today</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "EPG_AIRING" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <view name="phoenix.view.util.instantstatus.currentlyrecording" label="Currently Recording" contextVar="MediaFile" preload="true" limit="5" >
+                  <description>TV airings that are currently recording</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "TV" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <view name="phoenix.view.util.instantstatus.recentimports" label="Recently Added" contextVar="MediaFile" preload="true" limit="5" >
+                  <description>Recently imported or recorded movies</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "VIDEO" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <view name="phoenix.view.util.instantstatus.recentlywatchedtv" label="Recently Watched TV" contextVar="MediaFile" preload="true" limit="5" >
+                  <description>Recently watched TV shows</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "TV" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+            <view name="phoenix.view.util.instantstatus.recentlywatchedmovies" label="Recently Watched Movies" contextVar="MediaFile" preload="true" limit="5" >
+                  <description>Recently watched movies</description>
+                  <eval>AddStaticContext( "MediaItem" , MediaFile )</eval>
+                  <eval>AddStaticContext( "MediaType" , "VIDEO" )</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("RGJDX-87319")</eval>
+            </view>
+      </menu>
+</menus>

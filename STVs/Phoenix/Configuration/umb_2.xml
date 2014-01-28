@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="phoenix2" label="Phoenix 2.0">
+      <description>Phoenix Configuration</description>
+      <group path="phoenix2/umb" label="Universal Media Browser Options">
+            <description>Media Browser Settings</description>
+            <field key="showWatchedIcon" label="Show Watched Icon in Lists" defaultValue="NEVER" type="choice">
+                  <description>Determines when the watched icon is displayed in lists of media items.</description>
+                  <options>
+                        <option name="Never" value="NEVER"/>
+                        <option name="TV Only" value="TVONLY"/>
+                        <option name="TV and Home Videos" value="TVANDHOME"/>
+                        <option name="Always" value="ALWAYS"/>
+                  </options>
+            </field>
+            <field fullkey="fuzzy/WatchExternally_BluRay" label="Use external player :: BluRay" defaultValue="false" type="boolean" visible="${IsRemoteUI()==false}">
+                  <description>Use the configured external player for BluRay discs.  The WatchExternally plugin by @Fuzzy is required for this option to work.</description>
+                  <options>
+                        <option name="Yes" value="true"/>
+                        <option name="No" value="false"/>
+                  </options>
+            </field>
+            <field fullkey="fuzzy/WatchExternally_DVD" label="Use external player :: DVD" defaultValue="false" type="boolean" visible="${IsRemoteUI()==false}">
+                  <description>Use the configured external player for DVD discs.  The WatchExternally plugin by @Fuzzy is required for this option to work.</description>
+                  <options>
+                        <option name="Yes" value="true"/>
+                        <option name="No" value="false"/>
+                  </options>
+            </field>
+      </group>
+</configuration>

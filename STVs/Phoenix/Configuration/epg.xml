@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="phoenix" label="Phoenix">
+      <description>Phoenix Configuration</description>
+	  <group path="phoenix/epgfull" label="Full Screen EPG Options">
+            <field key="rowcount" label="Rows" defaultValue="10" type="int">
+                  <description>Number of rows to use in the EPG.</description>
+            </field>
+            <field key="colcount" label="Columns" defaultValue="3" type="int">
+                  <description>Number of columns to use in the EPG.</description>
+            </field>	  
+	  </group>
+	  <group path="phoenix/epgnormal" label="Normal EPG Options">
+            <field fullkey="phoenix/epg/gridLocation" label="Grid Location" defaultValue="TOP" type="choice">
+                  <description>Placement of the programming grid.</description>
+                  <options>
+                        <option name="Top" value="TOP"/>
+                        <option name="Bottom" value="BOTTOM"/>
+                  </options>
+            </field>
+            <field fullkey="phoenix/epg/previewLocation" label="Preview Location" defaultValue="LEFT" type="choice">
+                  <description>Placement of the Preview when media is playing, or show fanart for the selected listing.</description>
+                  <options>
+                        <option name="Right" value="RIGHT"/>
+                        <option name="Left" value="LEFT"/>
+                  </options>
+            </field>
+            <field fullkey="phoenix/epg/rowcount" label="Rows" defaultValue="6" type="int">
+                  <description>Number of rows to use in the EPG.</description>
+            </field>
+            <field fullkey="phoenix/epg/colcount" label="Columns" defaultValue="3" type="int">
+                  <description>Number of columns to use in the EPG.</description>
+            </field>
+	  </group>
+      <group path="phoenix/epg" label="Global Program Guide Options">
+            <description>Program Guide Settings</description>
+            <field key="epgType" label="EPG Variant" defaultValue="NORMAL" type="choice">
+                  <description>Select either the Normal or Full Screen EPG.</description>
+                  <options>
+                        <option name="Normal" value="NORMAL"/>
+                        <option name="Full Screen" value="FULL"/>
+                  </options>
+            </field>
+            <field key="epgStyle" label="EPG Style" defaultValue="TRANSPARENT" type="choice">
+                  <description>Select either Transparent or Opaque.</description>
+                  <options>
+                        <option name="Transparent" value="TRANSPARENT"/>
+                        <option name="Opaque" value="OPAQUE"/>
+                  </options>
+            </field>
+            <field key="tuningdelay" label="Tuning Delay (seconds)" defaultValue="2" type="int">
+                  <description>Number of seconds to wait before tuning an item that is currently airing in the EPG.</description>
+            </field>
+            <field key="contextSensitiveFanartBackgrounds" label="Fanart Backgrounds" defaultValue="false" type="boolean">
+                  <description>When enabled, background fanart for the selected listing will be used as the wallpaper for this screen.</description>
+                  <options>
+                        <option name="Enabled" value="true"/>
+                        <option name="Disabled" value="false"/>
+                  </options>
+            </field>
+            <field key="channelLogos" label="Channel Logos" defaultValue="false" type="boolean">
+                  <description>When enabled, channel logos (when available) will be used in place of the station call sign.</description>
+                  <options>
+                        <option name="Enabled" value="true"/>
+                        <option name="Disabled" value="false"/>
+                  </options>
+            </field>
+            <field key="showChannelNumber" label="Show Channel Number" defaultValue="false" type="boolean" visible="${If(phoenix_config_GetProperty(&quot;phoenix/epg/channelLogos&quot;) == &quot;true&quot;,&quot;true&quot;,&quot;false&quot;)}">
+                  <description>Show the channel number in the guide. This setting only applies if Channel Logos are enabled.</description>
+                  <options>
+                        <option name="Yes" value="true"/>
+                        <option name="No" value="false"/>
+                  </options>
+            </field>
+            <field key="columnDuration" label="Column Duration" defaultValue="30" type="int">
+                  <description>Minutes per column.</description>
+            </field>
+            <field key="channelColumnWidth" label="Channel Width" defaultValue="15" type="int">
+                  <description>Percentage of the EPG to reserve for channel name / logo.</description>
+            </field>
+            <field key="colorCategoryAlpha" label="Category Color Alpha" defaultValue="70" type="int">
+                  <description>Alpha value (0 - 255) for the Category color in the EPG.</description>
+            </field>
+			
+      </group>
+</configuration>

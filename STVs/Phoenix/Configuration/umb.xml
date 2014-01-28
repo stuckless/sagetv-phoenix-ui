@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="phoenix" label="Phoenix">
+      <description>Phoenix Configuration</description>
+      <group path="phoenix/umb/single" label="Single List - Universal Media Browser Options">
+            <field fullkey="phoenix/umb/showPosters" label="Show Posters" defaultValue="true" type="boolean">
+                  <description>Use fanart posters in the description area.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+            <field label="Banners in Lists" defaultValue="false" type="boolean" fullkey="phoenix/umb/useBannerInList">
+                  <description>Use fanart banners in lists when available.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+      </group>
+      <group path="phoenix/umb/cover" label="Cover Flow - Universal Media Browser Options">
+            <field fullkey="phoenix/umb/autoMediaInfo" label="Automatic Media Info Display" defaultValue="false" type="boolean" visible="true">
+                  <description>When enabled, Browsers that support automatic launching of the Media Info screen will do so. Currently this is supported in Cover Flow.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+            <field key="alwaysusesimple" label="Detailed Info Overide" defaultValue="false" type="bool">
+                  <description>When Enabled, this overide forces this menu to use the Simple Info Display - regardless of what the default is set to below.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+      </group>
+      <group path="phoenix/umb/banner" label="Banner Flow - Universal Media Browser Options">
+            <field fullkey="phoenix/umb/bannerFlowAllBanners" label="Show All Banners" defaultValue="false" type="bool">
+                  <description>When enabled, all of the list items in Banner Flow are shown with a banner. When disabled, only the focused item in the list shows the banner.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+            <field fullkey="phoenix/umb/bannerRows" label="Banner View Rows" defaultValue="5" type="int">
+                  <description>Number of rows to use in the Banner Flow style UMB.</description>
+            </field>
+      </group>
+      <group path="phoenix/umb/movieflow" label="Movie Flow - Universal Media Browser Options">
+            <field key="white" label="Show White alpha layer" defaultValue="false" type="bool">
+                  <description>Adds a white alpha layer to the background - provides a bit of uniformity and makes text easier to read.</description>
+                  <options>
+                        <option name="Hidden" value="false"/>
+                        <option name="Shown" value="true"/>
+                  </options>
+            </field>
+            <field key="whitealpha" label="White Alpha Transparency" defaultValue="100" type="int" visible="prop:client:phoenix/umb/movieflow/white">
+                  <description>Alpha transparency level for the white alpha layer - 0 through 255</description>
+            </field>
+            <field key="alwaysusesimple" label="Detailed Info Overide" defaultValue="false" type="bool">
+                  <description>When Enabled, this overide forces this menu to use the Simple Info Display - regardless of what the default is set to below.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+      </group>
+
+      <group path="phoenix/umb/inline" label="Inline - Universal Media Browser Options">
+            <field key="alwaysusesimple" label="Detailed Info Overide" defaultValue="false" type="bool">
+                  <description>When Enabled, this overide forces this menu to use the Simple Info Display - regardless of what the default is set to below.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+            <field key="arttype" label="Art Type" defaultValue="POSTER" type="choice">
+                  <description>Choose between poster and banner in the main view.</description>
+                  <options>
+                        <option name="Poster" value="POSTER"/>
+                        <option name="Banner" value="BANNER"/>
+                  </options>
+            </field>
+      </group>
+      <group path="phoenix/umb/grid" label="Grid Flow - Universal Media Browser Options">
+            <field fullkey="phoenix/umb/gridRows" label="Grid View Rows" defaultValue="3" type="int">
+                  <description>Number of rows to use in the Grid style UMB.</description>
+            </field>
+            <field fullkey="phoenix/umb/gridColumns" label="Grid View Columns" defaultValue="6" type="int">
+                  <description>Number of columns to use in the Grid style UMB.</description>
+            </field>
+            <field key="scrolldirection" label="Scroll direction for the grid" defaultValue="HORIZONTAL" type="choice">
+                  <description>Sets the navigation direction for the grid flow.</description>
+                  <options>
+                        <option name="Horizontal" value="HORIZONTAL"/>
+                        <option name="Vertical" value="VERTICAL"/>
+                  </options>
+            </field>
+            <field key="alwaysshowinfo" label="Display item info" defaultValue="true" type="boolean">
+                  <description>Determines if the items information is always visible while navigating the grid.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+            <field key="alphamask" label="Alpha Mask" defaultValue="WHITE" type="choice">
+                  <description>Adds a alpha mask to the background - provides a bit of uniformity and makes text easier to read.</description>
+                  <options>
+                        <option name="White" value="WHITE"/>
+                        <option name="Black" value="BLACK"/>
+                        <option name="Gray" value="GRAY"/>
+                        <option name="None" value="NONE"/>
+                  </options>
+            </field>
+            <field key="maskalpha" label="Mask Alpha Transparency" defaultValue="100" type="int" visible="${GetProperty(&quot;phoenix/umb/grid/alphamask&quot;, &quot;NONE&quot;) != &quot;NONE&quot;}">
+                  <description>Alpha transparency level for the white alpha layer - 0 through 255</description>
+            </field>
+		</group>
+      <group path="phoenix/umb" label="Universal Media Browser Options">
+            <description>UMB Settings</description>
+            <field key="listSearchMethod" label="List Search Method" defaultValue="PERCENT" type="choice">
+                  <description>Percent jumps based on the number - 0 top of the list, 9 to the end of the list. RegEx does a match bases on the characters input.  Alpha Filter does a filter on the letter the media item starts with.</description>
+                  <options>
+                        <option name="Percent" value="PERCENT"/>
+                        <option name="RegEx" value="REGEX"/>
+                        <option name="Alpha Filter" value="ALPHA FILTER"/>
+                  </options>
+            </field>
+            <field fullkey="phoenix/umb/selectToBrowse" label="Select to Browse" defaultValue="false" type="boolean">
+                  <description>Used in UMB's that are list based.  Whene enabled, Select browses into folders while Right shows detailed info.  Opposite when disabled (default).</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+            <field key="stickyCustomization" label="View presentation customization" defaultValue="false" type="boolean">
+                  <description>If Sticky, changes to the Sort/Filter/Grouping are retained.  If Temporary, the view will reset to default the next time it is loaded.</description>
+                  <options>
+                        <option name="Temporary" value="false"/>
+                        <option name="Sticky" value="true"/>
+                  </options>
+            </field>			
+            <field key="showActionOnOptions" label="Show Action Menu before Options" defaultValue="true" type="boolean">
+                  <description>When Enabled, the Action menu is shown on the first press of Options.  A second press will bring up the Global Options Menu.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>			
+            <field key="defaultBrowser" label="Default Browser" defaultValue="SINGLELIST" type="choice">
+                  <description>Select the default UMB variant to use when browsing media.</description>
+                  <options>
+                        <option name="Single List" value="SINGLELIST"/>
+						<option name="Tall List"   value="TALLLIST"/>
+						<option name="Inline List" value="INLINE"/>
+                        <option name="Banner Flow" value="BANNERFLOW"/>
+                        <option name="Grid Flow"   value="GRIDFLOW"/>
+                  </options>
+            </field>
+            <field key="mediaInfoDisplay" label="Media Info Display" defaultValue="DETAILED" type="choice">
+                  <description>Selects which Media Info Display is used when selecting an item in the UMB.</description>
+                  <options>
+                        <option name="Detailed" value="DETAILED"/>
+                        <option name="Simple" value="SIMPLE"/>
+                  </options>
+            </field>
+            <field key="showWatchedIcon" label="Show Watched Icon in Lists" defaultValue="NEVER" type="choice">
+                  <description>Determines when the watched icon is displayed in lists of media items.</description>
+                  <options>
+                        <option name="Never" value="NEVER"/>
+                        <option name="TV Only" value="TVONLY"/>
+                        <option name="TV and Home Videos" value="TVANDHOME"/>
+                        <option name="Always" value="ALWAYS"/>
+                  </options>
+            </field>
+            <field key="roundedCorners" label="Rounded Corners" defaultValue="false" type="boolean">
+                  <description>When enabled, Fanart elements have a rounded corner effect applied.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+            <field key="foldericonsize" label="Folder Icon in Lists" defaultValue="LARGE" type="choice">
+                  <description>When Yes, folders in list based browsers will use a folder icon.</description>
+                  <options>
+                        <option name="Large" value="LARGE"/>
+                        <option name="Small" value="SMALL"/>
+                        <option name="Hidden" value="HIDDEN"/>
+                  </options>
+            </field>
+            <field key="showMediaCount" label="Media Count Display" defaultValue="true" type="boolean">
+                  <description>When enabled, the Media Count in the lower left corner of screen is shown.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+            <field key="showMediaPath" label="Media Path Display" defaultValue="true" type="boolean">
+                  <description>When enabled, the Media Path in the lower right corner of screen is shown.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+			
+            <field key="titlesortalwaysignore" label="Always ignore prepositions for Title sort" defaultValue="true" type="boolean">
+                  <description>When enabled, when the UMB is sorted by title it will ignore 'The', 'A', and 'An' at the beginning of the title.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+      </group>
+</configuration>

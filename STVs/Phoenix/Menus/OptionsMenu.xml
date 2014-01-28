@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd"[]>
+<menus>
+      <menu name="phoenix.menu.options" label="Options Menu" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"Global Options Menu"</description>
+            <menu name="phoenix.menu.options.context.base" label="Context Sensitive Menu Items" linkedMenu="${java_lang_String_replace( GetWidgetName(GetCurrentMenuWidget()) , &quot; &quot; , &quot;&quot; )}">
+                  <menuItem label="Options" visible="true">
+                        <eval>CloseOptionsMenu()</eval>
+                        <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-254308")</eval>
+                  </menuItem>
+                  <menuItem label="${If(IsDoingLibraryImportScan(),&quot;Scanning Libraries...&quot;,&quot;Start Library Scan&quot;)}" visible="true">
+                        <eval>RunLibraryImportScan( false )</eval>
+                        <eval>Refresh()</eval>
+                  </menuItem>
+                  <menuItem label="Toggle Full Screen" visible="${IsRemoteUI()==false}">
+                        <sageCommand name="Full Screen" />
+                  </menuItem>
+                  <menuItem label="Browse Views" visible="true">
+                        <eval>CloseOptionsMenu()</eval>
+                        <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-256205")</eval>
+                  </menuItem>
+            </menu>
+            <menu name="phoenix.menu.options.config" label="Options &amp; Configuration">
+                  <menuItem label="Skin Manager" visible="true">
+                        <eval>AddGlobalContext( "OptionsSubmenu" , "Skin Manager" )</eval>
+                        <eval>Refresh()</eval>
+                  </menuItem>
+                  <menuItem label="Global Configuration" visible="true">
+                        <eval>AddGlobalContext( "OptionsSubmenu" , "ConfigurationGroups" )</eval>
+                        <eval>Refresh()</eval>
+                  </menuItem>
+                  <menuItem label="Parental Controls" visible="true">
+                        <eval>CloseOptionsMenu()</eval>
+                        <eval>ExecuteWidgetChainInCurrentMenuContext("PHOENIX-3790")</eval>
+                  </menuItem>                  
+				  <!--
+				  <menuItem label="Phoenix Weather Configuration" visible="true">
+                        <eval>CloseOptionsMenu()</eval>
+                        <eval>ExecuteWidgetChainInCurrentMenuContext("XJXYO-783")</eval>
+                  </menuItem>
+				  -->
+                  <menuItem label="Reload Menus, Views, Config" visible="true">
+                        <eval>phoenix_menu_ReloadMenus()</eval>
+                        <eval>phoenix_umb_ReloadViews()</eval>
+                        <eval>phoenix_config_ReloadConfiguration()</eval>
+                        <eval>CloseOptionsMenu()</eval>
+                        <eval>Refresh()</eval>
+                  </menuItem>
+                  <menuItem label="Calibrate Drop Shadow" visible="true">
+                        <screen name="Phoenix Drop Shadow Calibration" />
+                  </menuItem>
+                  <menuItem label="Scale Fanart" visible="true">
+                        <eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to scale all of the fanart?" )</eval>
+                        <eval>AddGlobalContext("gNativeConfirmYes", "Yes")</eval>
+                        <eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
+                        <eval>AddGlobalContext("gNativeConfirmYesAction", "ExecuteWidgetChainInCurrentMenuContext(\"PHNX-254176\")")</eval>
+                        <eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
+                        <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+                  </menuItem>
+            </menu>
+            <menu name="phoenix.menu.options.dvr" label="DVR Settings">
+                  <menuItem label="Scheduled Recordings" visible="true">
+                        <eval>AddGlobalContext( "OptionsSubmenu" , "Scheduled Recordings" )</eval>
+                        <eval>Refresh()</eval>
+                  </menuItem>
+                  <menuItem label="Manage Favorites" visible="true">
+                        <eval>AddGlobalContext( "OptionsSubmenu" , "Series Manager" )</eval>
+                        <eval>Refresh()</eval>
+                  </menuItem>
+                  <menu name="phoenix.menu.options.dvr.search" label="Search">
+                        <menuItem label="Browse by Category" visible="true">
+                              <eval>AddGlobalContext( "OptionsSubmenu" , "Browse by Category" )</eval>
+                              <eval>Refresh()</eval>
+                        </menuItem>
+                        <menuItem label="Search by Title" visible="true">
+                              <eval>AddGlobalContext( "OptionsSubmenu" , "Search by Title" )</eval>
+                              <eval>Refresh()</eval>
+                        </menuItem>
+                        <menuItem label="Search by Actor" visible="true">
+                              <eval>AddGlobalContext( "OptionsSubmenu" , "Search by Actor" )</eval>
+                              <eval>Refresh()</eval>
+                        </menuItem>
+                        <menuItem label="Search by Keyword" visible="true">
+                              <eval>AddGlobalContext( "OptionsSubmenu" , "Search by Keyword" )</eval>
+                              <eval>Refresh()</eval>
+                        </menuItem>
+                  </menu>
+                  <menuItem label="Timed Recording" visible="true">
+                        <eval>AddGlobalContext( "OptionsSubmenu" , "Timed Recording" )</eval>
+                        <eval>Refresh()</eval>
+                  </menuItem>
+            </menu>
+            <menu name="phoenix.menu.options.sagesettings" label="Sage Settings">
+                  <menuItem label="Sage Detailed Setup" visible="true">
+                        <description>Default STV Setup Menu</description>
+                        <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+                        <eval>AddGlobalContext("gTargetMenuName", "Detailed Setup")</eval>
+                        <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+                        <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+                        <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+                  </menuItem>
+                  <menuItem label="Sage Video Sources" visible="true">
+                        <description>Default STV Video Setup Menu</description>
+                        <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+                        <eval>AddGlobalContext("gTargetMenuName", "Setup Wizard - Summary Page")</eval>
+                        <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+                        <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+                        <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+                  </menuItem>
+                  <menuItem label="Sage Plugins" visible="true">
+                        <description>Default STV Video Setup Menu</description>
+                        <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+                        <eval>AddGlobalContext("gTargetMenuName", "Plugin List")</eval>
+                        <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+                        <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+                        <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+                  </menuItem>
+            </menu>
+            <menu name="phoenix.menu.options.admin" label="Admin Tools">
+                  <menuItem label="Load STV" visible="true">
+                        <eval>CloseOptionsMenu()</eval>
+                        <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-264074")</eval>
+                  </menuItem>
+                  <menuItem label="Reload Default UI" visible="true">
+                        <eval>AddGlobalContext("gCurCustomSTVFilePath", null )</eval>
+                        <eval>AddGlobalContext("gTargetMenuName", null)</eval>
+                        <eval>AddGlobalContext("gReloadCustomSTVOnHome", null)</eval>
+                        <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", null)</eval>
+                        <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+                  </menuItem>
+                  <menuItem label="Update Phoenix" visible="false">
+                        <eval>phoenix_beta_UpdatePhoenix()</eval>
+                  </menuItem>
+            </menu>
+      </menu>
+</menus>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="phoenix" label="Phoenix">
+      <description>Phoenix Configuration</description>
+      <group path="phoenix/music" label="Phoenix Music Options">
+            <field label="Delay between tracks" defaultValue="2000" type="int" key="afterloaddelay">
+                  <description>Length (in milliseconds) to delay playback between tracks.  0 to disable.</description>
+            </field>
+            <field key="allowBrowseToSong" label="Allow Navigation to Individual Tracks" defaultValue="false" type="bool">
+                  <description>When enabled, you can browse down into albums all the way.  When disabled, you can only go down to the level that is grouped by Album.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+		</group>
+</configuration>

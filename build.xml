@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="dist-plugins" name="PhoenixExtras">
+	<tstamp/>
+	
+	<property environment="env" />
+
+	<!-- Put Host specific properties here, ie sage path, bmt path, etc -->
+	<property file="${user.home}/AntCommon/build.properties" />
+	
+	<!-- we are using the build.properties for the google code stuff -->
+	<property name="gc.upload.settings" value="build.properties"/>
+
+	<property name="dist.dir" value="${basedir}/target" />
+
+	<property name="buildversion" value="413"></property>
+	<property name="baseversion" value="2.5.${buildversion}"></property>
+	
+	<property name="p1version" value="411" />
+	<property name="stv.name" value="phoenix-stv" />
+	<property name="stv.version" value="2.5.${buildversion}" />
+	
+	<property name="p2version" value="201" />
+	
+	<property name="theme.name" value="phoenix-theme" />
+	<property name="theme.version" value="${baseversion}" />
+
+	<property name="stvcompat.name" value="phoenix-compatability" />
+	<property name="stvcompat.version" value="1.0.1" />
+	
+	<target name="init" depends="clean">
+		<mkdir dir="${dist.dir}" />
+	</target>
+	
+	<target name="clean">
+		<delete dir="target" />
+	</target>
+	
+	<target name="dist-phoenix-compatibility" depends="init">
+		<tstamp>
+			<format property="last-modified" pattern="yyyy.MM.dd" />
+		</tstamp>
+
+		<mkdir dir="${dist.dir}" />
+		<property name="STVIFile" value="${dist.dir}/STV7.phoenix.compatability.${stvcompat.version}.stvi"/>
+		
+		<!-- zip stv -->
+		<zip destfile="${dist.dir}/${stvcompat.name}-${stvcompat.version}.zip">
+			<zipfileset dir="STVs/SageTV7/" includes="STV7.phoenix.compatability.${stvcompat.version}.stvi"/>
+		</zip>
+		<checksum file="${dist.dir}/${stvcompat.name}-${stvcompat.version}.zip" property="md5.stvcompat" />
+
+		
+		<copy tofile="${dist.dir}/${stvcompat.name}-${stvcompat.version}.xml" file="plugin/${stvcompat.name}.xml"/>
+		<replace file="${dist.dir}/${stvcompat.name}-${stvcompat.version}.xml" summary="yes">
+			<replacefilter token="@@last-modified@@" value="${last-modified}" />
+			<replacefilter token="@@stvcompat-version@@" value="${stvcompat.version}" />
+			<replacefilter token="@@stvcompat-checksum@@" value="${md5.stvcompat}" />
+		</replace>
+	</target>
+	
+	<target name="dist-plugins" description="Create the STV Plugin" depends="init">
+		<mkdir dir="${dist.dir}" />
+		<property name="STVFile" value="${dist.dir}/Phoenix.xml"/>
+		<copy tofile="${STVFile}" file="STVs/SageTV7/Phoenix STV.${p1version}.xml" failonerror="true"/>
+
+		<property name="STV2File" value="${dist.dir}/Phoenix2.xml"/>
+		<copy tofile="${STV2File}" file="STVs/SageTV7/Phoenix2 STV.${p2version}.xml" failonerror="true"/>
+
+		
+		<!-- zip stv -->
+		<zip destfile="${dist.dir}/${stv.name}-${stv.version}.zip">
+			<zipfileset dir="${dist.dir}" prefix="SageTV7/" includes="Phoenix.xml"></zipfileset>
+			<zipfileset dir="${dist.dir}" prefix="SageTV7/" includes="Phoenix2.xml"></zipfileset>
+			<zipfileset dir="STVs/Phoenix/Menus" prefix="Phoenix/Menus"></zipfileset>
+			<zipfileset dir="STVs/Phoenix/vfs" prefix="Phoenix/vfs"></zipfileset>
+			<zipfileset dir="STVs/Phoenix/Configuration" prefix="Phoenix/Configuration"></zipfileset>
+		</zip>
+		<checksum file="${dist.dir}/${stv.name}-${stv.version}.zip" property="md5.stv" />
+
+		<property name="stv1.theme" value="${theme.name}-2.3.409.zip"></property>
+		<!-- zip themes -->
+		<zip destfile="${dist.dir}/${stv1.theme}">
+			<zipfileset dir="STVs/Phoenix/Skins" prefix="STVs/Phoenix/Skins" excludes="**/P2*/**"></zipfileset>
+		</zip>
+		<checksum file="${dist.dir}/${stv1.theme}" property="md5.theme" />
+		<echo message="${stv1.theme} MD5: ${md5.theme}"/>
+
+		<property name="stv2.theme" value="${theme.name}2-2.5.${p2version}.zip"></property>
+		<zip destfile="${dist.dir}/${stv2.theme}">
+			<zipfileset dir="STVs/Phoenix/Skins" prefix="STVs/Phoenix/Skins" includes="P2*/**"></zipfileset>
+		</zip>
+		<checksum file="${dist.dir}/${stv2.theme}" property="md5_p2.theme" />
+		<echo message="${stv2.theme} MD5: ${md5_p2.theme}"/>
+		
+		<tstamp>
+			<format property="last-modified" pattern="yyyy.MM.dd" />
+		</tstamp>
+
+		<copy tofile="${dist.dir}/${stv.name}-${stv.version}.xml" file="plugin/${stv.name}.xml"/>
+		<replace file="${dist.dir}/${stv.name}-${stv.version}.xml" summary="yes">
+			<replacefilter token="@@last-modified@@" value="${last-modified}" />
+			<replacefilter token="@@stv-version@@" value="${stv.version}" />
+			<replacefilter token="@@stv-checksum@@" value="${md5.stv}" />
+			<replacefilter token="@@theme-version@@" value="${theme.version}" />
+			<replacefilter token="@@theme-checksum@@" value="${md5.theme}" />
+		</replace>
+
+		<propertyfile file="lastbuild.properties">
+			<entry key="md5.stv" value="${md5.stv}"/>
+			<entry key="md5.theme" value="${md5.theme}"/>
+		</propertyfile>
+	</target>
+
+	<target name="dist-plugins-just-make-plugin-xml" description="Create the STV Plugin XML">
+		<checksum file="${dist.dir}/${stv.name}-${stv.version}.zip" property="md5.stv" />
+		<checksum file="${dist.dir}/${theme.name}-${stv.version}.zip" property="md5.theme" />
+		
+		<tstamp>
+			<format property="last-modified" pattern="yyyy.MM.dd" />
+		</tstamp>
+
+		<copy tofile="${dist.dir}/${stv.name}-${stv.version}.xml" file="plugin/${stv.name}.xml"/>
+		<replace file="${dist.dir}/${stv.name}-${stv.version}.xml" summary="yes">
+			<replacefilter token="@@last-modified@@" value="${last-modified}" />
+			<replacefilter token="@@stv-version@@" value="${stv.version}" />
+			<replacefilter token="@@stv-checksum@@" value="${md5.stv}" />
+			<replacefilter token="@@theme-version@@" value="${theme.version}" />
+			<replacefilter token="@@theme-checksum@@" value="${md5.theme}" />
+		</replace>
+	</target>
+	
+	<target name="publish-googlecode-stv" description="Upload STV plugin to Google Code">
+		<get dest="${user.home}/.ant/lib/ant-googlecode.jar" src="http://ant-googlecode.googlecode.com/files/ant-googlecode-0.0.2.jar" usetimestamp="true"/>
+		<fail message="gc.username must be defined in ${gc.upload.settings}" unless="gc.username" />
+		<fail message="gc.password must be defined in ${gc.upload.settings}" unless="gc.password" />
+		<taskdef classname="net.bluecow.googlecode.ant.GoogleCodeUploadTask" name="gcupload">
+			<classpath>
+			      <fileset dir="${user.home}/.ant/lib/">
+			        <include name="**/*.jar"/>
+			      </fileset>
+			</classpath>
+		</taskdef>
+		<echo message="Basedir: ${basedir}"></echo>
+		<gcupload targetfilename="${stv.name}-${stv.version}.zip"  filename="${dist.dir}/${stv.name}-${stv.version}.zip" username="${gc.username}" password="${gc.password}" projectname="sagephoenix" summary="Phoenix STV ${stv.version}" labels="QA-Snapshot,Type-Archive,OpSys-All" />
+		<echo message="Manually Update the Theme Files, and then Notify SageTV"/>
+		<!-- 
+		<gcupload targetfilename="${theme.name}-${theme.version}.zip"  filename="${dist.dir}/${theme.name}-${theme.version}.zip" username="${gc.username}" password="${gc.password}" projectname="sagephoenix" summary="Phoenix Theme ${stv.version}" labels="QA-Snapshot,Type-Archive,OpSys-All" />
+		-->
+	</target>
+
+	<target name="publish-googlecode-phoenix-compatability" description="Uploads the Phoenix Compatibility Plugin to SageTV">
+		<get dest="${user.home}/.ant/lib/ant-googlecode.jar" src="http://ant-googlecode.googlecode.com/files/ant-googlecode-0.0.2.jar" usetimestamp="true"/>
+		<fail message="gc.username must be defined in ${gc.upload.settings}" unless="gc.username" />
+		<fail message="gc.password must be defined in ${gc.upload.settings}" unless="gc.password" />
+		<taskdef classname="net.bluecow.googlecode.ant.GoogleCodeUploadTask" name="gcupload">
+			<classpath>
+			      <fileset dir="${user.home}/.ant/lib/">
+			        <include name="**/*.jar"/>
+			      </fileset>
+			</classpath>
+		</taskdef>
+		<gcupload targetfilename="${stvcompat.name}-${stvcompat.version}.zip"  filename="${dist.dir}/${stvcompat.name}-${stvcompat.version}.zip" username="${gc.username}" password="${gc.password}" projectname="sagephoenix" summary="Phoenix STV ${stv.version}" labels="QA-Snapshot,Type-Archive,OpSys-All" />
+	</target>
+	
+	<target name="notify-sagetv-phoenix-stv" description="Notifies SageTV about the STV Plugin">
+		<get dest="target/slugger.zip" src="http://sagetv-addons.googlecode.com/files/slugger-dev-tools-0.0.1.zip"/>
+		<unzip dest="${user.home}/.ant/lib/" src="target/slugger.zip"/>
+        <taskdef classname="com.google.code.sagetvaddons.dev.ant.task.SageTvPluginSubmitter" name="sagesubmit">
+			<classpath>
+			      <fileset dir="${user.home}/.ant/lib/">
+			        <include name="**/*.jar"/>
+			      </fileset>
+			</classpath>
+        </taskdef>
+		<!--
+        <sagesubmit name="Sean Stuckless" user="${sage.forumuser}" email="sean.stuckless@gmail.com" pluginid="phoenix" reqtype="UPGRADE" descriptor="${dist.dir}/${stv.name}-${stv.version}.xml" />
+		<sagesubmit name="Sean Stuckless" user="${sage.forumuser}" email="sean.stuckless@gmail.com" pluginid="phoenix" reqtype="NEW" descriptor="${dist.dir}/${stv.name}-${stv.version}.xml" />
+        -->
+		<sagesubmit name="Sean Stuckless" user="${sage.forumuser}" email="sean.stuckless@gmail.com" pluginid="phoenix" reqtype="UPGRADE" descriptor="${dist.dir}/${stv.name}-${stv.version}.xml" />
+	</target>
+
+	<target name="notify-sagetv-phoenix-compatability" description="Notifies SageTV about the Phoenix Compatability Plugin">
+		<get dest="target/slugger.zip" src="http://sagetv-addons.googlecode.com/files/slugger-dev-tools-0.0.1.zip"/>
+		<unzip dest="${user.home}/.ant/lib/" src="target/slugger.zip"/>
+        <taskdef classname="com.google.code.sagetvaddons.dev.ant.task.SageTvPluginSubmitter" name="sagesubmit">
+			<classpath>
+			      <fileset dir="${user.home}/.ant/lib/">
+			        <include name="**/*.jar"/>
+			      </fileset>
+			</classpath>
+        </taskdef>
+		<!--
+		<sagesubmit name="Sean Stuckless" user="${sage.forumuser}" email="sean.stuckless@gmail.com" pluginid="phoenix-compatability" reqtype="NEW" descriptor="${dist.dir}/${stvcompat.name}-${stvcompat.version}.xml" />
+		-->
+		<sagesubmit name="Sean Stuckless" user="${sage.forumuser}" email="sean.stuckless@gmail.com" pluginid="phoenix-compatability" reqtype="UPGRADE" descriptor="${dist.dir}/${stvcompat.name}-${stvcompat.version}.xml" />
+	</target>
+	
+	<target name="build-publish-notify-phoenix-compatibility-plugin" depends="dist-phoenix-compatibility,publish-googlecode-phoenix-compatability,notify-sagetv-phoenix-compatability" description="Builds, Publishes, and Notifies SageTV about the Phoenix Compatibility Plugin"/>
+</project>

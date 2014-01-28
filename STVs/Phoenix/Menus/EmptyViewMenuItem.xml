@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd"[]>
+<menus>
+   <menu background="GlobalMenuBackground.jpg" label="Phoenix Landing Menu" name="phoenix2.menu.lz.view.empty" type="TV">
+      <menuItem label="No media items" name="phoenix2.menu.lz.view.empty.option" visible="true">
+      </menuItem>
+   </menu>
+</menus>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd"[]>
+<menus>
+      <menu name="phoenix.menu.keys" label="Key Command Definitions" background="GlobalMenuBackground.jpg" visible="false">
+            <menuItem label="SageTV Recordings" name="sagetvrecordings" visible="true">
+                  <eval>AddGlobalContext("DefaultView", GetProperty("phoenix/ui/sagetvrecordingsview", "phoenix.view.default.TV") )</eval>
+                  <eval>AddGlobalContext("FlowType", "BANNER")</eval>
+                  <screen name="Phoenix UMB - Art Flow"/>
+            </menuItem>
+            <menuItem label="Custom 1" name="custom1" visible="true"> 
+			</menuItem>
+            <menuItem label="Custom 2" name="custom2" visible="true"> 
+			</menuItem>
+            <menuItem label="Custom 3" name="custom3" visible="true"> 
+			</menuItem>
+            <menuItem label="Custom 4" name="custom4" visible="true"> 
+			</menuItem>
+            <menuItem label="Custom 5" name="custom5" visible="true"> 
+			</menuItem>
+            <menuItem label="Music" name="musicjukebox" visible="true"> 
+                <eval>AddGlobalContext("DefaultView", GetProperty("phoenix/ui/musicjukeboxview", "phoenix.view.default.music.album") )</eval>
+				<screen name="Phoenix Music Browser" />
+			</menuItem>
+            <menuItem label="Video Library" name="videolibrary" visible="true"> 
+			</menuItem>
+            <menuItem label="Picture Library" name="picturelibrary" visible="true"> 
+			</menuItem>
+            <menuItem label="Recording Schedule" name="recordingschedule" visible="true"> 
+			</menuItem>
+            <menuItem label="Live TV" name="livetv" visible="true"> 
+			</menuItem>
+            <menuItem label="Library" name="library" visible="true"> 
+			</menuItem>
+            <menuItem label="Setup" name="setup" visible="true"> 
+			</menuItem>
+            <menuItem label="TV" name="tv" visible="true"> 
+			</menuItem>
+      </menu>
+</menus>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="phoenix" label="Phoenix">
+      <description>Phoenix Configuration</description>
+      <group path="phoenix/ui" label="Phoenix UI Options">
+            <field label="View to use for 'SageTV Recordings' listener" defaultValue="phoenix.view.default.TV" type="string" key="sagetvrecordingsview">
+                  <description>The view to use when the 'SageTV Recordings' event is received.  This is the button labeled 'Video' on the Sage Remote.</description>
+            </field>
+            <field key="simplify" label="Simplified UI options" defaultValue="true" type="boolean">
+                  <description>When enabled, the most used options for an activity are displayed while advanced options are hidden.</description>
+                  <options>
+                        <option name="Enabled" value="true"/>
+                        <option name="Disabled" value="false"/>
+                  </options>
+            </field>
+            <field key="alwaysresume" label="Resume without prompting" defaultValue="false" type="boolean">
+                  <description>When enabled, media files that are partially watched will resume from where they were last viewed without being prompted.</description>
+                  <options>
+                        <option name="Enabled" value="true"/>
+                        <option name="Disabled" value="false"/>
+                  </options>
+            </field>	
+			<field fullkey="screen_saver_style" label="Screen Saver Style" defaultValue="xSlideshow" type="choice">
+                  <description>Select the style of the Screen Saver.</description>
+                  <options>
+                        <option name="Phoenix Logo" value="xPhoenix"/>
+                        <option name="SageTV Logo" value="xLogo"/>
+                        <option name="Photo Slideshow" value="xSlideshow"/>
+                  </options>
+            </field>
+      </group>
+</configuration>

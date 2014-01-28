@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd"[]>
+<menus>
+      <menu name="PhoenixUMB-SingleList" label="Universal Media Browser Options" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"Context Sensitive Menu"</description>
+      </menu>
+      <menu name="PhoenixUMB-DoubleList" label="Universal Media Browser Options" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"Context Sensitive Menu"</description>
+      </menu>
+      <menu name="PhoenixUMB-HorizontalList" label="Universal Media Browser Options" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"Context Sensitive Menu"</description>
+            <menuItem label="Configure Browser" visible="true">
+                  <eval>CloseOptionsMenu()</eval>
+                  <eval>AddGlobalContext ("ConfigGroupName", "phoenix/umb")</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-254308")</eval>
+            </menuItem>
+            <menuItem label="Change Media View" visible="true">
+                  <eval>CloseOptionsMenu()</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253496")</eval>
+            </menuItem>
+            <menuItem label="Refresh View" visible="true">
+                  <eval>CloseOptionsMenu()</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-255233")</eval>
+            </menuItem>
+      </menu>
+      <menu name="PhoenixUMB-CoverFlow" label="Universal Media Browser Options" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"Context Sensitive Menu"</description>
+      </menu>
+      <menu name="PhoenixUMB-ArtFlow" label="Universal Media Browser Options" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"Context Sensitive Menu"</description>
+      </menu>
+      <menu name="PhoenixMusicBrowser" label="Music Browser Options" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"Context Sensitive Menu"</description>
+            <menuItem label="${If(GetProperty( &quot;music/repeat_playback&quot; , true ), &quot;Repeat : ON&quot;, &quot;Repeat : OFF&quot;)}" visible="true">
+			    <eval>SetProperty("music/repeat_playback", If(GetProperty("music/repeat_playback", true ), false, true))</eval>
+    	    	<eval>Refresh()</eval>
+		    </menuItem>			
+            <menuItem label="${If(GetProperty( &quot;random_music_playback&quot; , false ), &quot;Shuffle : ON&quot;, &quot;Shuffle : OFF&quot;)}" visible="true">
+			    <eval>SetProperty("random_music_playback", If(GetProperty("random_music_playback", false ), false, true))</eval>
+    	    	<eval>Refresh()</eval>
+		    </menuItem>
+      </menu>
+      <menu name="PhoenixEPGFull" label="Program Guide Options" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"Context Sensitive Menu"</description>
+            <menuItem label="Goto current time" visible="true">
+                  <eval>CloseOptionsMenu()</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-268459")</eval>
+            </menuItem>
+      </menu>
+      <menu name="PhoenixEPGNormal" label="Program Guide Options" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"Context Sensitive Menu"</description>
+            <menuItem label="Goto current time" visible="true">
+                  <eval>CloseOptionsMenu()</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-268459")</eval>
+            </menuItem>
+      </menu>
+
+      <menu name="PhoenixOSDMusic" label="Music Options" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"Context Sensitive Menu"</description>
+            <menuItem label="${If(GetProperty( &quot;music/repeat_playback&quot; , true ), &quot;Repeat : ON&quot;, &quot;Repeat : OFF&quot;)}" visible="true">
+			    <eval>SetProperty("music/repeat_playback", If(GetProperty("music/repeat_playback", true ), false, true))</eval>
+    	    	<eval>Refresh()</eval>
+		    </menuItem>			
+            <menuItem label="${If(GetProperty( &quot;random_music_playback&quot; , false ), &quot;Shuffle : ON&quot;, &quot;Shuffle : OFF&quot;)}" visible="true">
+			    <eval>SetProperty("random_music_playback", If(GetProperty("random_music_playback", false ), false, true))</eval>
+    	    	<eval>Refresh()</eval>
+		    </menuItem>
+      </menu>
+	  
+      <menu name="PhoenixWeather" label="Weather Options" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"Context Sensitive Menu"</description>
+	  </menu>
+	  
+      <menu name="PhoenixOSDVideo" label="Video Options" background="OptionsMenuBackground.jpg" type="TV">
+            <description>"Context Sensitive Menu"</description>
+            <!-- Common items -->
+            <!-- TV items -->
+            <menu name="PlaybackCommands" label="Playback Options" background="OptionsMenuBackground.jpg" type="TV" visible="true">
+                  <menuItem label="Recording Options" visible="${If(IsTVFile(GetCurrentMediaFile()),&quot;true&quot;,&quot;false&quot;)}">
+                        <eval>CloseOptionsMenu()</eval>
+                        <sageCommand name="Record" />
+                  </menuItem>
+                  <menuItem label="${&quot;Aspect Ratio Mode : &quot; + GetAspectRatioMode()}" visible="true">
+                        <sageCommand name="Aspect Ratio Toggle" />
+                        <eval>Refresh()</eval>
+                  </menuItem>
+                  <menuItem label="${&quot;Audio Language: &quot; + GetDVDCurrentLanguage() }" visible="${IsDVD( GetCurrentMediaFile() ) &amp;&amp; (GetDVDCurrentDomain() != 10) &amp;&amp; Size(GetDVDAvailableLanguages()) > 0}">
+                        <eval>ExecuteWidgetChainInCurrentMenuContext("ZOMHW-9180410")</eval>
+                  </menuItem>
+                  <menuItem label="${&quot;DVD Subtitles : &quot; + If(Size(GetDVDCurrentSubpicture()) > 0,&quot;On&quot;,&quot;Off&quot;)}" visible="${IsDVD( GetCurrentMediaFile() ) &amp;&amp; (GetDVDCurrentDomain() != 10) &amp;&amp; (Size(GetDVDAvailableSubpictures()) > 0)}">
+                        <eval>ExecuteWidgetChainInCurrentMenuContext("ZOMHW-9170288")</eval>
+                  </menuItem>
+                  <menuItem label="${&quot;Video Subtitles : &quot; + If(Size(GetDVDCurrentSubpicture()) > 0,&quot;On&quot;,&quot;Off&quot;)}" visible="${IsVideoFile( GetCurrentMediaFile() ) &amp;&amp; (Size(GetDVDAvailableSubpictures()) > 0)}">
+                        <eval>ExecuteWidgetChainInCurrentMenuContext("ZOMHW-9170288")</eval>
+                  </menuItem>
+                  <menuItem label="${&quot;Subtitle Language&quot;}" visible="${Size(GetDVDCurrentSubpicture()) > 0}">
+                        <eval>ExecuteWidgetChainInCurrentMenuContext("ZOMHW-9170383")</eval>
+                  </menuItem>
+                  <menuItem label="${&quot;Captions : &quot; + GetMediaPlayerClosedCaptionState()}" visible="${(IsDVD( GetCurrentMediaFile() ) &amp;&amp; (GetDVDCurrentDomain() != 10))||(IsVideoFile( GetCurrentMediaFile() ) &amp;&amp; StringIndexOf( java_lang_String_toLowerCase(GetMediaFileFormatDescription( GetCurrentMediaFile() )), &quot;mpeg&quot;) != -1 )}">
+                        <eval>ExecuteWidgetChainInCurrentMenuContext("ZOMHW-9180401")</eval>
+                  </menuItem>
+                  <menuItem label="${&quot;Caption Options&quot;}" visible="${(IsDVD( GetCurrentMediaFile() ) &amp;&amp; (GetDVDCurrentDomain() != 10))||(IsVideoFile( GetCurrentMediaFile() ) &amp;&amp; StringIndexOf( java_lang_String_toLowerCase(GetMediaFileFormatDescription( GetCurrentMediaFile() )), &quot;mpeg&quot;) != -1 )}">
+                        <eval>ExecuteWidgetChainInCurrentMenuContext("ZOMHW-9180071")</eval>
+                  </menuItem>
+            </menu>
+            <menuItem label="Detailed Info" visible="true">
+                  <eval>CloseOptionsMenu()</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-254278")</eval>
+            </menuItem>
+            <menuItem label="Blu-ray Title Select" visible="${IsDVD( GetCurrentMediaFile() ) &amp;&amp; IsBluRay( GetCurrentMediaFile() )}">
+                  <eval>CloseOptionsMenu()</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("ZOMHW-9180476")</eval>
+            </menuItem>
+            <!-- DVD items Make sure that each menuItem has visible="${IsDVD(GetCurrentMediaFile())==true}" set-->
+            <menu name="DVDCommands" label="DVD Commands" background="OptionsMenuBackground.jpg" type="TV" visible="${IsDVD(GetCurrentMediaFile())==true}">
+                  <menuItem label="DVD Menu" visible="${IsDVD(GetCurrentMediaFile())==true}">
+                        <eval>CloseOptionsMenu()</eval>
+                        <sageCommand name="DVD Menu" />
+                  </menuItem>
+                  <menuItem label="Title Menu" visible="true">
+                        <eval>CloseOptionsMenu()</eval>
+                        <sageCommand name="DVD Title Menu" />
+                  </menuItem>
+                  <menuItem label="Return" visible="true">
+                        <eval>CloseOptionsMenu()</eval>
+                        <sageCommand name="DVD Return" />
+                  </menuItem>
+                  <menuItem label="Next Chapter" visible="true">
+                        <eval>CloseOptionsMenu()</eval>
+                        <sageCommand name="DVD Next Chapter" />
+                  </menuItem>
+                  <menuItem label="Prev Chapter" visible="true">
+                        <eval>CloseOptionsMenu()</eval>
+                        <sageCommand name="DVD Prev Chapter" />
+                  </menuItem>
+            </menu>
+      </menu>
+      <menu name="PhoenixLandingZoneVertical" label="Landing Zone Options" background="OptionsMenuBackground.jpg" type="TV">
+            <menuItem label="Customize Landing Zone" visible="${GetProperty(&quot;phoenix/lz/showCustomizeInOptions&quot;, true)==true}">
+                  <description>Customize the menu items visible in the landing zone.</description>
+				  <eval>AddStaticContext("Menu", "phoenix.menu.lz")</eval>
+				  <eval>AddStaticContext("MenuReload", "PHNX-256093")</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-255822")</eval>
+            </menuItem>      
+	  </menu>
+      <menu name="PhoenixLandingZoneCross" label="Landing Zone Options" background="OptionsMenuBackground.jpg" type="TV">
+            <menuItem label="Customize Landing Zone" visible="${GetProperty(&quot;phoenix/lz/showCustomizeInOptions&quot;, true)==true}">
+                  <description>Customize the menu items visible in the landing zone.</description>
+				  <eval>AddStaticContext("Menu", "phoenix.menu.lz")</eval>
+				  <eval>AddStaticContext("MenuReload", "PHNX-256093")</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-255822")</eval>
+            </menuItem>
+      </menu>
+      <menu name="PhoenixLandingZoneHorizontal" label="Landing Zone Options" background="OptionsMenuBackground.jpg" type="TV">
+            <menuItem label="Customize Landing Zone" visible="${GetProperty(&quot;phoenix/lz/showCustomizeInOptions&quot;, true)==true}">
+                  <description>Customize the menu items visible in the landing zone.</description>
+				  <eval>AddStaticContext("Menu", "phoenix.menu.lz")</eval>
+				  <eval>AddStaticContext("MenuReload", "PHNX-256093")</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-255822")</eval>
+            </menuItem>
+      </menu>
+      <menu name="PhoenixLandingZoneBox" label="Landing Zone Options" background="OptionsMenuBackground.jpg" type="TV">
+            <menuItem label="Customize Landing Zone" visible="${GetProperty(&quot;phoenix/lz/showCustomizeInOptions&quot;, true)==true}">
+                  <description>Customize the menu items visible in the landing zone.</description>
+				  <eval>AddStaticContext("Menu", "phoenix.menu.lz")</eval>
+				  <eval>AddStaticContext("MenuReload", "PHNX-256093")</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-255822")</eval>
+            </menuItem>
+      </menu>
+      <menu name="PhoenixLandingZoneSage" label="Landing Zone Options" background="OptionsMenuBackground.jpg" type="TV">
+            <menuItem label="Customize Landing Zone" visible="${GetProperty(&quot;phoenix/lz/showCustomizeInOptions&quot;, true)==true}">
+                  <description>Customize the menu items visible in the landing zone.</description>
+				  <eval>AddStaticContext("Menu", "phoenix.menu.lz")</eval>
+				  <eval>AddStaticContext("MenuReload", "PHNX-256093")</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-255822")</eval>
+            </menuItem>      
+	  </menu>
+	        <menu name="PhoenixLandingZoneMetro" label="Landing Zone Options" background="OptionsMenuBackground.jpg" type="TV">
+            <menuItem label="Customize Landing Zone" visible="${GetProperty(&quot;phoenix/lz/showCustomizeInOptions&quot;, true)==true}">
+                  <description>Customize the menu items visible in the landing zone.</description>
+				  <eval>AddStaticContext("Menu", "phoenix.menu.lz")</eval>
+				  <eval>AddStaticContext("MenuReload", "PHNX-256093")</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-255822")</eval>
+            </menuItem>      
+	  </menu>
+</menus>

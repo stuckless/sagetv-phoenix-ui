@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd"[]>
+<menus>
+   <menu background="GlobalMenuBackground.jpg" label="Phoenix Landing Menu" name="phoenix2.menu.lz.empty" type="TV">
+      <menuItem label="Add a menu item" name="phoenix2.menu.lz.empty.option" visible="true">
+         <screen name="Landing Zone Editor"/>
+      </menuItem>
+   </menu>
+</menus>

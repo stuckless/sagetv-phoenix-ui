@@ -1,0 +1,4 @@
+<plugin id="skin.ice" name="Ice" version="0.2">
+   <description>Ice</description>
+   <depend id="skin.serenity"/>
+</plugin>

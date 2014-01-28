@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd"[]>
+<menus>
+      <menu name="GlobalMenu" label="Phoenix Main Menu" background="GlobalMenuBackground.jpg" type="TV">
+            <description>This is a description about the menu</description>
+            <menuItem label="Browse Views" visible="true">
+                  <eval>CloseOptionsMenu()</eval>
+                  <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-256205")</eval>
+            </menuItem>
+            <menuItem name="browsevideos" label="Browse Movies" visible="true" icon="gMoviesMenuIcon">
+                  <description>Browse all media</description>
+                  <eval>AddGlobalContext( "DefaultView" , "phoenix.view.default.allMovies" )</eval>
+                  <screen name="Phoenix Universal Media Browser" />
+            </menuItem>
+            <menuItem name="browsetv" label="Browse TV" visible="true" icon="gTVMenuIcon">
+                  <eval>AddGlobalContext( "DefaultView" , "phoenix.view.default.allTV" )</eval>
+                  <screen name="Phoenix Universal Media Browser" />
+            </menuItem>
+            <menuItem name="browsearchivedtv" label="Home Movies" visible="true" icon="gHomeVideoMenuIcon">
+                  <eval>AddGlobalContext( "DefaultView" , "phoenix.view.default.homevideos" )</eval>
+                  <screen name="Phoenix Universal Media Browser" />
+            </menuItem>
+            <menuItem name="epg" label="Program Guide" visible="true" icon="gEPGMenuIcon">
+                  <screen name="Phoenix EPG" />
+            </menuItem>
+            <menuItem name="weather" label="Weather" visible="true" background="TV.jpg" icon="gWeatherMenuIcon" secondaryIcon="icon2.jpg">
+                  <description>Weather Forecast</description>
+                  <screen name="Phoenix Weather" />
+            </menuItem>
+      </menu>
+</menus>

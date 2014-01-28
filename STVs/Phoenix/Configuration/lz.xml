@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="phoenix" label="Phoenix">
+      <description>Phoenix Landing Zone Config</description>
+      <group path="phoenix/lz/cross" label="Cross Landing Zone Options">
+            <field key="recordingActivity" label="Recording Activity" defaultValue="false" type="boolean">
+                  <description>When enabled, landing zones that support recording activity will show Upcoming and Currently recording shows.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+            <field key="alphaBar" label="Alpha Bar level" defaultValue="30" type="int">
+                  <description>Alpha levels for the cross beams. 0 - 255</description>
+            </field>
+      </group>
+      <group path="phoenix/lz/sage" label="Sage Landing Zone Options">
+            <field key="recordingActivity" label="Recording Activity" defaultValue="false" type="boolean">
+                  <description>When enabled, landing zones that support recording activity will show Upcoming and Currently recording shows.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+      </group>
+      <group path="phoenix/lz/metro" label="Metro Landing Zone Options">
+      </group>
+      <group path="phoenix/lz/horiz" label="Horizontal Landing Zone Options">
+            <field key="recordingActivity" label="Recording Activity" defaultValue="false" type="boolean">
+                  <description>When enabled, landing zones that support recording activity will show Upcoming and Currently recording shows.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+            <field key="alphaBar" label="Alpha Bar level" defaultValue="30" type="int">
+                  <description>Alpha levels for the cross beams. 0 - 255</description>
+            </field>
+      </group>
+      <group path="phoenix/lz/box" label="Box Landing Zone Options">
+            <field key="edit" label="Customize Instant Status" defaultValue="Select" type="button" visible="true">
+                  <description>Customize the menu items visible in the landing zone.</description>
+                  <options>
+                        <option name="CloseOptionsMenu(&quot;Single Configuration Group Editor&quot;, true)" value="eval.0"/>
+                        <option name="AddStaticContext (&quot;Menu&quot;, &quot;phoenix.menu.lz.box.status&quot;)" value="eval.1"/>
+                        <option name="AddStaticContext (&quot;MenuReload&quot;, &quot;PHNX-256093&quot;)" value="eval.2"/>
+                        <option name="ExecuteWidgetChain(&quot;PHNX-255822&quot;)" value="eval.3"/>
+                  </options>
+            </field>
+      </group>
+      <group path="phoenix/lz" label="Landing Zone Options">
+            <description>Landing Zone Settings</description>
+            <field key="landingZone" label="Default Landing Zone" defaultValue="SAGE" type="choice">
+                  <description>Select the default landing zone to use.</description>
+                  <options>
+                        <option name="Sage" value="SAGE"/>
+                        <option name="Metro" value="METRO"/>
+                        <option name="Cross" value="CROSS"/>
+                        <option name="Horizontal" value="HORIZONTAL"/>
+                        <option name="Box" value="BOX"/>
+                        <option name="Vertical" value="VERTICAL"/>
+                  </options>
+            </field>
+            <field fullkey="video_menu_style" label="Video Menu Style" defaultValue="XBackground" type="choice">
+                  <description>Select the way video is shown when other menus are active.</description>
+                  <options>
+                        <option name="Background" value="XBackground"/>
+                        <option name="Window" value="XWindow"/>
+                  </options>
+            </field>
+            <field key="weatherBackgrounds" label="Weather Backgrounds" defaultValue="false" type="boolean">
+                  <description>When enabled, the wall paper in the landing zone is selected based on current weather conditions.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>			
+            <field key="fanart" label="Fanart Backgrounds" defaultValue="true" type="boolean">
+                  <description>When enabled, fanart will be used if a Media item is selected.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>			
+            <field key="background" label="Background Image" defaultValue="Select" type="button">
+                  <description>Select the background image.</description>
+                  <options>
+                        <option name="ExecuteWidgetChain(&quot;PHNX-255881&quot;)" value="eval.0"/>
+                  </options>
+            </field>
+            <field key="popupHomeMenu" label="Global Popup Home Menu" defaultValue="true" type="boolean">
+                  <description>When enabled, Pressing the 'Home' key will bring up a popup home menu. Pressing 'Home' a second time will take you to the configured landing zone.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+            <field key="showCustomizeInOptions" label="Show customize option in Global Options Menu" defaultValue="true" type="boolean">
+                  <description>When set to Yes, the option to customize the Landing Zone is shown in the Global Options Menu.</description>
+                  <options>
+                        <option name="No" value="false"/>
+                        <option name="Yes" value="true"/>
+                  </options>
+            </field>
+            <field key="edit" label="Customize Landing Zone" defaultValue="Select" type="button">
+                  <description>Customize the menu items visible in the landing zone.</description>
+                  <options>
+                        <option name="CloseOptionsMenu(&quot;Single Configuration Group Editor&quot;, true)" value="eval.0"/>
+                        <option name="AddStaticContext (&quot;Menu&quot;, &quot;phoenix.menu.lz&quot;)" value="eval.1"/>
+                        <option name="AddStaticContext (&quot;MenuReload&quot;, &quot;PHNX-256093&quot;)" value="eval.2"/>
+                        <option name="ExecuteWidgetChain(&quot;PHNX-255822&quot;)" value="eval.3"/>
+                  </options>
+            </field>
+            <field key="javaHeapInWidgetbar" label="Show java heap stats in Widget Bar" defaultValue="false" type="boolean">
+                  <description>When enabled, the current java heap usage is shown in the widget bar.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+		</group>
+</configuration>

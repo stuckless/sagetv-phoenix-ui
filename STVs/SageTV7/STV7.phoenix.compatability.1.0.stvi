@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Module xmlns="urn:tv.sage/stv" Name="default" PersistentPrimaryRefs="true">
+ <Hook Name="STVImported" Sym="PHOENIX-3969">
+  <Action Name="&quot;REM Deletion of Widgets&quot;" Sym="PHOENIX-3970"/>
+  <Action Name="&quot;REM Renaming of Widgets&quot;" Sym="PHOENIX-3971">
+   <Conditional Name="Widg = FindWidgetBySymbol(&quot;BASE-52059&quot;)" Sym="PHOENIX-3976">
+    <Branch Name="else" Sym="PHOENIX-3977">
+     <Action Name="SetWidgetName(Widg, &quot;IsParentalControlEnabled() || HasParentalLockCode()&quot;)" Sym="PHOENIX-3979"/>
+    </Branch>
+    <Branch Name="null" Sym="PHOENIX-3978">
+     <Action Name="DebugLog(&quot;PATCH ERROR Missing Widget - Symbol=BASE-52059 Could not rename from: \&quot;IsParentalControlEnabled()\&quot; to: \&quot;IsParentalControlEnabled() || HasParentalLockCode()\&quot;&quot;)" Sym="PHOENIX-3980"/>
+    </Branch>
+   </Conditional>
+  </Action>
+  <Action Name="&quot;REM Resetting of Widget properties&quot;" Sym="PHOENIX-3972"/>
+  <Action Name="&quot;REM Removal of Widget children relationships&quot;" Sym="PHOENIX-3973"/>
+  <Action Name="&quot;REM Adding of Widget children relationships&quot;" Sym="PHOENIX-3974"/>
+  <Action Name="&quot;REM Repositioning of child Widgets&quot;" Sym="PHOENIX-3975"/>
+  <Action Name="ReturnValue = &quot;AutoCleanupSTVImportedHook&quot;" Sym="PHOENIX-3981"/>
+ </Hook>
+</Module>

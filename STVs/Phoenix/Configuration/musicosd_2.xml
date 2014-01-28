@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="phoenix2" label="Phoenix 2.0">
+   <group path="phoenix2/musicosd" label="Phoenix Music OSD Options">
+      <field key="wallpaper" label="Wallpaper Style" defaultValue="MUSICART" type="choice">
+         <description>Select the type of background. Visualizations only works on HD200 or newer extenders.
+         </description>
+         <options>
+            <option name="Music Backgrounds" value="MUSICART"/>
+            <option name="Fanart Backgrounds" value="FANART"/>
+            <option name="Visualizations" value="VISUALIZATIONS"/>
+            <option name="Pictures" value="PICTURES"/>
+         </options>
+      </field>
+      <field key="showalbumart" label="Always Show Album Art" defaultValue="false" type="boolean">
+         <description>When enabled, the cover art for the track playing will remain visible in the OSD.</description>
+         <options>
+            <option name="Enabled" value="true"/>
+            <option name="Disabled" value="false"/>
+         </options>
+      </field>
+      <field label="Delay between tracks" defaultValue="2000" type="int" key="afterloaddelay">
+         <description>Length (in milliseconds) to delay playback between tracks. 0 to disable.</description>
+      </field>
+   </group>
+</configuration>

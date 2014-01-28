@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="phoenix" label="Phoenix">
+      <description>Phoenix Configuration</description>
+      <group path="phoenix/musicosd" label="Phoenix Music OSD Options">
+            <field key="wallpaper" label="Wallpaper Style" defaultValue="MUSICART" type="choice">
+                  <description>Select the type of background.  Visualizations only works on HD200 or newer extenders.</description>
+                  <options>
+                        <option name="Music Backgrounds" value="MUSICART"/>
+                        <option name="Fanart Backgrounds" value="FANART"/>
+                        <option name="Visualizations" value="VISUALIZATIONS"/>
+                  </options>
+            </field>
+            <field key="showalbumart" label="Always Show Album Art" defaultValue="false" type="boolean">
+                  <description>When enabled, the cover art for the track playing will remain visible in the OSD.</description>
+                  <options>
+                        <option name="Enabled" value="true"/>
+                        <option name="Disabled" value="false"/>
+                  </options>
+            </field>
+	</group>
+</configuration>
