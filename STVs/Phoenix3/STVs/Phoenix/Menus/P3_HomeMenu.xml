@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd"[]>
+<menus>
+   <menu label="P3" name="p3.menu" type="Options">
+      <menu label="SageTV" name="p3.menu.home" type="Options">
+         <menuItem label="Now Playing" name="p3.menu.home.nowplaying" visible="${HasMediaFile() &amp;&amp; IsMusicFile(GetCurrentMediaFile())==false}">
+            <eval>ExecuteWidgetChainInCurrentMenuContext("QISRJ-234858")</eval>
+         </menuItem>
+         <menuItem label="TV Shows" name="p3.menu.home.tv" visible="true">
+            <description>TV Shows</description>
+            <eval>AddGlobalContext("DefaultView", "phoenix.view.default.allTV" )</eval>
+            <screen name="Media Browser" />
+         </menuItem>
+         <menuItem label="Program Guide" name="p3.menu.home.epg" visible="true">
+            <description>Electronic program guide</description>
+            <screen name="Program Guide" />
+         </menuItem>
+         <menuItem label="Schedule" name="p3.menu.home.recordingschedule" visible="true">
+            <description>Scheduled recordings</description>
+            <eval>AddGlobalContext("DefaultView","phoenix.view.default.scheduledrecordings" )</eval>
+            <screen name="Media Browser" />
+         </menuItem>
+         <menuItem label="Resolve Conflicts" name="p3.menu.home.conflicts" visible="${AreThereUnresolvedConflicts()==true}">
+            <description>Resolve recording conflicts</description>
+            <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+            <eval>AddGlobalContext("gTargetMenuName", "Conflicting Recordings")</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+            <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+         </menuItem>
+         <menuItem label="Movies" name="p3.menu.home.movies" visible="true">
+            <description>Movies</description>
+            <eval>AddGlobalContext("DefaultView", "phoenix.view.default.allMovies" )</eval>
+            <screen name="Media Browser" />
+         </menuItem>
+         <menuItem label="Family Videos" name="p3.menu.home.family" visible="true">
+            <description>Family Videos</description>
+            <eval>AddGlobalContext("DefaultView", "phoenix.view.default.homevideos" )</eval>
+            <screen name="Media Browser" />
+         </menuItem>
+         <menu label="Settings" name="p3.menu.home.settings" type="Options" icon="gSettingsIcon">
+            <menuItem name="p3.menu.home.settings.scan" label="${If(IsDoingLibraryImportScan(),&quot;Scanning Libraries...&quot;,&quot;Start Library Scan&quot;)}" visible="true">
+               <eval>RunLibraryImportScan( false )</eval>
+               <eval>Refresh()</eval>
+            </menuItem>
+            <menuItem label="Parental Controls" visible="true" name="p3.menu.home.settings.parental">
+               <eval>ExecuteWidgetChainInCurrentMenuContext("PHOENIX-3790")</eval>
+            </menuItem>
+             <menuItem label="System Info" name="p3.menu.home.settings.sysinfo" visible="true">
+                <description>System Information</description>
+                <screen name="System Info" />
+             </menuItem>
+    		 <menuItem label="Scale Fanart" visible="true" name="p3.menu.home.settings.fanart">
+               <eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to scale all of the fanart?" )</eval>
+               <eval>AddGlobalContext("gNativeConfirmYes", "Yes")</eval>
+               <eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
+               <eval>AddGlobalContext("gNativeConfirmYesAction",
+					  "ExecuteWidgetChainInCurrentMenuContext(\"PHNX-254176\")")</eval>
+               <eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
+               <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+            </menuItem>
+            <menuItem label="Sage Detailed Setup" visible="true">
+               <description>Default STV Setup Menu</description>
+               <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+               <eval>AddGlobalContext("gTargetMenuName", "Detailed Setup")</eval>
+               <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+               <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+               <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+            </menuItem>
+            <menuItem label="Sage Video Sources" visible="true">
+               <description>Default STV Video Setup Menu</description>
+               <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+               <eval>AddGlobalContext("gTargetMenuName", "Setup Wizard - Summary Page")</eval>
+               <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+               <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+               <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+            </menuItem>
+            <menuItem label="Sage Plugins" visible="true">
+               <description>Default STV Video Setup Menu</description>
+               <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+               <eval>AddGlobalContext("gTargetMenuName", "Plugin List")</eval>
+               <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+               <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+               <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+            </menuItem>
+            <menuItem name="p3.menu.home.settings.reload" label="Reload Default UI" visible="true">
+               <eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to reload the default UI?" )</eval>
+               <eval>AddGlobalContext("gNativeConfirmYes", "Yes")</eval>
+               <eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
+               <eval>AddGlobalContext("gNativeConfirmYesAction",
+					  "ExecuteWidgetChainInCurrentMenuContext(\"PHNX2-4775\")")</eval>
+               <eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
+               <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+            </menuItem>
+         </menu>
+      </menu>
+   </menu>
+</menus>
+

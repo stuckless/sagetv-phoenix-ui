@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="p3" label="Phoenix 3.0">
+   <description>Phoenix Configuration</description>
+   <group path="p3/ui" label="UI Options">
+
+      <field fullkey="p3/home/weatherBackgrounds" label="Weather Backgrounds" defaultValue="false" type="boolean">
+         <description>When enabled, the wall paper in the landing zone is selected based on current weather conditions.</description>
+         <options>
+            <option name="Disabled" value="false"/>
+            <option name="Enabled" value="true"/>
+         </options>
+      </field>
+	  
+      <field fullkey="display_video_on_menus" label="Display video on menus" defaultValue="XIf Active" type="choice">
+         <description>Select the way video is shown when other menus are active.</description>
+         <options>
+            <option name="Never" value="XNever"/>
+            <option name="If active" value="XIf Active"/>
+            <option name="Always" value="XAlways"/>
+         </options>
+      </field>
+
+      <field fullkey="video_menu_style" label="Video menu style" defaultValue="XBackground" type="choice">
+         <description>Select the way video is shown when other menus are active.</description>
+         <options>
+            <option name="Background" value="XBackground"/>
+            <option name="Window" value="XWindow"/>
+         </options>
+      </field>
+
+      <field key="alwaysresume" label="Resume without prompting" defaultValue="false" type="boolean">
+         <description>When enabled, media files that are partially watched will resume from where they were last viewed without being prompted.</description>
+         <options>
+            <option name="Enabled" value="true"/>
+            <option name="Disabled" value="false"/>
+         </options>
+      </field>
+
+      <field key="javaHeapInHeader" label="Show java heap" defaultValue="false" type="boolean">
+         <description>Show java heap statistics in the header area.</description>
+         <options>
+            <option name="Yes" value="true"/>
+            <option name="No" value="false"/>
+         </options>
+      </field>
+
+      <field key="usePhoenixForPlayback" label="Use Phoenix for Playback" defaultValue="true" type="boolean">
+         <description>If 'Yes', videos started from the default UI will switch back to Phoenix once playback has started.</description>
+         <options>
+            <option name="Yes" value="true"/>
+            <option name="No" value="false"/>
+         </options>
+      </field>
+
+      <field fullkey="phoenix/mediametadata/fanartCentralFolder" label="Central Fanart Folder" defaultValue="userdata/Phoenix/fanart" type="string">
+         <description>Location of the central fanart folder.</description>
+      </field>
+
+      <field fullkey="phoenix/homevideos/folders" label="Home video folder" defaultValue="" type="string">
+         <description>Location of home video files.</description>
+      </field>
+
+   </group>
+</configuration>
