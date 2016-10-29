@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE menus SYSTEM "menus.dtd"[]>
+<!DOCTYPE menus SYSTEM "menus.dtd">
 <menus>
    <menu label="P3" name="p3.menu" type="Options">
       <menu label="SageTV" name="p3.menu.home" type="Options">

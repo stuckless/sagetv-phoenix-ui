@@ -1,0 +1,63 @@
+plugins {
+    id "com.jfrog.bintray" version "1.4"
+}
+
+ant.importBuild 'build.xml'
+
+ext {
+    plugin_name = "sagetv-phoenix-ui-3"
+    plugin_desc = "SageTV API Extensions and Remote APIs"
+    plugin_longdesc = "Wrapper for SageTV APIs, adding plugin extensions, remote REST extensions, and other general utility type functions"
+    plugin_version = ant.properties['baseversion']
+}
+
+version = plugin_version
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    jcenter()
+    maven {
+        url  "http://dl.bintray.com/opensagetv/maven"
+    }
+    maven {
+        url  "http://dl.bintray.com/stuckless/sagetvphoenix"
+    }
+}
+
+println("Phoenix UI Version: ${plugin_version}")
+
+// uploading to BinTray
+// use ./gradlew bintrayUpload
+bintray {
+    user = System.getenv("BINTRAY_USER")
+    key = System.getenv("BINTRAY_API");
+
+    filesSpec {
+        from ('target/dist/') {
+            include "*${plugin_version}*"
+        }
+        /* this is the dirname */
+        into "phoenix3/${plugin_version}"
+    }
+
+    dryRun = false //Whether to run this as dry-run, without deploying
+    publish = true //If version should be auto published after an upload
+    pkg {
+        repo = 'sagetv-plugins'
+        name = "${plugin_name}"
+        userOrg = 'opensagetv'
+        desc = "${plugin_desc}"
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/stuckless/sagetv-phoenix-ui.git'
+        labels = ['phoenix', 'sagetv', 'sagetv-plugin']
+        publicDownloadNumbers = true
+        //attributes= ['a': ['ay1', 'ay2'], 'b': ['bee'], c: 'cee'] //Optional package-level attributes
+        version {
+            name = "${plugin_version}"
+            desc = "${plugin_desc}"
+            vcsTag = "${plugin_version}"
+            //attributes = ['gradle-plugin': 'com.use.less:com.use.less.gradle:gradle-useless-plugin']
+        }
+    }
+}

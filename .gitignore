@@ -1,0 +1,6 @@
+/.idea/
+sagetv-phoenix-ui.iml
+.project
+/*/target/
+/*/.gradle/
+/*/build/

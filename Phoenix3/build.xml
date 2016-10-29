@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="dist-plugins" name="Phoenix 3">
+	<tstamp/>
+	
+	<property environment="env" />
+
+	<property name="dist.dir" value="${basedir}/target" />
+
+	<property name="buildversion" value="100"/>
+	<property name="baseversion" value="3.0.${buildversion}"/>
+	
+	<property name="stv.name" value="phoenix-stv" />
+	<property name="stv.version" value="${baseversion}" />
+
+	<property name="theme.name" value="phoenix-theme" />
+	<property name="theme.version" value="${baseversion}" />
+
+	<target name="init" depends="clean">
+		<mkdir dir="${dist.dir}" />
+	</target>
+	
+	<target name="clean">
+		<delete dir="target" />
+	</target>
+	
+	<target name="dist-plugins" description="Create the STV Plugin" depends="init">
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${dist.dir}/STV" />
+		<mkdir dir="${dist.dir}/dist" />
+
+		<property name="STVFile" value="${dist.dir}/STV/Phoenix3.xml"/>
+		<copy tofile="${STVFile}" file="STVs/SageTV7/Phoenix3 STV.${buildversion}.xml" failonerror="true"/>
+
+		<!-- zip stv -->
+		<zip destfile="${dist.dir}/dist/${stv.name}-${stv.version}.zip">
+			<zipfileset dir="${dist.dir}/STV/" prefix="SageTV7/" includes="Phoenix3.xml"></zipfileset>
+			<zipfileset dir="STVs/Phoenix/Menus" prefix="Phoenix/Menus"></zipfileset>
+			<zipfileset dir="STVs/Phoenix/Skins" prefix="Phoenix/Skins"></zipfileset>
+			<zipfileset dir="STVs/Phoenix/Configuration" prefix="Phoenix/Configuration"></zipfileset>
+		</zip>
+		<checksum file="${dist.dir}/dist/${stv.name}-${stv.version}.zip" property="md5.stv" />
+
+		<tstamp>
+			<format property="last-modified" pattern="yyyy.MM.dd" />
+		</tstamp>
+
+		<copy tofile="${dist.dir}/dist/${stv.name}-${stv.version}.xml" file="plugin/${stv.name}.xml"/>
+		<replace file="${dist.dir}/dist/${stv.name}-${stv.version}.xml" summary="yes">
+			<replacefilter token="@@last-modified@@" value="${last-modified}" />
+			<replacefilter token="@@stv-version@@" value="${stv.version}" />
+			<replacefilter token="@@stv-checksum@@" value="${md5.stv}" />
+			<replacefilter token="@@theme-version@@" value="${theme.version}" />
+			<!--<replacefilter token="@@theme-checksum@@" value="${md5.theme}" />-->
+		</replace>
+
+		<copy tofile="deployed/phoenix3-ui.xml" file="${dist.dir}/dist/${stv.name}-${stv.version}.xml"/>
+
+		<propertyfile file="lastbuild.properties">
+			<entry key="md5.stv" value="${md5.stv}"/>
+			<!--<entry key="md5.theme" value="${md5.theme}"/>-->
+		</propertyfile>
+	</target>
+</project>
