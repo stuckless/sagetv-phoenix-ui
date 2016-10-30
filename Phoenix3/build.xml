@@ -6,7 +6,7 @@
 
 	<property name="dist.dir" value="${basedir}/target" />
 
-	<property name="buildversion" value="100"/>
+	<property name="buildversion" value="101"/>
 	<property name="baseversion" value="3.0.${buildversion}"/>
 	
 	<property name="stv.name" value="phoenix-stv" />
