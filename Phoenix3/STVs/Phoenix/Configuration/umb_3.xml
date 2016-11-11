@@ -10,11 +10,11 @@
                         <option name="List" value="LIST"/>
                   </options>
             </field>
-			<field key="allowFilter" label="Allow filtering" defaultValue="false" type="choice">
+			<field key="filterMode" label="Filtering Mode" defaultValue="QUICK" type="choice">
                   <description>Enable the Filter option menu.</description>
                   <options>
-                        <option name="Yes" value="true"/>
-                        <option name="No" value="false"/>
+                        <option name="Quick" value="QUICK"/>
+                        <option name="Advanced" value="ADVANCED"/>
                   </options>
             </field>
       </group>

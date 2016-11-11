@@ -52,6 +52,16 @@
          </options>
       </field>
 
+	  <field fullkey="p3/home/menuicons" label="Menu Icons" defaultValue="IconsMenuOnly" type="choice">
+         <description>Select when to show icons on the home screen menu.</description>
+         <options>
+            <option name="Never" value="IconsNever"/>
+            <option name="Menus Only" value="IconsMenuOnly"/>
+            <option name="Always" value="IconsAlways"/>
+         </options>
+      </field>
+	  
+	  
       <field fullkey="phoenix/mediametadata/fanartCentralFolder" label="Central Fanart Folder" defaultValue="userdata/Phoenix/fanart" type="string">
          <description>Location of the central fanart folder.</description>
       </field>

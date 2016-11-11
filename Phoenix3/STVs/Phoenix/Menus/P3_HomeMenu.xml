@@ -3,24 +3,24 @@
 <menus>
    <menu label="P3" name="p3.menu" type="Options">
       <menu label="SageTV" name="p3.menu.home" type="Options">
-         <menuItem label="Now Playing" name="p3.menu.home.nowplaying" visible="${HasMediaFile() &amp;&amp; IsMusicFile(GetCurrentMediaFile())==false}">
+         <menuItem label="Now Playing" name="p3.menu.home.nowplaying" visible="${HasMediaFile() &amp;&amp; IsMusicFile(GetCurrentMediaFile())==false}" icon="live_tv">
             <eval>ExecuteWidgetChainInCurrentMenuContext("QISRJ-234858")</eval>
          </menuItem>
-         <menuItem label="TV Shows" name="p3.menu.home.tv" visible="true">
+         <menuItem label="TV Shows" name="p3.menu.home.tv" visible="true" icon="tv">
             <description>TV Shows</description>
             <eval>AddGlobalContext("DefaultView", "phoenix.view.default.allTV" )</eval>
             <screen name="Media Browser" />
          </menuItem>
-         <menuItem label="Program Guide" name="p3.menu.home.epg" visible="true">
+         <menuItem label="Program Guide" name="p3.menu.home.epg" visible="true" icon="dvr">
             <description>Electronic program guide</description>
             <screen name="Program Guide" />
          </menuItem>
-         <menuItem label="Schedule" name="p3.menu.home.recordingschedule" visible="true">
+         <menuItem label="Schedule" name="p3.menu.home.recordingschedule" visible="true" icon="event_note">
             <description>Scheduled recordings</description>
             <eval>AddGlobalContext("DefaultView","phoenix.view.default.scheduledrecordings" )</eval>
             <screen name="Media Browser" />
          </menuItem>
-         <menuItem label="Resolve Conflicts" name="p3.menu.home.conflicts" visible="${AreThereUnresolvedConflicts()==true}">
+         <menuItem label="Resolve Conflicts" name="p3.menu.home.conflicts" visible="${AreThereUnresolvedConflicts()==true}" icon="new_releases">
             <description>Resolve recording conflicts</description>
             <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
             <eval>AddGlobalContext("gTargetMenuName", "Conflicting Recordings")</eval>
@@ -28,17 +28,17 @@
             <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
             <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
          </menuItem>
-         <menuItem label="Movies" name="p3.menu.home.movies" visible="true">
+         <menuItem label="Movies" name="p3.menu.home.movies" visible="true" icon="movie">
             <description>Movies</description>
             <eval>AddGlobalContext("DefaultView", "phoenix.view.default.allMovies" )</eval>
             <screen name="Media Browser" />
          </menuItem>
-         <menuItem label="Family Videos" name="p3.menu.home.family" visible="true">
+         <menuItem label="Family Videos" name="p3.menu.home.family" visible="true" icon="videocam">
             <description>Family Videos</description>
             <eval>AddGlobalContext("DefaultView", "phoenix.view.default.homevideos" )</eval>
             <screen name="Media Browser" />
          </menuItem>
-         <menu label="Settings" name="p3.menu.home.settings" type="Options" icon="gSettingsIcon">
+         <menu label="Settings" name="p3.menu.home.settings" type="Options" icon="settings">
             <menuItem name="p3.menu.home.settings.scan" label="${If(IsDoingLibraryImportScan(),&quot;Scanning Libraries...&quot;,&quot;Start Library Scan&quot;)}" visible="true">
                <eval>RunLibraryImportScan( false )</eval>
                <eval>Refresh()</eval>
@@ -93,6 +93,29 @@
                <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
             </menuItem>
          </menu>
+		 
+		 <menu background="GlobalMenuBackground.jpg" label="Power" name="p3.menu.home.exit" visible="${IsRemoteUI()==false}" icon="power_settings_new">
+			 <menuItem label="Standby" name="phoenix2.menu.lz.exit.standby" visible="true">
+				<description>Standby command (equivalent to Power Off)</description>
+				<eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to enter standby?" )</eval>
+				<eval>AddGlobalContext("gNativeConfirmYes", "Standby")</eval>
+				<eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
+				<eval>AddGlobalContext("gNativeConfirmYesAction", "SageCommand(\"Power Off\")")</eval>
+				<eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
+				<eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+			 </menuItem>
+			 <menuItem label="Exit" name="phoenix2.menu.lz.exit.exit" visible="true">
+				<description>Exit command (closes the application on full clients)</description>
+				<eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to exit?" )</eval>
+				<eval>AddGlobalContext("gNativeConfirmYes", "Exit")</eval>
+				<eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
+				<eval>AddGlobalContext("gNativeConfirmYesAction", "Exit()")</eval>
+				<eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
+				<eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+			 </menuItem>
+		</menu>
+		 
+		 
       </menu>
    </menu>
 </menus>
