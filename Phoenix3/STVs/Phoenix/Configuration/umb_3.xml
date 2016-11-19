@@ -10,6 +10,13 @@
                         <option name="List" value="LIST"/>
                   </options>
             </field>
+            <field key="bannersInLists" label="Banners in Lists" defaultValue="YES" type="choice" visible="${GetProperty(&quot;p3/umb/browsingMode&quot;, &quot;GRID&quot;)==&quot;LIST&quot;}">
+                  <description>Use banners for the selected list item when appropriate.</description>
+                  <options>
+                        <option name="Yes" value="YES"/>
+                        <option name="No"  value="NO"/>
+                  </options>
+            </field>
 			<field key="filterMode" label="Filtering Mode" defaultValue="QUICK" type="choice">
                   <description>Enable the Filter option menu.</description>
                   <options>
