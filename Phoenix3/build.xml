@@ -6,7 +6,10 @@
 
 	<property name="dist.dir" value="${basedir}/target" />
 
-	<property name="buildversion" value="103"/>
+	<property name="p3_buildversion" value="103"/>
+	<property name="lite_buildversion" value="001"/>
+
+	<property name="buildversion" value="104"/>
 	<property name="baseversion" value="3.0.${buildversion}"/>
 	
 	<property name="stv.name" value="phoenix-stv" />
@@ -28,8 +31,8 @@
 		<mkdir dir="${dist.dir}/STV" />
 		<mkdir dir="${dist.dir}/dist" />
 
-		<property name="STVFile" value="${dist.dir}/STV/Phoenix3.xml"/>
-		<copy tofile="${STVFile}" file="STVs/SageTV7/Phoenix3 STV.${buildversion}.xml" failonerror="true"/>
+		<copy tofile="${dist.dir}/STV/Phoenix3.xml" file="STVs/SageTV7/Phoenix3 STV.${p3_buildversion}.xml" failonerror="true"/>
+		<copy tofile="${dist.dir}/STV/PhoenixLite.xml" file="STVs/SageTV7/PhoenixLite STV.${lite_buildversion}.xml" failonerror="true"/>
 
 		<!-- zip stv -->
 		<zip destfile="${dist.dir}/dist/${stv.name}-${stv.version}.zip">
