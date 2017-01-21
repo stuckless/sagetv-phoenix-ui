@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd">
+<menus>
+	<menu label="Settings" name="plite.settings" type="Options" icon="settings">
+		<menuItem name="plite.settings.scan" label="${If(IsDoingLibraryImportScan(),&quot;Scanning Libraries...&quot;,&quot;Start Library Scan&quot;)}" visible="true" icon="loop">
+		   <eval>RunLibraryImportScan( false )</eval>
+		   <eval>Refresh()</eval>
+		</menuItem>
+		<menuItem label="Parental Controls" visible="true" name="plite.settings.parental" icon="lock">
+		   <eval>ExecuteWidgetChainInCurrentMenuContext("PHOENIX-3790")</eval>
+		</menuItem>
+		 <menuItem label="System Info" name="plite.settings.sysinfo" visible="true" icon="info">
+			<description>System Information</description>
+			<screen name="System Info" />
+		 </menuItem>
+         <menuItem label="Resolve Conflicts" name="plite.settings.conflicts" visible="${AreThereUnresolvedConflicts()==true}" icon="new_releases">
+            <description>Resolve recording conflicts</description>
+            <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+            <eval>AddGlobalContext("gTargetMenuName", "Conflicting Recordings")</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+            <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+         </menuItem>
+         <menuItem label="Manage Favorites" name="plite.settings.conflicts" visible="true" icon="favorite">
+            <description>Resolve recording conflicts</description>
+            <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+            <eval>AddGlobalContext("gTargetMenuName", "Favorites Manager")</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+            <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+            <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+         </menuItem>
+		 <menuItem label="Scale Fanart" visible="true" name="plite.settings.fanart" icon="photo_size_select_large">
+		   <eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to scale all of the fanart?" )</eval>
+		   <eval>AddGlobalContext("gNativeConfirmYes", "Yes")</eval>
+		   <eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
+		   <eval>AddGlobalContext("gNativeConfirmYesAction",
+				  "ExecuteWidgetChainInCurrentMenuContext(\"PHNX-254176\")")</eval>
+		   <eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
+		   <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+		</menuItem>
+		<menuItem label="Sage Detailed Setup" visible="true" icon="settings">
+		   <description>Default STV Setup Menu</description>
+		   <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+		   <eval>AddGlobalContext("gTargetMenuName", "Detailed Setup")</eval>
+		   <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+		   <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+		   <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+		</menuItem>
+		<menuItem label="Sage Video Sources" visible="true" icon="input">
+		   <description>Default STV Video Setup Menu</description>
+		   <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+		   <eval>AddGlobalContext("gTargetMenuName", "Setup Wizard - Summary Page")</eval>
+		   <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+		   <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+		   <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+		</menuItem>
+		<menuItem name="plite.settings.visit" label="Visit Default UI" visible="true" icon="forward" >
+		   <eval>AddGlobalContext("gNativeToastPrompt", "Visiting Default UI") </eval>
+		   <eval>AddGlobalContext("gNativeToastButtonText", null) </eval>
+		   <eval>AddGlobalContext("gNativeToastTimeout", 3000) </eval>
+		   <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-254212")</eval>
+		   <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
+		   <eval>AddGlobalContext("gTargetMenuName", "Main Menu")</eval>
+		   <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
+		   <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
+		   <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
+		</menuItem>
+		<menuItem name="plite.settings.reload" label="Reload Default UI" visible="true" icon="clear">
+		   <eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to reload the default UI?" )</eval>
+		   <eval>AddGlobalContext("gNativeConfirmYes", "Yes")</eval>
+		   <eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
+		   <eval>AddGlobalContext("gNativeConfirmYesAction",
+				  "ExecuteWidgetChainInCurrentMenuContext(\"PHNX2-4775\")")</eval>
+		   <eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
+		   <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+		</menuItem>
+   </menu>
+</menus>
+

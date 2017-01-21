@@ -11,33 +11,8 @@
             <option name="2 minutes" value="120000"/>
          </options>
       </field>
-      <field key="transition_effect" label="Transition effect" defaultValue="PANZOOMFADE" type="choice">
-         <description>Select the effect used when switching between pictures.</description>
-         <options>
-            <option name="Pan / Zoom / Fade" value="PANZOOMFADE"/>
-            <option name="Cross Fade" value="FADE"/>
-            <option name="None" value="NOEFFECT"/>
-         </options>
-      </field>
-      <field key="transistion_duration" label="Transition duration" defaultValue="1000" type="int">
+      <field key="transition_duration" label="Transition duration" defaultValue="10000" type="int">
          <description>Time, in milliseconds, for the transition effect</description>
-      </field>
-      <field key="enlarge_images" label="Enlarge images" defaultValue="true" type="boolean">
-         <description>If Yes, the images will be resized to fit the screen</description>
-         <options>
-            <option name="Yes" value="true"/>
-            <option name="No" value="false"/>
-         </options>
-      </field>
-      <field key="showtimedate" label="Show time and date" defaultValue="true" type="boolean">
-         <description>If Yes, the images will be overlaid with the date and time taken.</description>
-         <options>
-            <option name="Yes" value="true"/>
-            <option name="No" value="false"/>
-         </options>
-      </field>
-      <field key="slide_duration" label="Slide duration" defaultValue="10000" type="int">
-         <description>Time, in milliseconds, for each picture to be displayed</description>
       </field>
    </group>
 </configuration>

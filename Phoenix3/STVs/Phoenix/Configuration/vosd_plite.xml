@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration id="plite" label="Phoenix Lite">
+      <description>Phoenix Video OSD Configuration</description>
+      <group path="plite/vosd" label="Video OSD Options">
+            <description>Video OSD Options</description>
+            <field key="autoComskip" label="Automatic Comskip" defaultValue="false" type="boolean">
+                  <description>When enabled, playback will automatically skip over commercials that have been detected.</description>
+                  <options>
+                        <option name="Disabled" value="false"/>
+                        <option name="Enabled" value="true"/>
+                  </options>
+            </field>
+            <field key="autoskipactivitybuffer" label="Auto Skip Activity Buffer" defaultValue="3000" type="int" visible="${GetProperty(&quot;phoenix2/vosd/autoComskip&quot;, false)==true}">
+                  <description>Duration (in milliseconds) to disable automatic comskip after user activity.</description>
+            </field>			
+            <field key="comskipBlind" label="Comskip Blind Skip" defaultValue="false" type="boolean">
+                  <description>When enabled, comskip will skip commercials (manually) without showing the timebar first.</description>
+                  <options>
+                        <option name="Enabled" value="true"/>
+                        <option name="Disabled" value="false"/>
+                  </options>
+            </field>
+            <field key="miniguideNavigation" label="Miniguide Navigation Direction" defaultValue="true" type="boolean">
+                  <description>When Normal, 'Up' goes to the next higher channel.  When Inverted, 'Up' goes to the next lower channel.</description>
+                  <options>
+                        <option name="Normal" value="true"/>
+                        <option name="Inverted" value="false"/>
+                  </options>
+            </field>
+		</group>
+</configuration>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE menus SYSTEM "menus.dtd">
+<menus>
+   <menu label="Phoenix Lite View Menu" name="plite.menu" type="Options">
+		 
+	<menuItem label="Recorded TV" name="phoenix.view.default.allTV" visible="true" icon="view"/>
+	<menuItem label="Currently Recording" name="phoenix.view.util.currentlyrecording" visible="true" icon="view"/>
+    <menuItem label="Recorded Movies" name="phoenix.view.default.allMovies" visible="true" icon="view"/>
+	<menuItem label="Live TV" name="phoenix.view.primary.currentlyairing" visible="true" icon="view"/>
+	<menuItem label="Recording Schedule" name="phoenix.view.default.scheduledrecordings" visible="true" icon="view"/>
+    <menuItem label="Exit" name="plite.exit" visible="${IsRemoteUI()==false}" icon="eval">
+				<description>Exit command (closes the application on full clients)</description>
+				<eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to exit?" )</eval>
+				<eval>AddGlobalContext("gNativeConfirmYes", "Exit")</eval>
+				<eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
+				<eval>AddGlobalContext("gNativeConfirmYesAction", "Exit()")</eval>
+				<eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
+				<eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+	</menuItem>
+		
+	</menu>
+</menus>

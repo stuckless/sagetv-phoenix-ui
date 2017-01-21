@@ -1,0 +1,4 @@
+<plugin id="skin.plite.default" name="Phoenix Lite Default" version="0.1">
+   <description>Phoenix Lite for SageTV Default Skin</description>
+   <depend id="skin.p3.default"/>
+</plugin>
