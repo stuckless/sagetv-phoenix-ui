@@ -9048,6 +9048,30 @@
                   <Conditional Name="Size(Children) &gt; 12 &amp;&amp; SelectorVisible == false" Sym="VFBWX-7091">
                    <Panel Ref="1469" Name="P3 Table Scroll Bar (8..."/>
                   </Conditional>
+                  <Action Name="GetFocusContext()" Sym="VFBWX-7586">
+                   <Conditional Name="phoenix_media_IsMediaType( vfsItem , &quot;FOLDER&quot; )" Sym="VFBWX-7585">
+                    <Panel Name="hilite" Sym="VFBWX-7580">
+                     <Layout>Horizontal</Layout>
+                     <AnchorX>1.0</AnchorX>
+                     <AnchorY>1.0</AnchorY>
+                     <FixedWidth>0.04</FixedWidth>
+                     <FixedHeight>0.95</FixedHeight>
+                     <HorizontalAlignment>0.0</HorizontalAlignment>
+                     <VerticalAlignment>0.5</VerticalAlignment>
+                     <BackgroundComponent>true</BackgroundComponent>
+                     <MouseTransparency>false</MouseTransparency>
+                     <Action Name="phoenix_image_GetFontIcon(&quot;keyboard_arrow_right&quot;)" Sym="VFBWX-7581">
+                      <Text Name="" Sym="VFBWX-7582">
+                       <Theme Ref="635" Name="FontIcon24 Highlite"/>
+                       <Listener Name="" Sym="VFBWX-7583">
+                        <ListenerEvent>MouseClick</ListenerEvent>
+                        <Action Name="SageCommand(&quot;Right&quot;)" Sym="VFBWX-7584"/>
+                       </Listener>
+                      </Text>
+                     </Action>
+                    </Panel>
+                   </Conditional>
+                  </Action>
                  </Table>
                 </Action>
                </Branch>
