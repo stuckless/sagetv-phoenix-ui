@@ -5606,7 +5606,7 @@
           <Branch Name="false" Sym="VFBWX-7481">
            <Item Name="Details" Sym="VFBWX-7482">
             <Action Ref="1932" Name="&quot;REM Details&quot;"/>
-            <Action Name="fonticon = phoenix_image_GetFontIcon(&quot;info&quot;)" Sym="VFBWX-7486">
+            <Action Name="fonticon = phoenix_image_GetFontIcon(&quot;description&quot;)" Sym="VFBWX-7486">
              <Text Name="" Sym="VFBWX-7487">
               <Theme Ref="635" Name="FontIcon24 Highlite"/>
              </Text>
@@ -8951,7 +8951,7 @@
                               <Layout>Horizontal</Layout>
                               <AnchorX>1.0</AnchorX>
                               <AnchorY>1.0</AnchorY>
-                              <FixedWidth>0.32</FixedWidth>
+                              <FixedWidth>1.0</FixedWidth>
                               <FixedHeight>0.15</FixedHeight>
                               <HorizontalAlignment>0.5</HorizontalAlignment>
                               <VerticalAlignment>0.5</VerticalAlignment>
@@ -9134,7 +9134,7 @@
          </Action>
          <Action Name="phoenix_opt_GetValue(phoenix_umb_GetOption(AlphaFilter, &quot;value&quot;))" Sym="VFBWX-7136">
           <Text Name="" Sym="VFBWX-7137">
-           <Theme Ref="3212" Name="Text Center Justified ..."/>
+           <Theme Ref="3219" Name="Text Center Justified ..."/>
           </Text>
          </Action>
         </Branch>
@@ -9267,7 +9267,7 @@
      </Text>
     </Branch>
    </Conditional>
-   <Theme Ref="3245" Name="Text Left Justified XX..."/>
+   <Theme Ref="3252" Name="Text Left Justified XX..."/>
   </Panel>
   <Theme Ref="456" Name="Default Menu Theme"/>
  </Menu>
@@ -9303,17 +9303,17 @@
           <IgnoreThemeProps>false</IgnoreThemeProps>
           <BackgroundComponent>false</BackgroundComponent>
           <MouseTransparency>false</MouseTransparency>
-          <Theme Ref="3254" Name="Text Center Justified ..."/>
+          <Theme Ref="3261" Name="Text Center Justified ..."/>
          </Text>
         </Action>
        </Conditional>
        <Conditional Name="gNativeToastButtonText != null" Sym="PHNX-265800">
         <Item Name="OK" Sym="PHNX-254218">
          <Theme Ref="1577" Name="P3 Single Button Theme"/>
-         <Action ID="3257" Name="CloseOptionsMenu()" Sym="PHNX-254222"/>
+         <Action ID="3264" Name="CloseOptionsMenu()" Sym="PHNX-254222"/>
          <Action Name="gNativeToastButtonText" Sym="PHNX-254220">
           <Text Name="" Sym="PHNX-254221">
-           <Theme Ref="3254" Name="Text Center Justified ..."/>
+           <Theme Ref="3261" Name="Text Center Justified ..."/>
           </Text>
          </Action>
         </Item>
@@ -9350,7 +9350,7 @@
       </Attribute>
       <Listener Name="" Sym="PHNX-265924">
        <ListenerEvent>Select</ListenerEvent>
-       <Action Ref="3257" Name="CloseOptionsMenu()"/>
+       <Action Ref="3264" Name="CloseOptionsMenu()"/>
       </Listener>
      </OptionsMenu>
      <Action Name="AddGlobalContext(&quot;gNativeToastPrompt&quot;, null)" Sym="PHNX-254240"/>
@@ -9391,7 +9391,7 @@
             <Action Name="scalewidth5 = GetFullUIWidth() * .90" Sym="VFBWX-7235">
              <Action Name="scalewidth6 = GetFullUIWidth() * .5" Sym="VFBWX-7285">
               <Action Name="loop = 0" Sym="PHNX-254182">
-               <Conditional ID="3299" Name="loop &lt; Size(artChildren)" Sym="PHNX-254183">
+               <Conditional ID="3306" Name="loop &lt; Size(artChildren)" Sym="PHNX-254183">
                 <Branch Name="true" Sym="PHNX-254184">
                  <Action Name="artMediaItem = GetElement(artChildren, loop)" Sym="PHNX-254186">
                   <Conditional Name="phoenix_fanart_HasFanartBackground(artMediaItem)" Sym="PHNX-254187">
@@ -9424,7 +9424,7 @@
                    </Branch>
                   </Conditional>
                   <Action Name="loop = loop + 1" Sym="PHNX-254192">
-                   <Conditional Ref="3299" Name="loop &lt; Size(artChildren)"/>
+                   <Conditional Ref="3306" Name="loop &lt; Size(artChildren)"/>
                   </Action>
                  </Action>
                 </Branch>
@@ -9456,16 +9456,16 @@
        <Action Name="PCCode = &quot;&quot;" Sym="PHOENIX-3885">
         <Action Name="ReturnValue = false" Sym="PHOENIX-3886">
          <Action Name="DialogState = &quot;xAskForCodeAccess&quot;" Sym="PHOENIX-3889">
-          <OptionsMenu Ref="3331" Name="Parental Control Playb..."/>
+          <OptionsMenu Ref="3338" Name="Parental Control Playb..."/>
           <Conditional Name="ReturnValue" Sym="PHOENIX-3888">
-           <Menu Ref="3333" Name="Parental Controls"/>
+           <Menu Ref="3340" Name="Parental Controls"/>
           </Conditional>
          </Action>
         </Action>
        </Action>
       </Branch>
       <Branch Name="false" Sym="PHOENIX-3891">
-       <Menu Ref="3333" Name="Parental Controls"/>
+       <Menu Ref="3340" Name="Parental Controls"/>
       </Branch>
      </Conditional>
     </Action>
@@ -9503,7 +9503,7 @@
       </Action>
      </Action>
     </Action>
-    <Action ID="3353" Name="&quot;REM Play a DVD if there is one&quot;" Sym="PHOENIX-460">
+    <Action ID="3360" Name="&quot;REM Play a DVD if there is one&quot;" Sym="PHOENIX-460">
      <Action Name="GetMediaFiles(&quot;D&quot;)" Sym="PHOENIX-472">
       <Action Name="DVDDrive = FilterByBoolMethod(this, &quot;IsDVDDrive&quot;, true)" Sym="PHOENIX-473">
        <Conditional Name="Size(DVDDrive) &gt; 0" Sym="PHOENIX-474">
@@ -9590,10 +9590,10 @@
          <Action Name="&quot;REM if a poll interval is set up, we will refresh every so often&quot;" Sym="PHNX-253488"/>
          <Action Name="PollThreadActive = true" Sym="PHNX-253483">
           <Action Name="Fork()" Sym="PHNX-253485">
-           <Conditional ID="3379" Name="PollThreadActive" Sym="PHNX-253486">
+           <Conditional ID="3386" Name="PollThreadActive" Sym="PHNX-253486">
             <Action Name="Wait(gNativeProgressPollInterval)" Sym="PHNX-253487">
-             <Action Ref="3381" Name="&quot;REM Refresh Native Pr..."/>
-             <Conditional Ref="3379" Name="PollThreadActive"/>
+             <Action Ref="3388" Name="&quot;REM Refresh Native Pr..."/>
+             <Conditional Ref="3386" Name="PollThreadActive"/>
             </Action>
            </Conditional>
           </Action>
@@ -9617,16 +9617,16 @@
       </Hook>
       <Action Name="&quot;REM Allow exit if the OnCancel variable is set&quot;" Sym="PHNX-253481"/>
       <Listener Name="Left" Sym="PHNX-253470">
-       <Conditional ID="3392" Name="gNativeProgressOnCancel != null" Sym="PHNX-253472">
+       <Conditional ID="3399" Name="gNativeProgressOnCancel != null" Sym="PHNX-253472">
         <Action Name="EvaluateExpression(gNativeProgressOnCancel)" Sym="PHNX-253473">
          <Action Name="SetGlobalContext(&quot;gNativeProgressOnCancel&quot;, null)" Sym="PHNX-253474">
-          <Action Ref="3395" Name="&quot;REM Dismiss Native Pr..."/>
+          <Action Ref="3402" Name="&quot;REM Dismiss Native Pr..."/>
          </Action>
         </Action>
        </Conditional>
       </Listener>
       <Listener Name="Options" Sym="PHNX-253471">
-       <Conditional Ref="3392" Name="gNativeProgressOnCance..."/>
+       <Conditional Ref="3399" Name="gNativeProgressOnCance..."/>
       </Listener>
       <Action Name="&quot;REM Clean Up the global and local variables&quot;" Sym="PHNX-253482"/>
       <Hook Name="BeforeMenuUnload" Sym="PHNX-253477">
@@ -9642,10 +9642,10 @@
       <Theme Ref="1896" Name="Dialog Theme"/>
      </OptionsMenu>
     </Action>
-    <Action ID="3381" Name="&quot;REM Refresh Native Progress&quot;" Sym="PHNX-253463">
+    <Action ID="3388" Name="&quot;REM Refresh Native Progress&quot;" Sym="PHNX-253463">
      <Action Name="RefreshArea(&quot;NativeProgressContainer&quot;)" Sym="PHNX-253465"/>
     </Action>
-    <Action ID="3395" Name="&quot;REM Dismiss Native Progress Dialog&quot;" Sym="PHNX-253456">
+    <Action ID="3402" Name="&quot;REM Dismiss Native Progress Dialog&quot;" Sym="PHNX-253456">
      <Action Name="CloseOptionsMenu(&quot;NativeProgress&quot;, true)" Sym="PHNX-253457"/>
     </Action>
     <Action ID="504" Name="&quot;REM Link here to start playback - checks for parental locks - MediaItem&quot;" Sym="PHOENIX-4000">
@@ -9654,7 +9654,7 @@
        <Branch Name="true" Sym="UVJWK-3841">
         <Action Name="loop = 0" Sym="UVJWK-3844">
          <Action Name="allChildren = phoenix_media_GetAllChildren(MediaItem)" Sym="UVJWK-3845">
-          <Conditional ID="3412" Name="loop &lt; Size(allChildren)" Sym="UVJWK-3846">
+          <Conditional ID="3419" Name="loop &lt; Size(allChildren)" Sym="UVJWK-3846">
            <Branch Name="true" Sym="UVJWK-3859">
             <Action Name="GetElement(allChildren, loop)" Sym="UVJWK-3847">
              <Action Name="CurRatings = GetAiringRatings(phoenix_media_GetSageMediaFile(this))" Sym="UVJWK-3849">
@@ -9663,10 +9663,10 @@
                 <Branch Name="true" Sym="UVJWK-3851">
                  <Action Name="PCCode = &quot;&quot;" Sym="UVJWK-3854">
                   <Action Name="ReturnValue = false" Sym="UVJWK-3855">
-                   <OptionsMenu Ref="3331" Name="Parental Control Playb..."/>
+                   <OptionsMenu Ref="3338" Name="Parental Control Playb..."/>
                    <Conditional Name="ReturnValue" Sym="UVJWK-3856">
                     <Branch Name="true" Sym="UVJWK-3857">
-                     <Conditional Ref="3423" Name="phoenix_umb_IsFolder(M..."/>
+                     <Conditional Ref="3430" Name="phoenix_umb_IsFolder(M..."/>
                     </Branch>
                     <Branch Name="else" Sym="UVJWK-3858"/>
                    </Conditional>
@@ -9675,7 +9675,7 @@
                 </Branch>
                 <Branch Name="else" Sym="UVJWK-3852">
                  <Action Name="loop = loop + 1" Sym="UVJWK-3853">
-                  <Conditional Ref="3412" Name="loop &lt; Size(allChildren)"/>
+                  <Conditional Ref="3419" Name="loop &lt; Size(allChildren)"/>
                  </Action>
                 </Branch>
                </Conditional>
@@ -9684,7 +9684,7 @@
             </Action>
            </Branch>
            <Branch Name="else" Sym="UVJWK-3860">
-            <Conditional Ref="3423" Name="phoenix_umb_IsFolder(M..."/>
+            <Conditional Ref="3430" Name="phoenix_umb_IsFolder(M..."/>
            </Branch>
           </Conditional>
          </Action>
@@ -9697,10 +9697,10 @@
            <Branch Name="true" Sym="PHOENIX-3870">
             <Action Name="PCCode = &quot;&quot;" Sym="BASE-88570">
              <Action Name="ReturnValue = false" Sym="PHOENIX-3872">
-              <OptionsMenu Ref="3331" Name="Parental Control Playb..."/>
+              <OptionsMenu Ref="3338" Name="Parental Control Playb..."/>
               <Conditional Name="ReturnValue" Sym="PHOENIX-3873">
                <Branch Name="true" Sym="PHOENIX-4003">
-                <Conditional Ref="3423" Name="phoenix_umb_IsFolder(M..."/>
+                <Conditional Ref="3430" Name="phoenix_umb_IsFolder(M..."/>
                </Branch>
                <Branch Name="else" Sym="PHOENIX-4004"/>
               </Conditional>
@@ -9708,7 +9708,7 @@
             </Action>
            </Branch>
            <Branch Name="else" Sym="PHOENIX-3871">
-            <Conditional ID="3423" Name="phoenix_umb_IsFolder(MediaItem)" Sym="UVJWK-3808">
+            <Conditional ID="3430" Name="phoenix_umb_IsFolder(MediaItem)" Sym="UVJWK-3808">
              <Branch Name="true" Sym="UVJWK-3809">
               <Action Name="&quot;REM If it's music start up the Music OSD&quot;" Sym="UVJWK-3811"/>
               <Action Name="&quot;REM If it's Video got VIdeo OSD&quot;" Sym="UVJWK-3812"/>
@@ -9752,13 +9752,13 @@
                    <Action Ref="92" Name="&quot;REM Launch Video OSD&quot;"/>
                   </Action>
                  </Branch>
-                 <Branch Ref="3464" Name="else"/>
+                 <Branch Ref="3471" Name="else"/>
                 </Conditional>
                </Branch>
-               <Branch ID="3464" Name="else" Sym="UVJWK-3817">
+               <Branch ID="3471" Name="else" Sym="UVJWK-3817">
                 <Conditional Name="IsBluRay(phoenix_media_GetSageMediaFile(MediaItem)) &amp;&amp; GetProperty(&quot;fuzzy/WatchExternally_BluRay&quot;, false)" Sym="OLDTC-187">
                  <Branch Name="true" Sym="OLDTC-188">
-                  <Action ID="3467" Name="WatchExternallyCommand=GetProperty(&quot;fuzzy/WatchExternally_path&quot;,java_lang_String_replaceAll(GetPathParentDirectory(GetProperty(&quot;STV&quot;,null)) + &quot;/WatchExternally.bat&quot;,&quot;\\\\&quot;,&quot;/&quot;))" Sym="OLDTC-190">
+                  <Action ID="3474" Name="WatchExternallyCommand=GetProperty(&quot;fuzzy/WatchExternally_path&quot;,java_lang_String_replaceAll(GetPathParentDirectory(GetProperty(&quot;STV&quot;,null)) + &quot;/WatchExternally.bat&quot;,&quot;\\\\&quot;,&quot;/&quot;))" Sym="OLDTC-190">
                    <Action Name="WatchExternallyArgs= GetFileForSegment(phoenix_media_GetSageMediaFile( MediaItem ),0)" Sym="OLDTC-191">
                     <Action Name="DebugLog(&quot;Fuzzy_WatchExternally - &quot; + WatchExternallyCommand + &quot; &quot; + WatchExternallyArgs)" Sym="OLDTC-192">
                      <Action Name="ExecuteProcess(WatchExternallyCommand, WatchExternallyArgs, null, true)" Sym="OLDTC-193"/>
@@ -9770,7 +9770,7 @@
                  <Branch Name="else" Sym="OLDTC-189">
                   <Conditional Name="IsDVD(phoenix_media_GetSageMediaFile(MediaItem)) &amp;&amp; !IsBluRay(phoenix_media_GetSageMediaFile(MediaItem)) &amp;&amp; GetProperty(&quot;fuzzy/WatchExternally_DVD&quot;, false)" Sym="OLDTC-200">
                    <Branch Name="true" Sym="OLDTC-201">
-                    <Action Ref="3467" Name="WatchExternallyCommand..."/>
+                    <Action Ref="3474" Name="WatchExternallyCommand..."/>
                    </Branch>
                    <Branch Name="else" Sym="OLDTC-202">
                     <Conditional Name="Watch(phoenix_media_GetSageMediaFile(MediaItem))" Sym="UVJWK-3772">
@@ -9799,20 +9799,20 @@
       <Action Name="DisplayText  = &quot;Enter the name for the new playlist:&quot;" Sym="UVJWK-3866">
        <Action Name="OldString = &quot;&quot;" Sym="UVJWK-3867">
         <Action Name="NewString = OldString" Sym="UVJWK-3868">
-         <OptionsMenu Ref="3483" Name="Phoenix Keyboard popup"/>
+         <OptionsMenu Ref="3490" Name="Phoenix Keyboard popup"/>
          <Conditional Name="Size(NewString) &gt; 0 &amp;&amp; NewString != OldString" Sym="UVJWK-3869">
           <Branch Name="true" Sym="UVJWK-3878">
            <Action Name="newPlayList = AddPlaylist(NewString)" Sym="UVJWK-3870">
-            <Action ID="3487" Name="&quot;REM Loop through the folder and add to newPlayList&quot;" Sym="UVJWK-3905">
+            <Action ID="3494" Name="&quot;REM Loop through the folder and add to newPlayList&quot;" Sym="UVJWK-3905">
              <Action Name="loop = 0" Sym="UVJWK-3871">
               <Action Name="allChildren = phoenix_media_GetAllChildren(PFolder)" Sym="UVJWK-3872">
-               <Conditional ID="3490" Name="loop &lt; Size(allChildren)" Sym="UVJWK-3873">
+               <Conditional ID="3497" Name="loop &lt; Size(allChildren)" Sym="UVJWK-3873">
                 <Branch Name="true" Sym="UVJWK-3874">
                  <Action Name="GetElement(allChildren, loop)" Sym="UVJWK-3875">
                   <Action Name="AddToPlaylist(newPlayList, phoenix_media_GetSageMediaFile(this))" Sym="UVJWK-3876"/>
                  </Action>
                  <Action Name="loop = loop + 1" Sym="UVJWK-3877">
-                  <Conditional Ref="3490" Name="loop &lt; Size(allChildren)"/>
+                  <Conditional Ref="3497" Name="loop &lt; Size(allChildren)"/>
                  </Action>
                 </Branch>
                 <Branch Name="else" Sym="UVJWK-3914">
@@ -9851,7 +9851,7 @@
     </Action>
     <Action Name="&quot;REM Add the passed in folder PFolder to an existing playlist&quot;" Sym="UVJWK-3887">
      <Action Name="selectedPlaylist = null" Sym="UVJWK-3892">
-      <OptionsMenu ID="3507" Name="Select Playlist" Sym="UVJWK-3890">
+      <OptionsMenu ID="3514" Name="Select Playlist" Sym="UVJWK-3890">
        <Panel Name="Untitled" Sym="UVJWK-3906">
         <FixedWidth>1.0</FixedWidth>
         <WrapHNav>false</WrapHNav>
@@ -9859,7 +9859,7 @@
         <IgnoreThemeProps>false</IgnoreThemeProps>
         <BackgroundComponent>false</BackgroundComponent>
         <MouseTransparency>false</MouseTransparency>
-        <Shape Ref="3509" Name="White Alpha Mask"/>
+        <Shape Ref="3516" Name="White Alpha Mask"/>
         <Action Name="&quot;SELECT A PLAYLIST&quot;" Sym="UVJWK-3907">
          <Text Name="" Sym="UVJWK-3908">
           <Theme Ref="469" Name="Text Center Justified ..."/>
@@ -9885,7 +9885,7 @@
            </Action>
           </Item>
          </TableComponent>
-         <Theme ID="3520" Name="Option Menu Button Theme" Sym="NRCPU-3551">
+         <Theme ID="3527" Name="Option Menu Button Theme" Sym="NRCPU-3551">
           <TileBackgroundImage>false</TileBackgroundImage>
           <StretchBackgroundImage>false</StretchBackgroundImage>
           <ForegroundColor>=gP3CText</ForegroundColor>
@@ -9897,7 +9897,7 @@
       </OptionsMenu>
       <Conditional Name="selectedPlaylist" Sym="UVJWK-3898">
        <Branch Name="null" Sym="UVJWK-3899">
-        <Action ID="3523" Name="&quot;REM Toast that a name for playlist is required&quot;" Sym="UVJWK-3915">
+        <Action ID="3530" Name="&quot;REM Toast that a name for playlist is required&quot;" Sym="UVJWK-3915">
          <Action Name="AddGlobalContext(&quot;gNativeToastPrompt&quot;, &quot;Oops.  Something went wrong.  Try again.&quot;)" Sym="UVJWK-3916">
           <Action Name="AddGlobalContext(&quot;gNativeToastButtonText&quot;, null)" Sym="UVJWK-3917">
            <Action Name="AddGlobalContext(&quot;gNativeToastTimeout&quot;, 1000)" Sym="UVJWK-3918">
@@ -9909,7 +9909,7 @@
        </Branch>
        <Branch Name="else" Sym="UVJWK-3900">
         <Action Name="newPlayList = selectedPlaylist" Sym="UVJWK-3904">
-         <Action Ref="3487" Name="&quot;REM Loop through the ..."/>
+         <Action Ref="3494" Name="&quot;REM Loop through the ..."/>
         </Action>
        </Branch>
       </Conditional>
@@ -9917,10 +9917,10 @@
     </Action>
     <Action Name="&quot;REM Add the passed in item (PItem) to an existing playlist&quot;" Sym="UVJWK-4104">
      <Action Name="selectedPlaylist = null" Sym="UVJWK-4105">
-      <OptionsMenu Ref="3507" Name="Select Playlist"/>
+      <OptionsMenu Ref="3514" Name="Select Playlist"/>
       <Conditional Name="selectedPlaylist" Sym="UVJWK-4106">
        <Branch Name="null" Sym="UVJWK-4107">
-        <Action Ref="3523" Name="&quot;REM Toast that a name..."/>
+        <Action Ref="3530" Name="&quot;REM Toast that a name..."/>
        </Branch>
        <Branch Name="else" Sym="UVJWK-4108">
         <Action Name="AddToPlaylist(selectedPlaylist, phoenix_media_GetSageMediaFile(PItem))" Sym="UVJWK-4109">
@@ -10008,10 +10008,10 @@
     <Action Name="&quot;REM Test for Long or Short Press&quot;" Sym="VFBWX-2380">
      <Action Name="&quot;REM Define Short Press and Long Press Actions Here&quot;" Sym="VFBWX-2381">
       <Conditional Name="false" Sym="VFBWX-2439">
-       <Action ID="3579" Name="&quot;REM LONG&quot;" Sym="VFBWX-2440"/>
+       <Action ID="3586" Name="&quot;REM LONG&quot;" Sym="VFBWX-2440"/>
       </Conditional>
       <Conditional Name="false" Sym="VFBWX-2442">
-       <Action ID="3581" Name="&quot;REM SHORT&quot;" Sym="VFBWX-2441"/>
+       <Action ID="3588" Name="&quot;REM SHORT&quot;" Sym="VFBWX-2441"/>
       </Conditional>
      </Action>
      <Action Name="InitialWaitTime = 500" Sym="VFBWX-2385">
@@ -10031,7 +10031,7 @@
              <Action Name="LongPressActionComplete = false" Sym="VFBWX-2397">
               <Action Name="Fork()" Sym="VFBWX-2398">
                <Action Name="DebugLog( &quot;Long Press Fork Started&quot; )" Sym="VFBWX-2399"/>
-               <Action ID="3597" Name="Wait( 50 )" Sym="VFBWX-2400">
+               <Action ID="3604" Name="Wait( 50 )" Sym="VFBWX-2400">
                 <Action Name="CurrentTime = Time()" Sym="VFBWX-2401">
                  <Action Name="TimeIncrement = CurrentTime - ElapsedTime" Sym="VFBWX-2402">
                   <Action Name="ElapsedTime = CurrentTime - LongPressStartTime" Sym="VFBWX-2403">
@@ -10042,7 +10042,7 @@
                       <Branch Name="true" Sym="VFBWX-2408">
                        <Action Name="LongPressWait = false" Sym="VFBWX-2409"/>
                        <Action Name="&quot;REM Perform Short Press Action&quot;" Sym="VFBWX-2410">
-                        <Action Ref="3581" Name="&quot;REM SHORT&quot;"/>
+                        <Action Ref="3588" Name="&quot;REM SHORT&quot;"/>
                         <Action Name="&quot;REM Exit Thread&quot;" Sym="VFBWX-2411"/>
                         <Action Name="DebugLog( &quot;********* Short Press **********&quot; )" Sym="VFBWX-2412"/>
                        </Action>
@@ -10057,17 +10057,17 @@
                           </Branch>
                           <Branch Name="else" Sym="VFBWX-2420">
                            <Action Name="&quot;REM Consume remainder of long press repeating select commands&quot;" Sym="VFBWX-2421">
-                            <Action Ref="3597" Name="Wait( 50 )"/>
+                            <Action Ref="3604" Name="Wait( 50 )"/>
                            </Action>
                           </Branch>
                          </Conditional>
                         </Branch>
                         <Branch Name="else" Sym="VFBWX-2422">
                          <Action Name="&quot;REM Perform Long Press Action&quot;" Sym="VFBWX-2423">
-                          <Action Ref="3579" Name="&quot;REM LONG&quot;"/>
+                          <Action Ref="3586" Name="&quot;REM LONG&quot;"/>
                           <Action Name="DebugLog( &quot;********* Long Press **********&quot; )" Sym="VFBWX-2424"/>
                           <Action Name="LongPressActionComplete = true" Sym="VFBWX-2425">
-                           <Action Ref="3597" Name="Wait( 50 )"/>
+                           <Action Ref="3604" Name="Wait( 50 )"/>
                           </Action>
                          </Action>
                         </Branch>
@@ -10076,7 +10076,7 @@
                      </Conditional>
                     </Branch>
                     <Branch Name="else" Sym="VFBWX-2426">
-                     <Action Ref="3597" Name="Wait( 50 )"/>
+                     <Action Ref="3604" Name="Wait( 50 )"/>
                     </Branch>
                    </Conditional>
                   </Action>
@@ -10097,7 +10097,7 @@
    </Conditional>
   </Action>
  </Menu>
- <Menu ID="3333" Name="Parental Controls" Sym="PHNX2-4733">
+ <Menu ID="3340" Name="Parental Controls" Sym="PHNX2-4733">
   <Theme Ref="456" Name="Default Menu Theme"/>
   <Attribute Name="MenuTitle" Sym="PHNX2-4734">
    <Value>"Parental Controls"</Value>
@@ -10132,12 +10132,12 @@
     <Insets>0,10,0,10</Insets>
     <Action Name="&quot;Parental Controls&quot;" Sym="PHOENIX-3829">
      <Text Name="" Sym="PHOENIX-3830">
-      <Theme Ref="3632" Name="Text Center Justified ..."/>
+      <Theme Ref="3639" Name="Text Center Justified ..."/>
      </Text>
     </Action>
     <Action Name="&quot;Select ratings that require the Parental Lock Code to view&quot;" Sym="PHOENIX-3864">
      <Text Name="" Sym="PHOENIX-3865">
-      <Theme Ref="3635" Name="Text Center Justified ..."/>
+      <Theme Ref="3642" Name="Text Center Justified ..."/>
      </Text>
     </Action>
     <Panel Name="Controls" Sym="PHOENIX-3892">
@@ -10157,14 +10157,14 @@
       <Conditional Name="HasParentalLockCode()" Sym="PHOENIX-3895">
        <Branch Name="true" Sym="PHOENIX-3896">
         <Action Name="&quot;Change Parental Lock Code&quot;" Sym="PHOENIX-3898">
-         <Text ID="3641" Name="" Sym="PHOENIX-3900">
+         <Text ID="3648" Name="" Sym="PHOENIX-3900">
           <Theme Ref="469" Name="Text Center Justified ..."/>
          </Text>
         </Action>
        </Branch>
        <Branch Name="false" Sym="PHOENIX-3897">
         <Action Name="&quot;Set Parental Lock Code&quot;" Sym="PHOENIX-3899">
-         <Text Ref="3641" Name=""/>
+         <Text Ref="3648" Name=""/>
         </Action>
        </Branch>
       </Conditional>
@@ -10415,14 +10415,14 @@
          <FixedHeight>1.0</FixedHeight>
          <TableSubcomp>Cell</TableSubcomp>
          <Item Name="" Sym="PHOENIX-3804">
-          <Theme ID="3712" Name="Rating Theme" Sym="PHOENIX-3831">
+          <Theme ID="3719" Name="Rating Theme" Sym="PHOENIX-3831">
            <Item Name="" Sym="PHOENIX-3832">
             <Layout>Horizontal</Layout>
             <Insets>5</Insets>
             <VerticalAlignment>0.5</VerticalAlignment>
             <Conditional Name="Focused" Sym="PHOENIX-3833">
-             <Shape Ref="3715" Name="Highlite"/>
-             <Shape Ref="3716" Name="Highlite"/>
+             <Shape Ref="3722" Name="Highlite"/>
+             <Shape Ref="3723" Name="Highlite"/>
             </Conditional>
             <Panel Name="Label" Sym="PHOENIX-3858">
              <Layout>Vertical</Layout>
@@ -10435,16 +10435,16 @@
               <Conditional Name="rating" Sym="PHOENIX-3982">
                <Branch Name="&quot;AO&quot;" Sym="PHOENIX-3984">
                 <Action Name="ratingLabel = &quot;AO (Adult Only)&quot;" Sym="PHOENIX-3988">
-                 <Conditional Ref="3722" Name="IsRatingUnderParentalL..."/>
+                 <Conditional Ref="3729" Name="IsRatingUnderParentalL..."/>
                 </Action>
                </Branch>
                <Branch Name="&quot;NR&quot;" Sym="PHOENIX-3985">
                 <Action Name="ratingLabel = &quot;NR (Not Rated)&quot;" Sym="PHOENIX-3987">
-                 <Conditional Ref="3722" Name="IsRatingUnderParentalL..."/>
+                 <Conditional Ref="3729" Name="IsRatingUnderParentalL..."/>
                 </Action>
                </Branch>
                <Branch Name="else" Sym="PHOENIX-3986">
-                <Conditional ID="3722" Name="IsRatingUnderParentalLock(rating)" Sym="PHOENIX-3847">
+                <Conditional ID="3729" Name="IsRatingUnderParentalLock(rating)" Sym="PHOENIX-3847">
                  <Branch Name="true" Sym="PHOENIX-3848">
                   <Action Name="ratingLabel" Sym="VFBWX-2457">
                    <Text Name="" Sym="VFBWX-2458">
@@ -10528,7 +10528,7 @@
          <FixedHeight>1.0</FixedHeight>
          <TableSubcomp>Cell</TableSubcomp>
          <Item Name="" Sym="PHOENIX-3815">
-          <Theme Ref="3712" Name="Rating Theme"/>
+          <Theme Ref="3719" Name="Rating Theme"/>
           <Attribute Name="rating" Sym="PHOENIX-3842">
            <Value>mpaarating</Value>
           </Attribute>
@@ -10565,7 +10565,7 @@
         <FixedHeight>1.0</FixedHeight>
         <TableSubcomp>Cell</TableSubcomp>
         <Item Name="" Sym="PHOENIX-3824">
-         <Theme Ref="3712" Name="Rating Theme"/>
+         <Theme Ref="3719" Name="Rating Theme"/>
          <Attribute Name="rating" Sym="PHOENIX-3843">
           <Value>contentrating</Value>
          </Attribute>
@@ -10744,12 +10744,12 @@
       <Conditional Name="Size( phoenix_videothumbs_GetThumbnails( snapshotMediaItem ) ) == 0" Sym="NRCPU-3251">
        <Branch Name="true" Sym="NRCPU-3257">
         <Action Name="Thumbnails = phoenix_videothumbs_GenerateThumbnailsEvenly( snapshotMediaItem, 9, 160, 90 )" Sym="NRCPU-3252">
-         <Action Ref="3807" Name="RefreshArea(&quot;Options&quot;)"/>
+         <Action Ref="3814" Name="RefreshArea(&quot;Options&quot;)"/>
         </Action>
        </Branch>
        <Branch Name="false" Sym="NRCPU-3241">
         <Action Name="Thumbnails = phoenix_videothumbs_GetThumbnails( snapshotMediaItem ) " Sym="NRCPU-3244">
-         <Action ID="3807" Name="RefreshArea(&quot;Options&quot;)" Sym="NRCPU-3262"/>
+         <Action ID="3814" Name="RefreshArea(&quot;Options&quot;)" Sym="NRCPU-3262"/>
         </Action>
        </Branch>
       </Conditional>
@@ -10787,7 +10787,7 @@
        <Action Name="GetAiringTitle(Airing)" Sym="NRCPU-4121">
         <Text Name="" Sym="NRCPU-4122"/>
        </Action>
-       <Theme Ref="3632" Name="Text Center Justified ..."/>
+       <Theme Ref="3639" Name="Text Center Justified ..."/>
       </Panel>
       <Panel Name="Options" Sym="NRCPU-4124">
        <Layout>Vertical</Layout>
@@ -10821,7 +10821,7 @@
            </Item>
           </Branch>
           <Branch Name="false" Sym="UVJWK-4363">
-           <Item ID="3827" Name="Record This Show" Sym="UVJWK-4366">
+           <Item ID="3834" Name="Record This Show" Sym="UVJWK-4366">
             <Action Name="Record( Airing)" Sym="UVJWK-4367">
              <Action Name="Refresh()" Sym="UVJWK-4368"/>
             </Action>
@@ -10831,7 +10831,7 @@
         </Branch>
         <Branch Name="false" Sym="UVJWK-4364">
          <Conditional Name="!IsFavorite( Airing ) &amp;&amp; !IsManualRecord( Airing )" Sym="UVJWK-4365">
-          <Item Ref="3827" Name="Record This Show"/>
+          <Item Ref="3834" Name="Record This Show"/>
          </Conditional>
         </Branch>
        </Conditional>
@@ -10876,7 +10876,7 @@
        <IgnoreThemeProps>false</IgnoreThemeProps>
        <BackgroundComponent>false</BackgroundComponent>
        <MouseTransparency>false</MouseTransparency>
-       <Shape ID="3509" Name="White Alpha Mask" Sym="UVJWK-600">
+       <Shape ID="3516" Name="White Alpha Mask" Sym="UVJWK-600">
         <ForegroundColor>0xFFFFFF</ForegroundColor>
         <ForegroundAlpha>75</ForegroundAlpha>
         <ShapeType>Rectangle</ShapeType>
@@ -10884,7 +10884,7 @@
        </Shape>
        <Action Name="phoenix_config_GetConfigurationLabel(ConfigGroup)" Sym="PHNX-254392">
         <Text Name="" Sym="PHNX-254397">
-         <Theme Ref="3635" Name="Text Center Justified ..."/>
+         <Theme Ref="3642" Name="Text Center Justified ..."/>
         </Text>
        </Action>
       </Panel>
@@ -10964,11 +10964,11 @@
               <Branch ID="2034" Name="phoenix_config_IsButton(Element)" Sym="PHNX-255952">
                <Action Name="optionCount = Size(phoenix_config_GetOptions(Element))" Sym="PHNX-255969">
                 <Action Name="oIndex = 0" Sym="PHNX-255970">
-                 <Conditional ID="3858" Name="oIndex &lt; optionCount" Sym="PHNX-255971">
+                 <Conditional ID="3865" Name="oIndex &lt; optionCount" Sym="PHNX-255971">
                   <Branch Name="true" Sym="PHNX-255972">
                    <Action Name="EvaluateExpression(phoenix_config_GetOptionLabel(phoenix_config_GetOption(Element, &quot;eval.&quot;+oIndex)))" Sym="PHNX-255973">
                     <Action Name="oIndex = oIndex + 1" Sym="PHNX-255974">
-                     <Conditional Ref="3858" Name="oIndex &lt; optionCount"/>
+                     <Conditional Ref="3865" Name="oIndex &lt; optionCount"/>
                     </Action>
                    </Action>
                   </Branch>
@@ -11049,7 +11049,7 @@
                        </Action>
                        <Action Name="phoenix_config_GetConfigurationLabel( Element )" Sym="PHNX-255070">
                         <Text Name="" Sym="PHNX-255071">
-                         <Theme Ref="3254" Name="Text Center Justified ..."/>
+                         <Theme Ref="3261" Name="Text Center Justified ..."/>
                         </Text>
                        </Action>
                       </Panel>
@@ -11097,7 +11097,7 @@
                            <Branch Name="true" Sym="PHNX-255110">
                             <Action Name="phoenix_config_GetOptionLabel(Choice)" Sym="PHNX-255112">
                              <Text Name="" Sym="PHNX-255113">
-                              <Theme Ref="3635" Name="Text Center Justified ..."/>
+                              <Theme Ref="3642" Name="Text Center Justified ..."/>
                              </Text>
                             </Action>
                            </Branch>
@@ -11115,7 +11115,7 @@
                          </Item>
                         </TableComponent>
                         <Conditional Name="Size(Options) &gt; 3" Sym="PHOENIX2-6207">
-                         <Panel ID="3903" Name="P2 Table Scroll Bar (.02)" Sym="ZOMHW-630110">
+                         <Panel ID="3910" Name="P2 Table Scroll Bar (.02)" Sym="ZOMHW-630110">
                           <AnchorX>1.0</AnchorX>
                           <AnchorY>0.5</AnchorY>
                           <AnchorPointX>1.0</AnchorPointX>
@@ -11177,7 +11177,7 @@
                                 <Conditional Name="numwrappedItems &gt; 0" Sym="UVJWK-3152">
                                  <Branch Name="true" Sym="UVJWK-3153">
                                   <Action Name="&quot;REM Wrapping! use 2 scrollbars&quot;" Sym="UVJWK-3154">
-                                   <Action ID="3919" Name="&quot;REM calc simple scrollbar&quot;" Sym="UVJWK-3155">
+                                   <Action ID="3926" Name="&quot;REM calc simple scrollbar&quot;" Sym="UVJWK-3155">
                                     <Action Name="&quot;REM size=displayed items / total items (Min value 0.01)&quot;" Sym="UVJWK-3156">
                                      <Action Name="size = Min(NumRowsPerPage*NumManagedCols+0.0001,(NumRows-((VScrollIndex-1)*NumManagedCols)+0.0001)) / (NumRows)" Sym="UVJWK-3157">
                                       <Action Name="size = Max(0.03,size) * 1.0" Sym="UVJWK-3158">
@@ -11249,13 +11249,13 @@
                                   </Action>
                                  </Branch>
                                  <Branch Name="else" Sym="UVJWK-3171">
-                                  <Action Ref="3919" Name="&quot;REM calc simple scrol..."/>
+                                  <Action Ref="3926" Name="&quot;REM calc simple scrol..."/>
                                  </Branch>
                                 </Conditional>
                                </Action>
                               </Branch>
                               <Branch Name="else" Sym="UVJWK-3172">
-                               <Action Ref="3919" Name="&quot;REM calc simple scrol..."/>
+                               <Action Ref="3926" Name="&quot;REM calc simple scrol..."/>
                               </Branch>
                              </Conditional>
                             </Action>
@@ -11280,13 +11280,13 @@
                             <MouseTransparency>false</MouseTransparency>
                             <Listener Name="" Sym="ZOMHW-629786">
                              <ListenerEvent>MouseDrag</ListenerEvent>
-                             <Action ID="3940" Name="&quot;REM Scroll to position of mouse action&quot;" Sym="ZOMHW-630242">
+                             <Action ID="3947" Name="&quot;REM Scroll to position of mouse action&quot;" Sym="ZOMHW-630242">
                               <Action Name="SetScrollPosition( -1.0, RelativeY )" Sym="ZOMHW-630091"/>
                              </Action>
                             </Listener>
                             <Listener Name="" Sym="ZOMHW-629813">
                              <ListenerEvent>MouseClick</ListenerEvent>
-                             <Action Ref="3940" Name="&quot;REM Scroll to positio..."/>
+                             <Action Ref="3947" Name="&quot;REM Scroll to positio..."/>
                             </Listener>
                            </Panel>
                           </Action>
@@ -11388,7 +11388,7 @@
                <Action Name="DisplayText  = &quot;Enter the new string property value.&quot;" Sym="PHNX-254378">
                 <Action Name="OldString = phoenix_config_GetProperty( Element )" Sym="PHNX-254379">
                  <Action Name="NewString = OldString" Sym="PHNX-254380">
-                  <OptionsMenu Ref="3483" Name="Phoenix Keyboard popup"/>
+                  <OptionsMenu Ref="3490" Name="Phoenix Keyboard popup"/>
                   <Conditional Name="Size(NewString) &gt; 0 &amp;&amp; NewString != OldString" Sym="PHNX-254381">
                    <Action Name="phoenix_config_SetProperty( Element, NewString )" Sym="PHNX-254382">
                     <Action Name="Refresh()" Sym="PHNX-254383"/>
@@ -11405,7 +11405,7 @@
             </Item>
            </Panel>
           </TableComponent>
-          <Panel Ref="3903" Name="P2 Table Scroll Bar (...."/>
+          <Panel Ref="3910" Name="P2 Table Scroll Bar (...."/>
          </Table>
         </Action>
        </Action>
@@ -11417,15 +11417,15 @@
         </Text>
        </Action>
       </Action>
-      <Effect Ref="3979" Name="Slide Down"/>
-      <Effect Ref="3980" Name="Slide Up"/>
+      <Effect Ref="3986" Name="Slide Down"/>
+      <Effect Ref="3987" Name="Slide Up"/>
      </Panel>
     </OptionsMenu>
     <OptionsMenu ID="1089" Name="Choose BD Title" Sym="ZOMHW-9180486">
      <Layout>Vertical</Layout>
      <IgnoreThemeProps>false</IgnoreThemeProps>
      <BackgroundComponent>false</BackgroundComponent>
-     <Theme Ref="3981" Name="OSD Right Side Options..."/>
+     <Theme Ref="3988" Name="OSD Right Side Options..."/>
      <Panel Name="Untitled" Sym="PHOENIX2-4856">
       <BackgroundAlpha>255</BackgroundAlpha>
       <FixedWidth>1.0</FixedWidth>
@@ -11516,10 +11516,10 @@
            </Action>
           </Action>
          </Action>
-         <Theme Ref="3520" Name="Option Menu Button Theme"/>
+         <Theme Ref="3527" Name="Option Menu Button Theme"/>
         </Item>
        </TableComponent>
-       <Panel Ref="3903" Name="P2 Table Scroll Bar (...."/>
+       <Panel Ref="3910" Name="P2 Table Scroll Bar (...."/>
        <Theme Ref="469" Name="Text Center Justified ..."/>
       </Table>
      </Action>
@@ -11534,7 +11534,7 @@
       </Conditional>
      </Hook>
     </OptionsMenu>
-    <OptionsMenu ID="3331" Name="Parental Control Playback Request" Sym="BASE-88571">
+    <OptionsMenu ID="3338" Name="Parental Control Playback Request" Sym="BASE-88571">
      <IgnoreThemeProps>false</IgnoreThemeProps>
      <Theme Ref="1896" Name="Dialog Theme"/>
      <Conditional Name="DialogState" Sym="BASE-88572">
@@ -11552,7 +11552,7 @@
          <AutosizeText>false</AutosizeText>
          <WrapText>true</WrapText>
          <TextAlignment>0.5</TextAlignment>
-         <Theme Ref="3635" Name="Text Center Justified ..."/>
+         <Theme Ref="3642" Name="Text Center Justified ..."/>
         </Text>
        </Action>
        <Panel Name="PwdInputArea" Sym="BASE-88576">
@@ -11567,7 +11567,7 @@
         <IgnoreThemeProps>true</IgnoreThemeProps>
         <BackgroundComponent>false</BackgroundComponent>
         <MouseTransparency>false</MouseTransparency>
-        <TextInput ID="4028" Name="PCCode" Sym="BASE-88577">
+        <TextInput ID="4035" Name="PCCode" Sym="BASE-88577">
          <FixedWidth>1.0</FixedWidth>
          <TextAlignment>0.5</TextAlignment>
          <HideText>true</HideText>
@@ -11575,7 +11575,7 @@
          <BackgroundComponent>false</BackgroundComponent>
          <FocusableCondition>false</FocusableCondition>
         </TextInput>
-        <Theme Ref="3245" Name="Text Left Justified XX..."/>
+        <Theme Ref="3252" Name="Text Left Justified XX..."/>
        </Panel>
       </Branch>
       <Branch Name="&quot;xAskForCodeAccess&quot;" Sym="PHOENIX-3878">
@@ -11584,7 +11584,7 @@
          <AutosizeText>false</AutosizeText>
          <WrapText>true</WrapText>
          <TextAlignment>0.5</TextAlignment>
-         <Theme Ref="3635" Name="Text Center Justified ..."/>
+         <Theme Ref="3642" Name="Text Center Justified ..."/>
         </Text>
        </Action>
        <Panel Name="PwdInputArea" Sym="PHOENIX-3914">
@@ -11596,7 +11596,7 @@
         <WrapHNav>false</WrapHNav>
         <WrapVNav>false</WrapVNav>
         <IgnoreThemeProps>true</IgnoreThemeProps>
-        <TextInput Ref="4028" Name="PCCode"/>
+        <TextInput Ref="4035" Name="PCCode"/>
         <Panel Name="TextEntryCursor" Sym="BASE-45832">
          <Layout>Horizontal</Layout>
          <HorizontalAlignment>0.5</HorizontalAlignment>
@@ -11624,16 +11624,16 @@
         <Action Name="&quot;OK&quot;" Sym="PHOENIX-3882">
          <Text Name="" Sym="PHOENIX-3883"/>
         </Action>
-        <Action Ref="4040" Name="ReturnValue = false"/>
+        <Action Ref="4047" Name="ReturnValue = false"/>
         <Theme Ref="1577" Name="P3 Single Button Theme"/>
        </Item>
       </Branch>
      </Conditional>
      <Listener Name="Select" Sym="BASE-88584">
       <ListenerEvent>Select</ListenerEvent>
-      <Conditional ID="4042" Name="DialogState" Sym="BASE-88585">
+      <Conditional ID="4049" Name="DialogState" Sym="BASE-88585">
        <Branch Name="&quot;xAskForCode&quot;" Sym="BASE-88586">
-        <Conditional ID="4044" Name="IsCorrectParentalLockCode(PCCode)" Sym="BASE-88587">
+        <Conditional ID="4051" Name="IsCorrectParentalLockCode(PCCode)" Sym="BASE-88587">
          <Branch Name="true" Sym="BASE-88588">
           <Action Name="ReturnValue = true" Sym="BASE-88589">
            <Action Name="CloseOptionsMenu()" Sym="BASE-88590"/>
@@ -11651,10 +11651,10 @@
         </Conditional>
        </Branch>
        <Branch Name="&quot;xAskForCodeAccess&quot;" Sym="PHOENIX-3881">
-        <Conditional Ref="4044" Name="IsCorrectParentalLockC..."/>
+        <Conditional Ref="4051" Name="IsCorrectParentalLockC..."/>
        </Branch>
        <Branch Name="&quot;xWrongCode&quot;" Sym="BASE-88597">
-        <Action ID="4040" Name="ReturnValue = false" Sym="BASE-88582">
+        <Action ID="4047" Name="ReturnValue = false" Sym="BASE-88582">
          <Action Name="CloseOptionsMenu()" Sym="BASE-88583"/>
         </Action>
        </Branch>
@@ -11662,7 +11662,7 @@
      </Listener>
      <Listener Name="" Sym="BASE-88598">
       <ListenerEvent>Options</ListenerEvent>
-      <Conditional Ref="4042" Name="DialogState"/>
+      <Conditional Ref="4049" Name="DialogState"/>
      </Listener>
      <Attribute Name="DialogState" Sym="BASE-88599">
       <Value>If(DialogState==null,"xAskForCode", DialogState)</Value>
@@ -11708,7 +11708,7 @@
        </Action>
        <Action Name="phoenix_media_GetTitle( DELETEFolderItem ) + &quot; (&quot; + Size(phoenix_media_GetAllChildren(DELETEFolderItem)) + &quot; items)&quot;" Sym="ZOMHW-9174141">
         <Text Name="" Sym="ZOMHW-9174140">
-         <Theme Ref="3635" Name="Text Center Justified ..."/>
+         <Theme Ref="3642" Name="Text Center Justified ..."/>
         </Text>
        </Action>
       </Panel>
@@ -11737,7 +11737,7 @@
          <Value>true</Value>
         </Attribute>
        </Item>
-       <Theme Ref="3520" Name="Option Menu Button Theme"/>
+       <Theme Ref="3527" Name="Option Menu Button Theme"/>
        <Conditional Name="false" Sym="VFBWX-3639">
         <Item Name="Delete All &amp; Set Watched" Sym="ZOMHW-9174135">
          <Action Name="SetWatchedAfterDelete = true" Sym="ZOMHW-9174132">
@@ -11804,7 +11804,7 @@
        </Action>
        <Action Name="GetAiringTitle(DELETESageAiring) + If(Size(GetShowEpisode(DELETESageAiring))&gt;0, &quot; - \&quot;&quot; + GetShowEpisode(DELETESageAiring) + &quot;\&quot;&quot;,&quot;&quot;)" Sym="QISRJ-234830">
         <Text Name="" Sym="QISRJ-234831">
-         <Theme Ref="3635" Name="Text Center Justified ..."/>
+         <Theme Ref="3642" Name="Text Center Justified ..."/>
         </Text>
        </Action>
       </Panel>
@@ -11819,7 +11819,7 @@
        <IgnoreThemeProps>false</IgnoreThemeProps>
        <BackgroundComponent>false</BackgroundComponent>
        <MouseTransparency>false</MouseTransparency>
-       <Theme Ref="3520" Name="Option Menu Button Theme"/>
+       <Theme Ref="3527" Name="Option Menu Button Theme"/>
        <Item Name="Delete" Sym="QISRJ-209197">
         <Action Name="TryToDelete = true" Sym="QISRJ-253073">
          <Action Name="CloseOptionsMenu()" Sym="QISRJ-253074"/>
@@ -11857,19 +11857,19 @@
         <FixedWidth>1.0</FixedWidth>
         <FixedHeight>1.0</FixedHeight>
         <Item Name="" Sym="NRCPU-3358">
-         <Action Ref="4103" Name="filterWith = kateEntry"/>
+         <Action Ref="4110" Name="filterWith = kateEntry"/>
          <Conditional Name="Focused" Sym="NRCPU-3411">
           <Branch Name="true" Sym="NRCPU-3399">
            <Action Name="kateEntry" Sym="NRCPU-3328">
             <Text Name="" Sym="NRCPU-3345">
-             <Theme Ref="3212" Name="Text Center Justified ..."/>
+             <Theme Ref="3219" Name="Text Center Justified ..."/>
             </Text>
            </Action>
           </Branch>
           <Branch Name="false" Sym="NRCPU-3395">
            <Action Name="kateEntry" Sym="NRCPU-3373">
             <Text Name="" Sym="NRCPU-3354">
-             <Theme Ref="4111" Name="Text Center Justified ..."/>
+             <Theme Ref="4118" Name="Text Center Justified ..."/>
             </Text>
            </Action>
           </Branch>
@@ -11879,13 +11879,13 @@
       </Table>
      </Action>
      <Hook Name="BeforeMenuLoad" Sym="NRCPU-3365">
-      <Action ID="4113" Name="currentDigit = NumericSearchInput" Sym="NRCPU-3387">
+      <Action ID="4120" Name="currentDigit = NumericSearchInput" Sym="NRCPU-3387">
        <Conditional Name="NumericSearchInput" Sym="NRCPU-3353">
         <Branch Name="&quot;0&quot;" Sym="PHNX2-4476">
-         <Action Ref="4116" Name="kateOptions = CreateAr..."/>
+         <Action Ref="4123" Name="kateOptions = CreateAr..."/>
         </Branch>
         <Branch Name="&quot;1&quot;" Sym="NRCPU-3360">
-         <Action ID="4116" Name="kateOptions = CreateArray(&quot;Numbers&quot;)" Sym="NRCPU-3367"/>
+         <Action ID="4123" Name="kateOptions = CreateArray(&quot;Numbers&quot;)" Sym="NRCPU-3367"/>
         </Branch>
         <Branch Name="&quot;2&quot;" Sym="NRCPU-3401">
          <Action Name="kateOptions = CreateArray(&quot;A&quot;,&quot;B&quot;, &quot;C&quot;)" Sym="NRCPU-3391"/>
@@ -11915,17 +11915,17 @@
       </Action>
       <Action Name="filterTime = Time() + 1000" Sym="NRCPU-3356">
        <Action Name="Fork()" Sym="NRCPU-3362">
-        <Action ID="4136" Name="Wait(500)" Sym="NRCPU-3404">
+        <Action ID="4143" Name="Wait(500)" Sym="NRCPU-3404">
          <Conditional Name="(filterTime &gt; 0) &amp;&amp; (filterTime &lt; Time())" Sym="NRCPU-3402">
           <Branch Name="true" Sym="NRCPU-3333">
            <Action Name="GetFocusContext()" Sym="NRCPU-3329">
-            <Action ID="4103" Name="filterWith = kateEntry" Sym="NRCPU-3355">
+            <Action ID="4110" Name="filterWith = kateEntry" Sym="NRCPU-3355">
              <Action Name="CloseOptionsMenu()" Sym="NRCPU-3389"/>
             </Action>
            </Action>
           </Branch>
           <Branch Name="false" Sym="NRCPU-3330">
-           <Action Ref="4136" Name="Wait(500)"/>
+           <Action Ref="4143" Name="Wait(500)"/>
           </Branch>
          </Conditional>
         </Action>
@@ -11945,7 +11945,7 @@
         <Action Name="SageCommand(&quot;Right&quot;)" Sym="NRCPU-3410"/>
        </Branch>
        <Branch Name="false" Sym="NRCPU-3371">
-        <Action Ref="4113" Name="currentDigit = Numeric..."/>
+        <Action Ref="4120" Name="currentDigit = Numeric..."/>
         <Action Name="Refresh()" Sym="NRCPU-3397"/>
        </Branch>
       </Conditional>
@@ -11968,7 +11968,7 @@
       <Timescale>Quadratic</Timescale>
      </Effect>
     </OptionsMenu>
-    <OptionsMenu ID="3483" Name="Phoenix Keyboard popup" Sym="ZOMHW-4201">
+    <OptionsMenu ID="3490" Name="Phoenix Keyboard popup" Sym="ZOMHW-4201">
      <Listener Name="Left" Sym="OLDTC-1">
       <Action Name="&quot;REM Do Nothing&quot;" Sym="OLDTC-2"/>
      </Listener>
@@ -12054,7 +12054,7 @@
        <BackgroundComponent>false</BackgroundComponent>
        <ZOffset>=If(Focused, 0, 1)</ZOffset>
        <MouseTransparency>false</MouseTransparency>
-       <Conditional ID="4170" Name="Focused" Sym="ZOMHW-9170263">
+       <Conditional ID="4177" Name="Focused" Sym="ZOMHW-9170263">
         <Branch Name="true" Sym="ZOMHW-9170264">
          <Image Name="SelectionHighlight" Sym="ZOMHW-9170265">
           <File>=gSelectionBarWithBorder</File>
@@ -12251,7 +12251,7 @@
             <Item Name="1" Sym="ZOMHW-4346">
              <IgnoreThemeProps>false</IgnoreThemeProps>
              <Action Name="Number=&quot;1&quot;" Sym="ZOMHW-4378">
-              <Action ID="4203" Name="&quot;REM keystroke&quot;" Sym="UVJWK-1038">
+              <Action ID="4210" Name="&quot;REM keystroke&quot;" Sym="UVJWK-1038">
                <Action Name="Keystroke(Number)" Sym="ZOMHW-5905">
                 <Action Name="&quot;REM Clear LastNumber input w/o a refresh&quot;" Sym="ZOMHW-5906">
                  <Action Name="LastNumber = null" Sym="ZOMHW-5907"/>
@@ -12274,11 +12274,11 @@
                <Action Name="NTEOffText = &quot;1&quot;" Sym="ZOMHW-4479">
                 <Action Name="NTEText = GetProperty(&quot;ui/numeric_text_input_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_1&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;),&quot;1*?\&quot;\\/'`.,:;@$&amp;!-_()&quot;)" Sym="ZOMHW-4420">
                  <Action Name="Hint = GetProperty(&quot;ui/numeric_text_hint_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_1&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;1\nsym&quot;)" Sym="ZOMHW-4432">
-                  <Action ID="4212" Name="&quot;REM Show NTE number pad text&quot;" Sym="ZOMHW-4477">
+                  <Action ID="4219" Name="&quot;REM Show NTE number pad text&quot;" Sym="ZOMHW-4477">
                    <Conditional Name="EnableNumericText" Sym="ZOMHW-4397">
                     <Branch Name="true" Sym="ZOMHW-4345">
                      <Action Name="Hint" Sym="ZOMHW-4309">
-                      <Text ID="4216" Name="" Sym="ZOMHW-4303">
+                      <Text ID="4223" Name="" Sym="ZOMHW-4303">
                        <AutosizeText>false</AutosizeText>
                        <WrapText>false</WrapText>
                        <TextAlignment>0.5</TextAlignment>
@@ -12289,7 +12289,7 @@
                         <ListenerEvent>MouseClick</ListenerEvent>
                         <Conditional Name="CanClickFakeButtons &amp;&amp; (MouseClick == 1)" Sym="ZOMHW-4449">
                          <Branch Name="true" Sym="ZOMHW-4283">
-                          <Action Ref="4203" Name="&quot;REM keystroke&quot;"/>
+                          <Action Ref="4210" Name="&quot;REM keystroke&quot;"/>
                          </Branch>
                          <Branch Name="else" Sym="ZOMHW-4352">
                           <Action Name="PassiveListen()" Sym="ZOMHW-4447"/>
@@ -12301,7 +12301,7 @@
                     </Branch>
                     <Branch Name="else" Sym="ZOMHW-4300">
                      <Action Name="NTEOffText" Sym="ZOMHW-4410">
-                      <Text Ref="4216" Name=""/>
+                      <Text Ref="4223" Name=""/>
                      </Action>
                     </Branch>
                    </Conditional>
@@ -12314,7 +12314,7 @@
             </Item>
             <Item Name="2" Sym="ZOMHW-4396">
              <Action Name="Number=&quot;2&quot;" Sym="ZOMHW-4495">
-              <Action Ref="4203" Name="&quot;REM keystroke&quot;"/>
+              <Action Ref="4210" Name="&quot;REM keystroke&quot;"/>
              </Action>
              <Panel Name="NumberKey" Sym="ZOMHW-4310">
               <Layout>VerticalGrid</Layout>
@@ -12331,7 +12331,7 @@
                <Action Name="NTEOffText = &quot;2&quot;" Sym="ZOMHW-4448">
                 <Action Name="NTEText = GetProperty(&quot;ui/numeric_text_input_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_2&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;ABC2&quot;)" Sym="ZOMHW-4292">
                  <Action Name="Hint = GetProperty(&quot;ui/numeric_text_hint_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_2&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;2\nABC&quot;)" Sym="ZOMHW-4350">
-                  <Action Ref="4212" Name="&quot;REM Show NTE number p..."/>
+                  <Action Ref="4219" Name="&quot;REM Show NTE number p..."/>
                  </Action>
                 </Action>
                </Action>
@@ -12340,7 +12340,7 @@
             </Item>
             <Item Name="3" Sym="ZOMHW-4419">
              <Action Name="Number=&quot;3&quot;" Sym="ZOMHW-4323">
-              <Action Ref="4203" Name="&quot;REM keystroke&quot;"/>
+              <Action Ref="4210" Name="&quot;REM keystroke&quot;"/>
              </Action>
              <Panel Name="NumberKey" Sym="ZOMHW-4363">
               <Layout>VerticalGrid</Layout>
@@ -12357,25 +12357,25 @@
                <Action Name="NTEOffText = &quot;3&quot;" Sym="ZOMHW-4324">
                 <Action Name="NTEText = GetProperty(&quot;ui/numeric_text_input_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_3&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;DEF3&quot;)" Sym="ZOMHW-4318">
                  <Action Name="Hint = GetProperty(&quot;ui/numeric_text_hint_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_3&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;3\nDEF&quot;)" Sym="ZOMHW-4295">
-                  <Action Ref="4212" Name="&quot;REM Show NTE number p..."/>
+                  <Action Ref="4219" Name="&quot;REM Show NTE number p..."/>
                  </Action>
                 </Action>
                </Action>
               </Action>
              </Panel>
             </Item>
-            <Theme ID="4238" Name="Keypad Button Theme" Sym="ZOMHW-4485">
+            <Theme ID="4245" Name="Keypad Button Theme" Sym="ZOMHW-4485">
              <Item Name="ShapeItemHighlight" Sym="ZOMHW-4407">
               <Insets>.01</Insets>
               <IgnoreThemeProps>false</IgnoreThemeProps>
               <BackgroundComponent>false</BackgroundComponent>
               <ZOffset>=If(Focused, 0, 1)</ZOffset>
               <MouseTransparency>false</MouseTransparency>
-              <Conditional Ref="4170" Name="Focused"/>
+              <Conditional Ref="4177" Name="Focused"/>
               <Theme Ref="469" Name="Text Center Justified ..."/>
              </Item>
             </Theme>
-            <Listener ID="4240" Name="" Sym="ZOMHW-6791">
+            <Listener ID="4247" Name="" Sym="ZOMHW-6791">
              <ListenerEvent>Skip Fwd/Page Right</ListenerEvent>
              <Conditional Name="true" Sym="ZOMHW-6792">
               <Branch Name="InMusicSearch" Sym="ZOMHW-6793">
@@ -12390,7 +12390,7 @@
               </Branch>
              </Conditional>
             </Listener>
-            <Listener ID="4248" Name="" Sym="ZOMHW-6799">
+            <Listener ID="4255" Name="" Sym="ZOMHW-6799">
              <ListenerEvent>Skip Bkwd/Page Left</ListenerEvent>
              <Conditional Name="true" Sym="ZOMHW-6800">
               <Branch Name="InMusicSearch" Sym="ZOMHW-6801">
@@ -12416,7 +12416,7 @@
             <BackgroundComponent>false</BackgroundComponent>
             <Item Name="4" Sym="ZOMHW-4381">
              <Action Name="Number=&quot;4&quot;" Sym="ZOMHW-4284">
-              <Action Ref="4203" Name="&quot;REM keystroke&quot;"/>
+              <Action Ref="4210" Name="&quot;REM keystroke&quot;"/>
              </Action>
              <Panel Name="NumberKey" Sym="ZOMHW-4347">
               <Layout>VerticalGrid</Layout>
@@ -12433,7 +12433,7 @@
                <Action Name="NTEOffText = &quot;4&quot;" Sym="ZOMHW-4399">
                 <Action Name="NTEText = GetProperty(&quot;ui/numeric_text_input_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_4&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;GHI4&quot;)" Sym="ZOMHW-4497">
                  <Action Name="Hint = GetProperty(&quot;ui/numeric_text_hint_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_4&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;4\nGHI&quot;)" Sym="ZOMHW-4481">
-                  <Action Ref="4212" Name="&quot;REM Show NTE number p..."/>
+                  <Action Ref="4219" Name="&quot;REM Show NTE number p..."/>
                  </Action>
                 </Action>
                </Action>
@@ -12442,7 +12442,7 @@
             </Item>
             <Item Name="5" Sym="ZOMHW-4338">
              <Action Name="Number=&quot;5&quot;" Sym="ZOMHW-4403">
-              <Action Ref="4203" Name="&quot;REM keystroke&quot;"/>
+              <Action Ref="4210" Name="&quot;REM keystroke&quot;"/>
              </Action>
              <Panel Name="NumberKey" Sym="ZOMHW-4296">
               <Layout>VerticalGrid</Layout>
@@ -12459,7 +12459,7 @@
                <Action Name="NTEOffText = &quot;5&quot;" Sym="ZOMHW-4454">
                 <Action Name="NTEText = GetProperty(&quot;ui/numeric_text_input_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_5&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;JKL5&quot;)" Sym="ZOMHW-4336">
                  <Action Name="Hint = GetProperty(&quot;ui/numeric_text_hint_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_5&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;5\nJKL&quot;)" Sym="ZOMHW-4475">
-                  <Action Ref="4212" Name="&quot;REM Show NTE number p..."/>
+                  <Action Ref="4219" Name="&quot;REM Show NTE number p..."/>
                  </Action>
                 </Action>
                </Action>
@@ -12468,7 +12468,7 @@
             </Item>
             <Item Name="6" Sym="ZOMHW-4402">
              <Action Name="Number=&quot;6&quot;" Sym="ZOMHW-4308">
-              <Action Ref="4203" Name="&quot;REM keystroke&quot;"/>
+              <Action Ref="4210" Name="&quot;REM keystroke&quot;"/>
              </Action>
              <Panel Name="NumberKey" Sym="ZOMHW-4451">
               <Layout>VerticalGrid</Layout>
@@ -12485,16 +12485,16 @@
                <Action Name="NTEOffText = &quot;6&quot;" Sym="ZOMHW-4427">
                 <Action Name="NTEText = GetProperty(&quot;ui/numeric_text_input_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_6&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;MNO6&quot;)" Sym="ZOMHW-4359">
                  <Action Name="Hint = GetProperty(&quot;ui/numeric_text_hint_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_6&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;6\nMNO&quot;)" Sym="ZOMHW-4467">
-                  <Action Ref="4212" Name="&quot;REM Show NTE number p..."/>
+                  <Action Ref="4219" Name="&quot;REM Show NTE number p..."/>
                  </Action>
                 </Action>
                </Action>
               </Action>
              </Panel>
             </Item>
-            <Theme Ref="4238" Name="Keypad Button Theme"/>
-            <Listener Ref="4240" Name=""/>
-            <Listener Ref="4248" Name=""/>
+            <Theme Ref="4245" Name="Keypad Button Theme"/>
+            <Listener Ref="4247" Name=""/>
+            <Listener Ref="4255" Name=""/>
            </Panel>
            <Panel Name="789" Sym="ZOMHW-4401">
             <Layout>HorizontalGrid</Layout>
@@ -12506,7 +12506,7 @@
             <BackgroundComponent>false</BackgroundComponent>
             <Item Name="7" Sym="ZOMHW-4316">
              <Action Name="Number=&quot;7&quot;" Sym="ZOMHW-4326">
-              <Action Ref="4203" Name="&quot;REM keystroke&quot;"/>
+              <Action Ref="4210" Name="&quot;REM keystroke&quot;"/>
              </Action>
              <Panel Name="NumberKey" Sym="ZOMHW-4445">
               <Layout>VerticalGrid</Layout>
@@ -12523,7 +12523,7 @@
                <Action Name="NTEOffText = &quot;7&quot;" Sym="ZOMHW-4462">
                 <Action Name="NTEText = GetProperty(&quot;ui/numeric_text_input_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_7&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;PQRS7&quot;)" Sym="ZOMHW-4493">
                  <Action Name="Hint = GetProperty(&quot;ui/numeric_text_hint_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_7&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;7\nPQRS&quot;)" Sym="ZOMHW-4301">
-                  <Action Ref="4212" Name="&quot;REM Show NTE number p..."/>
+                  <Action Ref="4219" Name="&quot;REM Show NTE number p..."/>
                  </Action>
                 </Action>
                </Action>
@@ -12532,7 +12532,7 @@
             </Item>
             <Item Name="8" Sym="ZOMHW-4484">
              <Action Name="Number=&quot;8&quot;" Sym="ZOMHW-4340">
-              <Action Ref="4203" Name="&quot;REM keystroke&quot;"/>
+              <Action Ref="4210" Name="&quot;REM keystroke&quot;"/>
              </Action>
              <Panel Name="NumberKey" Sym="ZOMHW-4354">
               <Layout>VerticalGrid</Layout>
@@ -12549,7 +12549,7 @@
                <Action Name="NTEOffText = &quot;8&quot;" Sym="ZOMHW-4491">
                 <Action Name="NTEText = GetProperty(&quot;ui/numeric_text_input_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_8&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;TUV8&quot;)" Sym="ZOMHW-4302">
                  <Action Name="Hint = GetProperty(&quot;ui/numeric_text_hint_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_8&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;8\nTUV&quot;)" Sym="ZOMHW-4434">
-                  <Action Ref="4212" Name="&quot;REM Show NTE number p..."/>
+                  <Action Ref="4219" Name="&quot;REM Show NTE number p..."/>
                  </Action>
                 </Action>
                </Action>
@@ -12558,7 +12558,7 @@
             </Item>
             <Item Name="9" Sym="ZOMHW-4372">
              <Action Name="Number=&quot;9&quot;" Sym="ZOMHW-4437">
-              <Action Ref="4203" Name="&quot;REM keystroke&quot;"/>
+              <Action Ref="4210" Name="&quot;REM keystroke&quot;"/>
              </Action>
              <Panel Name="NumberKey" Sym="ZOMHW-4376">
               <Layout>VerticalGrid</Layout>
@@ -12575,16 +12575,16 @@
                <Action Name="NTEOffText = &quot;9&quot;" Sym="ZOMHW-4474">
                 <Action Name="NTEText = GetProperty(&quot;ui/numeric_text_input_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_9&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;WXYZ9&quot;)" Sym="ZOMHW-4374">
                  <Action Name="Hint = GetProperty(&quot;ui/numeric_text_hint_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_9&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;9\nWXYZ&quot;)" Sym="ZOMHW-4319">
-                  <Action Ref="4212" Name="&quot;REM Show NTE number p..."/>
+                  <Action Ref="4219" Name="&quot;REM Show NTE number p..."/>
                  </Action>
                 </Action>
                </Action>
               </Action>
              </Panel>
             </Item>
-            <Theme Ref="4238" Name="Keypad Button Theme"/>
-            <Listener Ref="4240" Name=""/>
-            <Listener Ref="4248" Name=""/>
+            <Theme Ref="4245" Name="Keypad Button Theme"/>
+            <Listener Ref="4247" Name=""/>
+            <Listener Ref="4255" Name=""/>
            </Panel>
            <Panel Name="Back0Accept" Sym="ZOMHW-4342">
             <Layout>HorizontalGrid</Layout>
@@ -12613,16 +12613,16 @@
                <Action Name="NTEOffText = &quot;0&quot;" Sym="ZOMHW-4468">
                 <Action Name="NTEText = GetProperty(&quot;ui/numeric_text_input_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_0&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot; 0&quot;)" Sym="ZOMHW-4379">
                  <Action Name="Hint = GetProperty(&quot;ui/numeric_text_hint_&quot;+GetProperty(&quot;ui/translation_language_code&quot;,&quot;en&quot;)+&quot;_0&quot;+If(NTEState==&quot;xUpperCase&quot;,&quot;&quot;,&quot;_lower&quot;), &quot;0\nspace&quot;)" Sym="ZOMHW-4425">
-                  <Action Ref="4212" Name="&quot;REM Show NTE number p..."/>
+                  <Action Ref="4219" Name="&quot;REM Show NTE number p..."/>
                  </Action>
                 </Action>
                </Action>
               </Action>
              </Panel>
             </Item>
-            <Theme Ref="4238" Name="Keypad Button Theme"/>
-            <Listener Ref="4240" Name=""/>
-            <Listener Ref="4248" Name=""/>
+            <Theme Ref="4245" Name="Keypad Button Theme"/>
+            <Listener Ref="4247" Name=""/>
+            <Listener Ref="4255" Name=""/>
            </Panel>
           </Panel>
          </Panel>
@@ -12951,11 +12951,11 @@
         <Item Name="Clear" Sym="ZOMHW-4221">
          <Action Name="&quot;REM Clear Text Entry&quot;" Sym="ZOMHW-4226">
           <Action Name="x = 0" Sym="ZOMHW-4215">
-           <Conditional ID="4468" Name="x &lt; 50" Sym="ZOMHW-4273">
+           <Conditional ID="4475" Name="x &lt; 50" Sym="ZOMHW-4273">
             <Branch Name="true" Sym="ZOMHW-4250">
              <Action Name="Keystroke(&quot;Backspace&quot;)" Sym="ZOMHW-4223">
               <Action Name="x = x + 1" Sym="ZOMHW-4217">
-               <Conditional Ref="4468" Name="x &lt; 50"/>
+               <Conditional Ref="4475" Name="x &lt; 50"/>
               </Action>
              </Action>
             </Branch>
@@ -13134,7 +13134,7 @@
                 <Conditional Name="numwrappedItems &gt; 0" Sym="PHOENIX3-491">
                  <Branch Name="true" Sym="PHOENIX3-520">
                   <Action Name="&quot;REM Wrapping! use 2 scrollbars&quot;" Sym="PHOENIX3-497">
-                   <Action Ref="4516" Name="&quot;REM calc simple scrol..."/>
+                   <Action Ref="4523" Name="&quot;REM calc simple scrol..."/>
                    <Action Name="&quot;REM calc wrapped scrollbar&quot;" Sym="PHOENIX3-492">
                     <Action Name="&quot;REM size=remainder items &quot;" Sym="PHOENIX3-501"/>
                     <Action Name="size2 = Min(NumRowsPerPage*NumManagedCols+0.0001,(numwrappedItems+0.0001)) / (NumRows)" Sym="PHOENIX3-516">
@@ -13170,7 +13170,7 @@
                   </Action>
                  </Branch>
                  <Branch Name="else" Sym="PHOENIX3-493">
-                  <Action ID="4516" Name="&quot;REM calc simple scrollbar&quot;" Sym="PHOENIX3-488">
+                  <Action ID="4523" Name="&quot;REM calc simple scrollbar&quot;" Sym="PHOENIX3-488">
                    <Action Name="&quot;REM size=displayed items / total items (Min value 0.01)&quot;" Sym="PHOENIX3-505">
                     <Action Name="size = Min(NumRowsPerPage*NumManagedCols+0.0001,(NumRows-((VScrollIndex-1)*NumManagedCols)+0.0001)) / (NumRows)" Sym="PHOENIX3-521">
                      <Action Name="size = Max(0.03,size) * 1.0" Sym="PHOENIX3-511">
@@ -13212,7 +13212,7 @@
                </Action>
               </Branch>
               <Branch Name="else" Sym="PHOENIX3-518">
-               <Action Ref="4516" Name="&quot;REM calc simple scrol..."/>
+               <Action Ref="4523" Name="&quot;REM calc simple scrol..."/>
               </Branch>
              </Conditional>
             </Action>
@@ -13237,11 +13237,11 @@
             <MouseTransparency>false</MouseTransparency>
             <Listener Name="" Sym="PHOENIX3-529">
              <ListenerEvent>MouseDrag</ListenerEvent>
-             <Action Ref="4537" Name="&quot;REM Scroll to positio..."/>
+             <Action Ref="4544" Name="&quot;REM Scroll to positio..."/>
             </Listener>
             <Listener Name="" Sym="PHOENIX3-528">
              <ListenerEvent>MouseClick</ListenerEvent>
-             <Action ID="4537" Name="&quot;REM Scroll to position of mouse action&quot;" Sym="PHOENIX3-525">
+             <Action ID="4544" Name="&quot;REM Scroll to position of mouse action&quot;" Sym="PHOENIX3-525">
               <Action Name="SetScrollPosition( -1.0, RelativeY )" Sym="PHOENIX3-530"/>
              </Action>
             </Listener>
@@ -13281,7 +13281,7 @@
       </Action>
      </Hook>
     </OptionsMenu>
-    <OptionsMenu ID="4551" Name="Fanart Manager" Sym="UVJWK-863">
+    <OptionsMenu ID="4558" Name="Fanart Manager" Sym="UVJWK-863">
      <Attribute Name="MediaItem" Sym="UVJWK-864">
       <Value>MediaItem</Value>
      </Attribute>
@@ -13293,7 +13293,7 @@
       <IgnoreThemeProps>false</IgnoreThemeProps>
       <BackgroundComponent>false</BackgroundComponent>
       <MouseTransparency>false</MouseTransparency>
-      <Theme Ref="3520" Name="Option Menu Button Theme"/>
+      <Theme Ref="3527" Name="Option Menu Button Theme"/>
       <Panel Name="Untitled" Sym="UVJWK-874">
        <FixedWidth>1.0</FixedWidth>
        <WrapHNav>false</WrapHNav>
@@ -13301,7 +13301,7 @@
        <IgnoreThemeProps>false</IgnoreThemeProps>
        <BackgroundComponent>false</BackgroundComponent>
        <MouseTransparency>false</MouseTransparency>
-       <Shape Ref="3509" Name="White Alpha Mask"/>
+       <Shape Ref="3516" Name="White Alpha Mask"/>
        <Action Name="&quot;MANAGE FANART&quot;" Sym="UVJWK-876">
         <Text Name="" Sym="UVJWK-877">
          <Theme Ref="469" Name="Text Center Justified ..."/>
@@ -13345,7 +13345,7 @@
               </Action>
              </Panel>
              <Action Name="artifact = &quot;Background&quot;" Sym="UVJWK-893">
-              <OptionsMenu ID="4570" Name="Fanart Options" Sym="PHNX-261796">
+              <OptionsMenu ID="4577" Name="Fanart Options" Sym="PHNX-261796">
                <Theme Ref="1643" Name="New Dialog Theme"/>
                <Panel Name="MenuContainer" Sym="PHNX-261797">
                 <Layout>Vertical</Layout>
@@ -13378,7 +13378,7 @@
                  <MouseTransparency>false</MouseTransparency>
                  <Action Name="&quot;Fanart Options&quot;" Sym="PHNX-261801">
                   <Text Name="" Sym="PHNX-261802">
-                   <Theme Ref="3635" Name="Text Center Justified ..."/>
+                   <Theme Ref="3642" Name="Text Center Justified ..."/>
                   </Text>
                  </Action>
                 </Panel>
@@ -13404,30 +13404,30 @@
                   <Conditional Name="artifact" Sym="PHNX-261847">
                    <Branch Name="&quot;Poster&quot;" Sym="PHNX-261848">
                     <Action Name="phoenix_fanart_SetFanartPoster(MediaItem, theArtifact)" Sym="PHNX-261851">
-                     <Action Ref="4584" Name="CloseOptionsMenu()"/>
+                     <Action Ref="4591" Name="CloseOptionsMenu()"/>
                     </Action>
                    </Branch>
                    <Branch Name="&quot;Background&quot;" Sym="PHNX-261849">
                     <Action Name="phoenix_fanart_SetFanartBackground(MediaItem, theArtifact)" Sym="PHNX-261806">
-                     <Action ID="4584" Name="CloseOptionsMenu()" Sym="PHNX-261808"/>
+                     <Action ID="4591" Name="CloseOptionsMenu()" Sym="PHNX-261808"/>
                     </Action>
                    </Branch>
                    <Branch Name="&quot;Banner&quot;" Sym="PHNX-261850">
                     <Action Name="phoenix_fanart_SetFanartBanner(MediaItem, theArtifact)" Sym="PHNX-261854">
-                     <Action Ref="4584" Name="CloseOptionsMenu()"/>
+                     <Action Ref="4591" Name="CloseOptionsMenu()"/>
                     </Action>
                    </Branch>
                   </Conditional>
                  </Item>
                  <Conditional Name="true" Sym="PHNX-261872">
                   <Branch Name="phoenix_media_IsMediaType(MediaItem, &quot;TV&quot;)" Sym="PHNX-261873">
-                   <Item ID="4591" Name="Set as default for all" Sym="PHNX-261816">
+                   <Item ID="4598" Name="Set as default for all" Sym="PHNX-261816">
                     <Action Name="&quot;REM get all the items and set the background for any that match the title exactly&quot;" Sym="PHNX-261819">
                      <Action Name="theTitle = phoenix_media_GetTitle(MediaItem)" Sym="PHNX-261825">
                       <Action Name="tempFolder = phoenix_umb_CreateView( &quot;phoenix.view.util.allsagefanart&quot; )" Sym="PHNX-261820">
                        <Action Name="tempChildren = phoenix_media_GetChildren(tempFolder) " Sym="PHNX-261821">
                         <Action Name="loop = 0" Sym="PHNX-261822">
-                         <Conditional ID="4597" Name="loop &lt; Size(tempChildren)" Sym="PHNX-261823">
+                         <Conditional ID="4604" Name="loop &lt; Size(tempChildren)" Sym="PHNX-261823">
                           <Branch Name="true" Sym="PHNX-261824">
                            <Conditional Name="phoenix_media_GetTitle(GetElement(tempChildren, loop))" Sym="PHNX-261826">
                             <Branch Name="theTitle" Sym="PHNX-261827">
@@ -13442,11 +13442,11 @@
                                <Action Name="phoenix_fanart_SetFanartBanner(GetElement(tempChildren, loop), theArtifact)" Sym="PHNX-261861"/>
                               </Branch>
                              </Conditional>
-                             <Action Ref="4608" Name="loop = loop + 1"/>
+                             <Action Ref="4615" Name="loop = loop + 1"/>
                             </Branch>
                             <Branch Name="else" Sym="PHNX-261829">
-                             <Action ID="4608" Name="loop = loop + 1" Sym="PHNX-261830">
-                              <Conditional Ref="4597" Name="loop &lt; Size(tempChildr..."/>
+                             <Action ID="4615" Name="loop = loop + 1" Sym="PHNX-261830">
+                              <Conditional Ref="4604" Name="loop &lt; Size(tempChildr..."/>
                              </Action>
                             </Branch>
                            </Conditional>
@@ -13466,7 +13466,7 @@
                    </Item>
                   </Branch>
                   <Branch Name="phoenix_media_IsMediaType(MediaItem, &quot;EPG_AIRING&quot;)" Sym="PHNX-261874">
-                   <Item Ref="4591" Name="Set as default for all"/>
+                   <Item Ref="4598" Name="Set as default for all"/>
                   </Branch>
                  </Conditional>
                  <Item Name="Delete" Sym="PHNX-261811">
@@ -13515,7 +13515,7 @@
           </Table>
          </Action>
         </OptionsMenu>
-        <OptionsMenu Ref="4551" Name="Fanart Manager"/>
+        <OptionsMenu Ref="4558" Name="Fanart Manager"/>
        </Action>
       </Item>
       <Item Name="Posters" Sym="UVJWK-867">
@@ -13555,19 +13555,19 @@
               </Action>
              </Panel>
              <Action Name="artifact = &quot;Poster&quot;" Sym="UVJWK-905">
-              <OptionsMenu Ref="4570" Name="Fanart Options"/>
+              <OptionsMenu Ref="4577" Name="Fanart Options"/>
              </Action>
             </Item>
            </TableComponent>
           </Table>
          </Action>
         </OptionsMenu>
-        <OptionsMenu Ref="4551" Name="Fanart Manager"/>
+        <OptionsMenu Ref="4558" Name="Fanart Manager"/>
        </Action>
       </Item>
       <Conditional Name="true" Sym="UVJWK-868">
        <Branch Name="phoenix_media_IsMediaType(MediaItem, &quot;TV&quot;)" Sym="UVJWK-869">
-        <Item ID="4651" Name="Banners" Sym="UVJWK-871">
+        <Item ID="4658" Name="Banners" Sym="UVJWK-871">
          <Action Name="CloseOptionsMenu()" Sym="UVJWK-906">
           <OptionsMenu Name="Posters" Sym="UVJWK-907">
            <Attribute Name="MediaItem" Sym="UVJWK-908">
@@ -13611,19 +13611,19 @@
                 </Action>
                </Panel>
                <Action Name="artifact = &quot;Banner&quot;" Sym="UVJWK-917">
-                <OptionsMenu Ref="4570" Name="Fanart Options"/>
+                <OptionsMenu Ref="4577" Name="Fanart Options"/>
                </Action>
               </Item>
              </TableComponent>
             </Table>
            </Action>
           </OptionsMenu>
-          <OptionsMenu Ref="4551" Name="Fanart Manager"/>
+          <OptionsMenu Ref="4558" Name="Fanart Manager"/>
          </Action>
         </Item>
        </Branch>
        <Branch Name="phoenix_media_IsMediaType(MediaItem, &quot;EPG_AIRING&quot;)" Sym="UVJWK-870">
-        <Item Ref="4651" Name="Banners"/>
+        <Item Ref="4658" Name="Banners"/>
        </Branch>
       </Conditional>
      </Panel>
@@ -13663,7 +13663,7 @@
       </Action>
      </Action>
     </OptionsMenu>
-    <OptionsMenu ID="4683" Name="Single Menu Editor" Sym="VFBWX-6046">
+    <OptionsMenu ID="4690" Name="Single Menu Editor" Sym="VFBWX-6046">
      <Theme Ref="1421" Name="PLite Menu"/>
      <Attribute Name="Parent" Sym="VFBWX-5911">
       <Value>phoenix_menu_GetMenu(Menu)</Value>
@@ -13877,11 +13877,11 @@
         <Item Name="Clear" Sym="VFBWX-6341">
          <Action Name="&quot;REM Clear Text Entry&quot;" Sym="VFBWX-5977">
           <Action Name="x = 0" Sym="VFBWX-6257">
-           <Conditional ID="4724" Name="x &lt; 50" Sym="VFBWX-6263">
+           <Conditional ID="4731" Name="x &lt; 50" Sym="VFBWX-6263">
             <Branch Name="true" Sym="VFBWX-6303">
              <Action Name="Keystroke(&quot;Backspace&quot;)" Sym="VFBWX-5978">
               <Action Name="x = x + 1" Sym="VFBWX-5992">
-               <Conditional Ref="4724" Name="x &lt; 50"/>
+               <Conditional Ref="4731" Name="x &lt; 50"/>
               </Action>
              </Action>
             </Branch>
@@ -13949,7 +13949,7 @@
             <Item Name="1" Sym="VFBWX-6094">
              <IgnoreThemeProps>false</IgnoreThemeProps>
              <Action Name="Number=&quot;1&quot;" Sym="VFBWX-6156">
-              <Action Ref="4741" Name="Keystroke(Number)"/>
+              <Action Ref="4748" Name="Keystroke(Number)"/>
              </Action>
              <Panel Name="NumberKey" Sym="VFBWX-5932">
               <Layout>VerticalGrid</Layout>
@@ -13964,14 +13964,14 @@
               <IgnoreThemeProps>false</IgnoreThemeProps>
               <Action Name="&quot;REM Show NTE button for 1&quot;" Sym="VFBWX-6260">
                <Action Name="NTEOffText = &quot;1&quot;" Sym="VFBWX-6243">
-                <Action Ref="4745" Name="NTEOffText"/>
+                <Action Ref="4752" Name="NTEOffText"/>
                </Action>
               </Action>
              </Panel>
             </Item>
             <Item Name="2" Sym="VFBWX-6230">
              <Action Name="Number=&quot;2&quot;" Sym="VFBWX-6049">
-              <Action Ref="4741" Name="Keystroke(Number)"/>
+              <Action Ref="4748" Name="Keystroke(Number)"/>
              </Action>
              <Panel Name="NumberKey" Sym="VFBWX-6030">
               <Layout>VerticalGrid</Layout>
@@ -13986,14 +13986,14 @@
               <IgnoreThemeProps>false</IgnoreThemeProps>
               <Action Name="&quot;REM Show NTE button for 2&quot;" Sym="VFBWX-6186">
                <Action Name="NTEOffText = &quot;2&quot;" Sym="VFBWX-6307">
-                <Action Ref="4745" Name="NTEOffText"/>
+                <Action Ref="4752" Name="NTEOffText"/>
                </Action>
               </Action>
              </Panel>
             </Item>
             <Item Name="3" Sym="VFBWX-5943">
              <Action Name="Number=&quot;3&quot;" Sym="VFBWX-6152">
-              <Action Ref="4741" Name="Keystroke(Number)"/>
+              <Action Ref="4748" Name="Keystroke(Number)"/>
              </Action>
              <Panel Name="NumberKey" Sym="VFBWX-6012">
               <Layout>VerticalGrid</Layout>
@@ -14008,12 +14008,12 @@
               <IgnoreThemeProps>false</IgnoreThemeProps>
               <Action Name="&quot;REM Show NTE button for 3&quot;" Sym="VFBWX-6282">
                <Action Name="NTEOffText = &quot;3&quot;" Sym="VFBWX-6264">
-                <Action Ref="4745" Name="NTEOffText"/>
+                <Action Ref="4752" Name="NTEOffText"/>
                </Action>
               </Action>
              </Panel>
             </Item>
-            <Theme Ref="4756" Name="NTE Button Theme"/>
+            <Theme Ref="4763" Name="NTE Button Theme"/>
            </Panel>
            <Panel Name="456" Sym="VFBWX-6122">
             <Layout>HorizontalGrid</Layout>
@@ -14025,7 +14025,7 @@
             <BackgroundComponent>false</BackgroundComponent>
             <Item Name="4" Sym="VFBWX-6052">
              <Action Name="Number=&quot;4&quot;" Sym="VFBWX-5990">
-              <Action ID="4741" Name="Keystroke(Number)" Sym="VFBWX-6289">
+              <Action ID="4748" Name="Keystroke(Number)" Sym="VFBWX-6289">
                <Action Name="&quot;REM Clear LastNumber input w/o a refresh&quot;" Sym="VFBWX-6207">
                 <Action Name="LastNumber = null" Sym="VFBWX-6089"/>
                </Action>
@@ -14044,14 +14044,14 @@
               <IgnoreThemeProps>false</IgnoreThemeProps>
               <Action Name="&quot;REM Show NTE button for 4&quot;" Sym="VFBWX-6305">
                <Action Name="NTEOffText = &quot;4&quot;" Sym="VFBWX-6184">
-                <Action Ref="4745" Name="NTEOffText"/>
+                <Action Ref="4752" Name="NTEOffText"/>
                </Action>
               </Action>
              </Panel>
             </Item>
             <Item Name="5" Sym="VFBWX-6390">
              <Action Name="Number=&quot;5&quot;" Sym="VFBWX-6382">
-              <Action Ref="4741" Name="Keystroke(Number)"/>
+              <Action Ref="4748" Name="Keystroke(Number)"/>
              </Action>
              <Panel Name="NumberKey" Sym="VFBWX-6120">
               <Layout>VerticalGrid</Layout>
@@ -14066,14 +14066,14 @@
               <IgnoreThemeProps>false</IgnoreThemeProps>
               <Action Name="&quot;REM Show NTE button for 5&quot;" Sym="VFBWX-5960">
                <Action Name="NTEOffText = &quot;5&quot;" Sym="VFBWX-6051">
-                <Action Ref="4745" Name="NTEOffText"/>
+                <Action Ref="4752" Name="NTEOffText"/>
                </Action>
               </Action>
              </Panel>
             </Item>
             <Item Name="6" Sym="VFBWX-6190">
              <Action Name="Number=&quot;6&quot;" Sym="VFBWX-6280">
-              <Action Ref="4741" Name="Keystroke(Number)"/>
+              <Action Ref="4748" Name="Keystroke(Number)"/>
              </Action>
              <Panel Name="NumberKey" Sym="VFBWX-6357">
               <Layout>VerticalGrid</Layout>
@@ -14088,12 +14088,12 @@
               <IgnoreThemeProps>false</IgnoreThemeProps>
               <Action Name="&quot;REM Show NTE button for 6&quot;" Sym="VFBWX-5958">
                <Action Name="NTEOffText = &quot;6&quot;" Sym="VFBWX-6334">
-                <Action Ref="4745" Name="NTEOffText"/>
+                <Action Ref="4752" Name="NTEOffText"/>
                </Action>
               </Action>
              </Panel>
             </Item>
-            <Theme ID="4756" Name="NTE Button Theme" Sym="VFBWX-6374">
+            <Theme ID="4763" Name="NTE Button Theme" Sym="VFBWX-6374">
              <Item Name="ShapeItemHighlight" Sym="VFBWX-6072">
               <Insets>.01</Insets>
               <IgnoreThemeProps>false</IgnoreThemeProps>
@@ -14138,7 +14138,7 @@
             <BackgroundComponent>false</BackgroundComponent>
             <Item Name="7" Sym="VFBWX-6277">
              <Action Name="Number=&quot;7&quot;" Sym="VFBWX-6253">
-              <Action Ref="4741" Name="Keystroke(Number)"/>
+              <Action Ref="4748" Name="Keystroke(Number)"/>
              </Action>
              <Panel Name="NumberKey" Sym="VFBWX-6238">
               <Layout>VerticalGrid</Layout>
@@ -14153,14 +14153,14 @@
               <IgnoreThemeProps>false</IgnoreThemeProps>
               <Action Name="&quot;REM Show NTE button for 7&quot;" Sym="VFBWX-5898">
                <Action Name="NTEOffText = &quot;7&quot;" Sym="VFBWX-6136">
-                <Action Ref="4745" Name="NTEOffText"/>
+                <Action Ref="4752" Name="NTEOffText"/>
                </Action>
               </Action>
              </Panel>
             </Item>
             <Item Name="8" Sym="VFBWX-6145">
              <Action Name="Number=&quot;8&quot;" Sym="VFBWX-6157">
-              <Action Ref="4741" Name="Keystroke(Number)"/>
+              <Action Ref="4748" Name="Keystroke(Number)"/>
              </Action>
              <Panel Name="NumberKey" Sym="VFBWX-5894">
               <Layout>VerticalGrid</Layout>
@@ -14175,14 +14175,14 @@
               <IgnoreThemeProps>false</IgnoreThemeProps>
               <Action Name="&quot;REM Show NTE button for 8&quot;" Sym="VFBWX-6237">
                <Action Name="NTEOffText = &quot;8&quot;" Sym="VFBWX-6091">
-                <Action Ref="4745" Name="NTEOffText"/>
+                <Action Ref="4752" Name="NTEOffText"/>
                </Action>
               </Action>
              </Panel>
             </Item>
             <Item Name="9" Sym="VFBWX-5921">
              <Action Name="Number=&quot;9&quot;" Sym="VFBWX-6169">
-              <Action Ref="4741" Name="Keystroke(Number)"/>
+              <Action Ref="4748" Name="Keystroke(Number)"/>
              </Action>
              <Panel Name="NumberKey" Sym="VFBWX-6034">
               <Layout>VerticalGrid</Layout>
@@ -14197,7 +14197,7 @@
               <IgnoreThemeProps>false</IgnoreThemeProps>
               <Action Name="&quot;REM Show NTE button for 9&quot;" Sym="VFBWX-5949">
                <Action Name="NTEOffText = &quot;9&quot;" Sym="VFBWX-5923">
-                <Action ID="4745" Name="NTEOffText" Sym="VFBWX-5940">
+                <Action ID="4752" Name="NTEOffText" Sym="VFBWX-5940">
                  <Text Name="" Sym="VFBWX-6298">
                   <AutosizeText>false</AutosizeText>
                   <WrapText>false</WrapText>
@@ -14211,7 +14211,7 @@
               </Action>
              </Panel>
             </Item>
-            <Theme Ref="4756" Name="NTE Button Theme"/>
+            <Theme Ref="4763" Name="NTE Button Theme"/>
            </Panel>
            <Panel Name="blank0blank" Sym="VFBWX-6208">
             <Layout>HorizontalGrid</Layout>
@@ -14237,7 +14237,7 @@
             </Item>
             <Item Name="0" Sym="VFBWX-6037">
              <Action Name="Number=&quot;0&quot;" Sym="VFBWX-6262">
-              <Action Ref="4741" Name="Keystroke(Number)"/>
+              <Action Ref="4748" Name="Keystroke(Number)"/>
              </Action>
              <Panel Name="NumberKey" Sym="VFBWX-6147">
               <Layout>VerticalGrid</Layout>
@@ -14252,7 +14252,7 @@
               <IgnoreThemeProps>false</IgnoreThemeProps>
               <Action Name="&quot;REM Show NTE button for 0&quot;" Sym="VFBWX-6293">
                <Action Name="NTEOffText = &quot;0&quot;" Sym="VFBWX-6043">
-                <Action Ref="4745" Name="NTEOffText"/>
+                <Action Ref="4752" Name="NTEOffText"/>
                </Action>
               </Action>
              </Panel>
@@ -14271,7 +14271,7 @@
               <IgnoreThemeProps>false</IgnoreThemeProps>
              </Panel>
             </Item>
-            <Theme Ref="4756" Name="NTE Button Theme"/>
+            <Theme Ref="4763" Name="NTE Button Theme"/>
            </Panel>
           </Panel>
          </Panel>
@@ -14663,13 +14663,13 @@
       </Action>
      </Action>
      <Action Name="Menu = &quot;plite.menu&quot;" Sym="VFBWX-6395">
-      <OptionsMenu Ref="4683" Name="Single Menu Editor"/>
+      <OptionsMenu Ref="4690" Name="Single Menu Editor"/>
      </Action>
     </Action>
    </Action>
   </Conditional>
  </Menu>
- <Menu ID="4980" Name="Default Menu Theme" Sym="NRCPU-719">
+ <Menu ID="4987" Name="Default Menu Theme" Sym="NRCPU-719">
   <Panel Name="MenuContainer" Sym="NRCPU-720">
    <FixedWidth>1.0</FixedWidth>
    <FixedHeight>1.0</FixedHeight>
@@ -14709,14 +14709,14 @@
     <Conditional Name="CustomBackground != null" Sym="MHCWJ-1979">
      <Branch Name="true" Sym="MHCWJ-1981">
       <Action Name="CustomBackground" Sym="MHCWJ-1980">
-       <Image Ref="4993" Name=""/>
+       <Image Ref="5000" Name=""/>
       </Action>
      </Branch>
      <Branch Name="else" Sym="MHCWJ-1982">
       <Conditional Name="GetProperty(&quot;plite/home/weatherBackgrounds&quot;, false)" Sym="UVJWK-700">
        <Branch Name="true" Sym="UVJWK-701">
         <Action Name="gWeatherBackground" Sym="UVJWK-703">
-         <Image ID="4993" Name="" Sym="NRCPU-738">
+         <Image ID="5000" Name="" Sym="NRCPU-738">
           <AnchorY>1.0</AnchorY>
           <FixedWidth>1.0</FixedWidth>
           <FixedHeight>1.0</FixedHeight>
@@ -14745,7 +14745,7 @@
        </Branch>
        <Branch Name="false" Sym="UVJWK-702">
         <Action Name="gUserBackground" Sym="UVJWK-704">
-         <Image Ref="4993" Name=""/>
+         <Image Ref="5000" Name=""/>
         </Action>
        </Branch>
       </Conditional>
@@ -14768,8 +14768,8 @@
       <BackgroundComponent>false</BackgroundComponent>
       <ZOffset>=If(IsOptionsMenuOpen(), 0, 1)</ZOffset>
       <MouseTransparency>false</MouseTransparency>
-      <Panel Ref="5005" Name="Clock"/>
-      <Conditional Ref="5006" Name="currentWeather != null"/>
+      <Panel Ref="5012" Name="Clock"/>
+      <Conditional Ref="5013" Name="currentWeather != null"/>
       <Theme Ref="194" Name="Text Left Justified Me..."/>
       <Effect Name="" Sym="VFBWX-3069">
        <BackgroundAlpha>1.0</BackgroundAlpha>
@@ -14813,7 +14813,7 @@
        </Image>
       </Action>
       <Action Name="menuName = GetWidgetName(GetCurrentMenuWidget())" Sym="PHOENIX3-804">
-       <Panel ID="5005" Name="Clock" Sym="NRCPU-1310">
+       <Panel ID="5012" Name="Clock" Sym="NRCPU-1310">
         <Layout>Horizontal</Layout>
         <FixedHeight>1.0</FixedHeight>
         <PadX>5</PadX>
@@ -14866,7 +14866,7 @@
          </Text>
         </Panel>
        </Panel>
-       <Conditional ID="5006" Name="currentWeather != null" Sym="NRCPU-1385">
+       <Conditional ID="5013" Name="currentWeather != null" Sym="NRCPU-1385">
         <Panel Name="WeatherWidgetBar" Sym="NRCPU-1384">
          <Layout>Horizontal</Layout>
          <WrapHNav>false</WrapHNav>
@@ -15065,7 +15065,7 @@
    <OptionsMenu Ref="1388" Name="NavigationMenu"/>
   </Listener>
  </Menu>
- <Menu ID="5073" Name="System Info" Sym="PHNX2-4803">
+ <Menu ID="5080" Name="System Info" Sym="PHNX2-4803">
   <Theme Ref="456" Name="Default Menu Theme"/>
   <Panel Name="MenuContainer" Sym="PHNX2-4804">
    <Layout>HorizontalFill</Layout>
@@ -15145,10 +15145,10 @@
             </Action>
            </Action>
            <Hook Name="FocusGained" Sym="ZOMHW-630794">
-            <Action ID="5100" Name="&quot;REM Set info area variables.&quot;" Sym="ZOMHW-1207265"/>
+            <Action ID="5107" Name="&quot;REM Set info area variables.&quot;" Sym="ZOMHW-1207265"/>
            </Hook>
            <Hook Name="FocusLost" Sym="ZOMHW-630771">
-            <Action ID="5102" Name="&quot;REM Clear info area variables.&quot;" Sym="ZOMHW-1207268">
+            <Action ID="5109" Name="&quot;REM Clear info area variables.&quot;" Sym="ZOMHW-1207268">
              <Action Name="SelectedSysMsg = null" Sym="ZOMHW-1207270"/>
             </Action>
            </Hook>
@@ -15161,10 +15161,10 @@
            <Value>"XDelete All"</Value>
           </Attribute>
           <Hook Name="FocusGained" Sym="ZOMHW-630769">
-           <Action Ref="5100" Name="&quot;REM Set info area var..."/>
+           <Action Ref="5107" Name="&quot;REM Set info area var..."/>
           </Hook>
           <Hook Name="FocusLost" Sym="ZOMHW-630779">
-           <Action Ref="5102" Name="&quot;REM Clear info area v..."/>
+           <Action Ref="5109" Name="&quot;REM Clear info area v..."/>
           </Hook>
           <Action Name="ConfMessage = &quot;Do you want to delete all system messages?&quot;" Sym="PHNX2-4829">
            <Action Name="YesButtonName = &quot;Yes&quot;" Sym="PHNX2-4830">
@@ -15328,7 +15328,7 @@
                 </Action>
                </Listener>
                <Hook Name="FocusLost" Sym="ZOMHW-630668">
-                <Action Ref="5102" Name="&quot;REM Clear info area v..."/>
+                <Action Ref="5109" Name="&quot;REM Clear info area v..."/>
                </Hook>
                <Hook Name="FocusGained" Sym="ZOMHW-630677">
                 <Action Name="&quot;REM Set info area variables.&quot;" Sym="ZOMHW-630482">
@@ -15390,12 +15390,12 @@
               <Conditional Name="RepeatCount &gt; 1" Sym="PHNX-256371">
                <Branch Name="true" Sym="PHNX-256372">
                 <Action Name="RepeatCount + &quot; Messages. Last Occurrence: &quot; + EndTimeText" Sym="PHNX-256373">
-                 <Text ID="5173" Name="" Sym="PHNX-256374"/>
+                 <Text ID="5180" Name="" Sym="PHNX-256374"/>
                 </Action>
                </Branch>
                <Branch Name="else" Sym="PHNX-256375">
                 <Action Name="&quot;Last Occurrence: &quot; + EndTimeText" Sym="PHNX-256376">
-                 <Text Ref="5173" Name=""/>
+                 <Text Ref="5180" Name=""/>
                 </Action>
                </Branch>
               </Conditional>
@@ -15456,7 +15456,7 @@
          <FixedWidth>1.0</FixedWidth>
          <TextAlignment>0.49</TextAlignment>
          <IgnoreThemeProps>true</IgnoreThemeProps>
-         <Theme Ref="3635" Name="Text Center Justified ..."/>
+         <Theme Ref="3642" Name="Text Center Justified ..."/>
         </Text>
        </Action>
       </Conditional>
@@ -15474,14 +15474,14 @@
         <Conditional Name="AlertLevel &lt; Size(AlertLevelText)" Sym="ZOMHW-630179">
          <Branch Name="true" Sym="ZOMHW-629835">
           <Action Name="InfoText = GetElement(AlertLevelText,AlertLevel)" Sym="ZOMHW-629904">
-           <Action ID="5197" Name="InfoText = &quot;Global Alert Level: &quot; + InfoText" Sym="ZOMHW-630171">
+           <Action ID="5204" Name="InfoText = &quot;Global Alert Level: &quot; + InfoText" Sym="ZOMHW-630171">
             <Text Name="" Sym="ZOMHW-629923"/>
            </Action>
           </Action>
          </Branch>
          <Branch Name="else" Sym="ZOMHW-630130">
           <Action Name="InfoText = AlertLevel+&quot;&quot;" Sym="ZOMHW-629897">
-           <Action Ref="5197" Name="InfoText = &quot;Global Ale..."/>
+           <Action Ref="5204" Name="InfoText = &quot;Global Ale..."/>
           </Action>
          </Branch>
         </Conditional>
@@ -15505,12 +15505,12 @@
       <Action Name="&quot;REM Display the extender firmware version number.&quot;" Sym="ZOMHW-629981">
        <Conditional Name="GetRemoteUIType()" Sym="ZOMHW-630131">
         <Branch Name="LocalizeString(&quot;HD_Media_Extender&quot;)" Sym="ZOMHW-629778">
-         <Action ID="5214" Name="InfoText = &quot;Extender firmware version: &quot; + GetRemoteClientVersion()" Sym="ZOMHW-630253">
+         <Action ID="5221" Name="InfoText = &quot;Extender firmware version: &quot; + GetRemoteClientVersion()" Sym="ZOMHW-630253">
           <Text Name="" Sym="ZOMHW-629884"/>
          </Action>
         </Branch>
         <Branch Name="LocalizeString(&quot;HD_Media_Player&quot;)" Sym="ZOMHW-630082">
-         <Action Ref="5214" Name="InfoText = &quot;Extender f..."/>
+         <Action Ref="5221" Name="InfoText = &quot;Extender f..."/>
         </Branch>
        </Conditional>
       </Action>
@@ -15649,7 +15649,7 @@
         <FixedWidth>1.0</FixedWidth>
         <TextAlignment>0.49</TextAlignment>
         <IgnoreThemeProps>true</IgnoreThemeProps>
-        <Theme Ref="3635" Name="Text Center Justified ..."/>
+        <Theme Ref="3642" Name="Text Center Justified ..."/>
        </Text>
       </Action>
       <Action Name="InfoText = &quot;Country: &quot; + GetCountry()" Sym="ZOMHW-630054">
@@ -15693,7 +15693,7 @@
                   <WrapHNav>false</WrapHNav>
                   <WrapVNav>false</WrapVNav>
                   <IgnoreThemeProps>false</IgnoreThemeProps>
-                  <Action ID="5319" Name="IsConfigured = If(Size(DataIntersection(ConfiguredDeviceList,CaptureDevice))&gt;0,true,false)" Sym="ZOMHW-629886">
+                  <Action ID="5326" Name="IsConfigured = If(Size(DataIntersection(ConfiguredDeviceList,CaptureDevice))&gt;0,true,false)" Sym="ZOMHW-629886">
                    <Action Name="InfoText = &quot;Capture Device &quot; + TableRow + If(IsConfigured,&quot;*&quot;,&quot;&quot;) + &quot;: &quot;+ CaptureDevice" Sym="ZOMHW-629892">
                     <Text Name="" Sym="ZOMHW-630173">
                      <AnchorX>0.0</AnchorX>
@@ -15714,14 +15714,14 @@
              </Branch>
              <Branch Name="true" Sym="ZOMHW-630209">
               <Action Name="item = 0" Sym="ZOMHW-629992">
-               <Conditional ID="5324" Name="item &lt; Size(DeviceList)" Sym="ZOMHW-630105">
+               <Conditional ID="5331" Name="item &lt; Size(DeviceList)" Sym="ZOMHW-630105">
                 <Branch Name="true" Sym="ZOMHW-630203">
                  <Action Name="CaptureDevice = GetElement(DeviceList,item)" Sym="ZOMHW-630032">
                   <Action Name="TableRow = item + 1" Sym="ZOMHW-630223">
-                   <Action Ref="5319" Name="IsConfigured = If(Size..."/>
+                   <Action Ref="5326" Name="IsConfigured = If(Size..."/>
                   </Action>
                   <Action Name="item = item + 1" Sym="ZOMHW-629910">
-                   <Conditional Ref="5324" Name="item &lt; Size(DeviceList)"/>
+                   <Conditional Ref="5331" Name="item &lt; Size(DeviceList)"/>
                   </Action>
                  </Action>
                 </Branch>
@@ -15747,7 +15747,7 @@
                   <WrapHNav>false</WrapHNav>
                   <WrapVNav>false</WrapVNav>
                   <IgnoreThemeProps>false</IgnoreThemeProps>
-                  <Action ID="5337" Name="InfoText = GetElement(ConfiguredInputName, CaptureDeviceInputIndex)" Sym="ZOMHW-630228">
+                  <Action ID="5344" Name="InfoText = GetElement(ConfiguredInputName, CaptureDeviceInputIndex)" Sym="ZOMHW-630228">
                    <Text Name="" Sym="ZOMHW-629947">
                     <AnchorX>0.0</AnchorX>
                     <Insets>0.005,.03,0.005,0.005</Insets>
@@ -15759,7 +15759,7 @@
                     <IgnoreThemeProps>true</IgnoreThemeProps>
                    </Text>
                   </Action>
-                  <Action ID="5339" Name="InfoText = GetElement(ConfiguredInputDetails, CaptureDeviceInputIndex)" Sym="ZOMHW-629918">
+                  <Action ID="5346" Name="InfoText = GetElement(ConfiguredInputDetails, CaptureDeviceInputIndex)" Sym="ZOMHW-629918">
                    <Text Name="" Sym="ZOMHW-630115">
                     <AnchorX>0.0</AnchorX>
                     <Insets>0.005,.05,0.005,0.005</Insets>
@@ -15778,15 +15778,15 @@
              </Branch>
              <Branch Name="true" Sym="ZOMHW-629894">
               <Action Name="item = 0" Sym="ZOMHW-630084">
-               <Conditional ID="5343" Name="item &lt; Size(ConfiguredInputIndex)" Sym="ZOMHW-630254">
+               <Conditional ID="5350" Name="item &lt; Size(ConfiguredInputIndex)" Sym="ZOMHW-630254">
                 <Branch Name="true" Sym="ZOMHW-630092">
                  <Action Name="CaptureDeviceInputIndex = GetElement(ConfiguredInputIndex,item)" Sym="ZOMHW-630060">
                   <Action Name="TableRow = item + 1" Sym="ZOMHW-629971">
-                   <Action Ref="5337" Name="InfoText = GetElement(..."/>
-                   <Action Ref="5339" Name="InfoText = GetElement(..."/>
+                   <Action Ref="5344" Name="InfoText = GetElement(..."/>
+                   <Action Ref="5346" Name="InfoText = GetElement(..."/>
                   </Action>
                   <Action Name="item = item + 1" Sym="ZOMHW-629864">
-                   <Conditional Ref="5343" Name="item &lt; Size(Configured..."/>
+                   <Conditional Ref="5350" Name="item &lt; Size(Configured..."/>
                   </Action>
                  </Action>
                 </Branch>
@@ -16034,24 +16034,24 @@
             <Conditional Name="true" Sym="ZOMHW-630050">
              <Branch Name="IsVideoRendererDefault()" Sym="ZOMHW-630118">
               <Action Name="VideoRenderer = &quot;Default&quot;" Sym="ZOMHW-630089">
-               <Action ID="5452" Name="InfoText = &quot;Video Renderer: &quot; + VideoRenderer" Sym="ZOMHW-630141">
+               <Action ID="5459" Name="InfoText = &quot;Video Renderer: &quot; + VideoRenderer" Sym="ZOMHW-630141">
                 <Text Name="" Sym="ZOMHW-630112"/>
                </Action>
               </Action>
              </Branch>
              <Branch Name="IsVideoRendererOverlay()" Sym="ZOMHW-630007">
               <Action Name="VideoRenderer = &quot;Overlay&quot;" Sym="ZOMHW-630008">
-               <Action Ref="5452" Name="InfoText = &quot;Video Rend..."/>
+               <Action Ref="5459" Name="InfoText = &quot;Video Rend..."/>
               </Action>
              </Branch>
              <Branch Name="IsVideoRendererVMR9()" Sym="ZOMHW-630065">
               <Action Name="VideoRenderer = &quot;VMR9&quot;" Sym="ZOMHW-630291">
-               <Action Ref="5452" Name="InfoText = &quot;Video Rend..."/>
+               <Action Ref="5459" Name="InfoText = &quot;Video Rend..."/>
               </Action>
              </Branch>
              <Branch Name="IsVideoRendererEVR()" Sym="ZOMHW-629793">
               <Action Name="VideoRenderer = &quot;EVR&quot;" Sym="ZOMHW-630135">
-               <Action Ref="5452" Name="InfoText = &quot;Video Rend..."/>
+               <Action Ref="5459" Name="InfoText = &quot;Video Rend..."/>
               </Action>
              </Branch>
             </Conditional>
@@ -16088,50 +16088,50 @@
            <Conditional Name="GetProperty(&quot;ConfigWiz/Remote&quot;, &quot;XNone&quot;)" Sym="ZOMHW-630231">
             <Branch Name="&quot;XNone&quot;" Sym="ZOMHW-629907">
              <Action Name="InfoText = Title + &quot;None Selected or External Setup&quot;" Sym="ZOMHW-630224">
-              <Text ID="5482" Name="" Sym="ZOMHW-630247"/>
+              <Text ID="5489" Name="" Sym="ZOMHW-630247"/>
              </Action>
             </Branch>
             <Branch Name="&quot;XHauppauge34&quot;" Sym="ZOMHW-630365">
              <Action Name="InfoText = Title + &quot;34 button Hauppauge remote&quot;" Sym="ZOMHW-630033">
-              <Text Ref="5482" Name=""/>
+              <Text Ref="5489" Name=""/>
              </Action>
             </Branch>
             <Branch Name="&quot;XHauppauge45&quot;" Sym="ZOMHW-630132">
              <Action Name="InfoText = Title + &quot;45 button Hauppauge remote&quot;" Sym="ZOMHW-629984">
-              <Text Ref="5482" Name=""/>
+              <Text Ref="5489" Name=""/>
              </Action>
             </Branch>
             <Branch Name="&quot;XStreamZap&quot;" Sym="ZOMHW-629896">
              <Action Name="InfoText = Title + &quot;Streamzap remote&quot;" Sym="ZOMHW-629928">
-              <Text Ref="5482" Name=""/>
+              <Text Ref="5489" Name=""/>
              </Action>
             </Branch>
             <Branch Name="&quot;XMCE&quot;" Sym="ZOMHW-629920">
              <Action Name="InfoText = Title + &quot;MCE remote&quot;" Sym="ZOMHW-629955">
-              <Text Ref="5482" Name=""/>
+              <Text Ref="5489" Name=""/>
              </Action>
             </Branch>
             <Branch Name="&quot;XUSBUIRT&quot;" Sym="ZOMHW-629972">
              <Action Name="InfoText = Title + &quot;USB-UIRT receiver&quot;" Sym="ZOMHW-629836">
-              <Text Ref="5482" Name=""/>
+              <Text Ref="5489" Name=""/>
              </Action>
             </Branch>
             <Branch Name="&quot;XIRMan&quot;" Sym="ZOMHW-629796">
              <Action Name="InfoText = Title + &quot;IRMan receiver on &quot; + GetInfraredReceiverPort()" Sym="ZOMHW-630017">
-              <Text Ref="5482" Name=""/>
+              <Text Ref="5489" Name=""/>
              </Action>
             </Branch>
            </Conditional>
           </Action>
          </Conditional>
-         <Action ID="5495" Name="&quot;REM Server enabled?&quot;" Sym="ZOMHW-629991">
+         <Action ID="5502" Name="&quot;REM Server enabled?&quot;" Sym="ZOMHW-629991">
           <Conditional Name="!IsClient() || (!IsClient() &amp;&amp; (GetProperty(&quot;client&quot;,&quot;&quot;)==&quot;true&quot;))" Sym="ZOMHW-630362">
            <Action Name="InfoText = &quot;SageTV Server: &quot; + If(IsSageTVServerEnabled(), &quot;Enabled&quot;, &quot;Disabled&quot;)" Sym="ZOMHW-630124">
             <Text Name="" Sym="ZOMHW-629790"/>
            </Action>
           </Conditional>
          </Action>
-         <Action ID="5499" Name="&quot;REM Media Extender &amp; Placeshifter Server enabled?&quot;" Sym="ZOMHW-629908">
+         <Action ID="5506" Name="&quot;REM Media Extender &amp; Placeshifter Server enabled?&quot;" Sym="ZOMHW-629908">
           <Conditional Name="!IsClient() || (!IsClient() &amp;&amp; (GetProperty(&quot;client&quot;,&quot;&quot;)==&quot;true&quot;))" Sym="ZOMHW-630188">
            <Action Name="InfoText = &quot;SageTV Media Extender &amp; Placeshifter Server: &quot; + If(GetServerProperty(&quot;enable_media_extender_server&quot;, true), &quot;Enabled&quot;, &quot;Disabled&quot;)" Sym="ZOMHW-630211">
             <Text Name="" Sym="ZOMHW-629883"/>
@@ -16151,17 +16151,17 @@
            <Conditional Name="GetProperty(&quot;ui/startup_type&quot;, 0)" Sym="ZOMHW-630077">
             <Branch Name="2" Sym="ZOMHW-630268">
              <Action Name="InfoText = InfoText + &quot;System Tray&quot;" Sym="ZOMHW-629925">
-              <Text ID="5513" Name="" Sym="ZOMHW-629954"/>
+              <Text ID="5520" Name="" Sym="ZOMHW-629954"/>
              </Action>
             </Branch>
             <Branch Name="1" Sym="ZOMHW-630159">
              <Action Name="InfoText = InfoText + &quot;Full Screen&quot;" Sym="ZOMHW-630220">
-              <Text Ref="5513" Name=""/>
+              <Text Ref="5520" Name=""/>
              </Action>
             </Branch>
             <Branch Name="else" Sym="ZOMHW-630180">
              <Action Name="InfoText = InfoText + &quot;No&quot;" Sym="ZOMHW-630070">
-              <Text Ref="5513" Name=""/>
+              <Text Ref="5520" Name=""/>
              </Action>
             </Branch>
            </Conditional>
@@ -16188,14 +16188,14 @@
             <Conditional Name="GetProperty(&quot;linux/video_output_port&quot;,&quot;Composite_Svideo&quot;)" Sym="ZOMHW-630176">
              <Branch Name="&quot;Composite_Svideo&quot;" Sym="ZOMHW-630337">
               <Action Name="VideoPort = &quot;Composite/Svideo&quot;" Sym="ZOMHW-630144">
-               <Action ID="5533" Name="InfoText = &quot;Video Output Port: &quot; + VideoPort" Sym="ZOMHW-630283">
+               <Action ID="5540" Name="InfoText = &quot;Video Output Port: &quot; + VideoPort" Sym="ZOMHW-630283">
                 <Text Name="" Sym="ZOMHW-629882"/>
                </Action>
               </Action>
              </Branch>
              <Branch Name="else" Sym="ZOMHW-629950">
               <Action Name="VideoRenderer = GetProperty(&quot;linux/video_output_port&quot;,&quot;Composite_Svideo&quot;)" Sym="ZOMHW-629945">
-               <Action Ref="5533" Name="InfoText = &quot;Video Outp..."/>
+               <Action Ref="5540" Name="InfoText = &quot;Video Outp..."/>
               </Action>
              </Branch>
             </Conditional>
@@ -16205,8 +16205,8 @@
            <Text Name="" Sym="ZOMHW-630087"/>
           </Action>
          </Conditional>
-         <Action Ref="5495" Name="&quot;REM Server enabled?&quot;"/>
-         <Action Ref="5499" Name="&quot;REM Media Extender &amp; ..."/>
+         <Action Ref="5502" Name="&quot;REM Server enabled?&quot;"/>
+         <Action Ref="5506" Name="&quot;REM Media Extender &amp; ..."/>
          <Conditional Name="!IsRemoteUI() || IsServerUI()" Sym="ZOMHW-629969">
           <Action Name="&quot;REM Network configuration details&quot;" Sym="ZOMHW-630330">
            <Action Name="NetworkInfo = &quot;Network IP Address: &quot;" Sym="ZOMHW-630333">
@@ -16281,8 +16281,8 @@
          </Conditional>
         </Branch>
         <Branch Name="IsMacOS()" Sym="ZOMHW-630334">
-         <Action Ref="5495" Name="&quot;REM Server enabled?&quot;"/>
-         <Action Ref="5499" Name="&quot;REM Media Extender &amp; ..."/>
+         <Action Ref="5502" Name="&quot;REM Server enabled?&quot;"/>
+         <Action Ref="5506" Name="&quot;REM Media Extender &amp; ..."/>
         </Branch>
        </Conditional>
       </Action>
@@ -16444,7 +16444,7 @@
      <Action Name="tvtvIsInUse = false" Sym="ZOMHW-5703">
       <Action Name="LineupList = GetAllLineups()" Sym="ZOMHW-5704">
        <Action Name="CurLineup = 0" Sym="ZOMHW-5705">
-        <Conditional ID="5637" Name="CurLineup &lt; Size(LineupList)" Sym="ZOMHW-5706">
+        <Conditional ID="5644" Name="CurLineup &lt; Size(LineupList)" Sym="ZOMHW-5706">
          <Action Name="LineupName = GetElement(LineupList,CurLineup)" Sym="ZOMHW-5707">
           <Conditional Name="LineupName" Sym="ZOMHW-5708">
            <Branch Name="&quot;tvtv&quot;" Sym="ZOMHW-5709">
@@ -16452,7 +16452,7 @@
            </Branch>
            <Branch Name="else" Sym="ZOMHW-5711">
             <Action Name="CurLineup = CurLineup + 1" Sym="ZOMHW-5712">
-             <Conditional Ref="5637" Name="CurLineup &lt; Size(Lineu..."/>
+             <Conditional Ref="5644" Name="CurLineup &lt; Size(Lineu..."/>
             </Action>
            </Branch>
           </Conditional>
@@ -16471,7 +16471,7 @@
      <Action Name="DeviceCount = Size(ConfiguredInputList)" Sym="ZOMHW-5717">
       <Action Name="MaxCount = 75" Sym="ZOMHW-5718">
        <Action Name="item = 0" Sym="ZOMHW-5719">
-        <Conditional ID="5651" Name="(item &lt; DeviceCount) &amp;&amp; (MaxCount &gt; 0)" Sym="ZOMHW-5720">
+        <Conditional ID="5658" Name="(item &lt; DeviceCount) &amp;&amp; (MaxCount &gt; 0)" Sym="ZOMHW-5720">
          <Branch Name="true" Sym="ZOMHW-5721">
           <Action Name="CaptureDeviceInput = GetElement(ConfiguredInputList,item)" Sym="ZOMHW-5722">
            <Action Name="ConfiguredInputIndex = DataUnion(ConfiguredInputIndex, item)" Sym="ZOMHW-5723"/>
@@ -16479,7 +16479,7 @@
            <Action Name="ConfiguredInputName = DataUnion(ConfiguredInputName, &quot;Input &quot; + (item+1) + &quot;: &quot;+ CaptureDeviceInput)" Sym="ZOMHW-5725">
             <Action Name="item = item + 1" Sym="ZOMHW-5726">
              <Action Name="MaxCount = MaxCount - 1" Sym="ZOMHW-5727">
-              <Conditional Ref="5651" Name="(item &lt; DeviceCount) &amp;..."/>
+              <Conditional Ref="5658" Name="(item &lt; DeviceCount) &amp;..."/>
              </Action>
             </Action>
            </Action>
@@ -16503,7 +16503,7 @@
       <Conditional Name="&quot;xForceSTVVersion&quot;" Sym="ZOMHW-5736">
        <Branch Name="&quot;xForceSTVVersion&quot;" Sym="ZOMHW-5737">
         <Action Name="&quot;REM Always use the STV's version as the current STV file set version.&quot;" Sym="ZOMHW-5738">
-         <Action ID="5670" Name="&quot;REM The STV says its file set is newer, so mark it in the properties file.&quot;" Sym="ZOMHW-5739">
+         <Action ID="5677" Name="&quot;REM The STV says its file set is newer, so mark it in the properties file.&quot;" Sym="ZOMHW-5739">
           <Action Name="SetProperty(&quot;version/STV_file_set&quot;,ThisSTVSetVersionNum)" Sym="ZOMHW-5740"/>
          </Action>
         </Action>
@@ -16513,7 +16513,7 @@
          <Action Name="CompareResult = java_lang_String_compareToIgnoreCase(ThisSTVSetVersionNum, CurSTVSetPropVersion)" Sym="ZOMHW-5743">
           <Conditional Name="(CompareResult &gt; 0)" Sym="ZOMHW-5744">
            <Branch Name="true" Sym="ZOMHW-5745">
-            <Action Ref="5670" Name="&quot;REM The STV says its ..."/>
+            <Action Ref="5677" Name="&quot;REM The STV says its ..."/>
            </Branch>
            <Branch Name="else" Sym="ZOMHW-5746">
             <Action Name="&quot;REM The STV file set is newer, so set that as the global value.&quot;" Sym="ZOMHW-5747">
@@ -16585,7 +16585,7 @@
         <Action Name="CurVersionNumber = java_util_Properties_getProperty( CurVersionProps, &quot;version&quot;, &quot;200801011&quot; )" Sym="ZOMHW-5781"/>
        </Action>
        <Action Name="OnlineVideoPropertiesVersion = CurVersionNumber" Sym="ZOMHW-5782">
-        <Action ID="5715" Name="ItemsToBeUpdated = ItemsToBeUpdated - 1" Sym="ZOMHW-5783">
+        <Action ID="5722" Name="ItemsToBeUpdated = ItemsToBeUpdated - 1" Sym="ZOMHW-5783">
          <Action Name="Refresh()" Sym="ZOMHW-5784"/>
         </Action>
        </Action>
@@ -16593,30 +16593,30 @@
       <Action Name="&quot;REM Get MD5 value.&quot;" Sym="ZOMHW-5785">
        <Action Name="PropFilePath = CreateFilePath( OnlineVideoBasePath, &quot;OnlineVideoLinks.properties&quot; )" Sym="ZOMHW-5786">
         <Action Name="OnlineVideoMD5 = java_lang_String_toLowerCase( CalculateMD5Sum(PropFilePath) )" Sym="ZOMHW-5787">
-         <Action Ref="5715" Name="ItemsToBeUpdated = Ite..."/>
+         <Action Ref="5722" Name="ItemsToBeUpdated = Ite..."/>
         </Action>
        </Action>
       </Action>
      </Action>
      <Action Name="&quot;REM Get MD5 value for STV file.&quot;" Sym="ZOMHW-5788">
       <Action Name="STVMD5 = java_lang_String_toLowerCase( CalculateMD5Sum( GetCurrentSTVFile() ) )" Sym="ZOMHW-5789">
-       <Action Ref="5715" Name="ItemsToBeUpdated = Ite..."/>
+       <Action Ref="5722" Name="ItemsToBeUpdated = Ite..."/>
       </Action>
      </Action>
      <Action Name="TotalDiskspaceAvailable = GetTotalDiskspaceAvailable()" Sym="ZOMHW-5790">
-      <Action Ref="5715" Name="ItemsToBeUpdated = Ite..."/>
+      <Action Ref="5722" Name="ItemsToBeUpdated = Ite..."/>
      </Action>
      <Action Name="UsedVideoDiskspace = GetUsedVideoDiskspace()" Sym="ZOMHW-5791">
-      <Action Ref="5715" Name="ItemsToBeUpdated = Ite..."/>
+      <Action Ref="5722" Name="ItemsToBeUpdated = Ite..."/>
      </Action>
      <Action Name="TotalVideoDuration = GetTotalVideoDuration()" Sym="ZOMHW-5792">
-      <Action Ref="5715" Name="ItemsToBeUpdated = Ite..."/>
+      <Action Ref="5722" Name="ItemsToBeUpdated = Ite..."/>
      </Action>
      <Action Name="UsedLibraryDiskspace = GetUsedLibraryDiskspace()" Sym="ZOMHW-5793">
-      <Action Ref="5715" Name="ItemsToBeUpdated = Ite..."/>
+      <Action Ref="5722" Name="ItemsToBeUpdated = Ite..."/>
      </Action>
      <Action Name="TotalLibraryDuration = GetTotalLibraryDuration()" Sym="ZOMHW-5794">
-      <Action Ref="5715" Name="ItemsToBeUpdated = Ite..."/>
+      <Action Ref="5722" Name="ItemsToBeUpdated = Ite..."/>
      </Action>
      <Action Name="&quot;REM Calculate how much recording space can be deleted &amp; how much can't be deleted automatically.&quot;" Sym="ZOMHW-5795">
       <Action Name="PartialRecSpace = 0" Sym="ZOMHW-5796">
@@ -16625,7 +16625,7 @@
          <Action Name="RecDirs = GetVideoDirectories()" Sym="ZOMHW-5799">
           <Action Name="AllRecordings = GetMediaFiles(&quot;T&quot;)" Sym="ZOMHW-5800">
            <Action Name="i = 0" Sym="ZOMHW-5801">
-            <Conditional ID="5734" Name="i &lt; Size(AllRecordings)" Sym="ZOMHW-5802">
+            <Conditional ID="5741" Name="i &lt; Size(AllRecordings)" Sym="ZOMHW-5802">
              <Branch Name="true" Sym="ZOMHW-5803">
               <Action Name="ThisRec = GetElement( AllRecordings, i )" Sym="ZOMHW-5804">
                <Action Name="ThisRecDir = GetParentDirectory(ThisRec)" Sym="ZOMHW-5805">
@@ -16664,7 +16664,7 @@
                  </Branch>
                 </Conditional>
                 <Action Name="i = i + 1" Sym="ZOMHW-5826">
-                 <Conditional Ref="5734" Name="i &lt; Size(AllRecordings)"/>
+                 <Conditional Ref="5741" Name="i &lt; Size(AllRecordings)"/>
                 </Action>
                </Action>
               </Action>
@@ -16673,7 +16673,7 @@
               <Action Name="TotalPartialRecSpace = PartialRecSpace" Sym="ZOMHW-5828">
                <Action Name="TotalNoDeleteRecSpace = NoDeleteRecSpace" Sym="ZOMHW-5829">
                 <Action Name="TotalCanDeleteRecSpace = CanDeleteRecSpace" Sym="ZOMHW-5830">
-                 <Action Ref="5715" Name="ItemsToBeUpdated = Ite..."/>
+                 <Action Ref="5722" Name="ItemsToBeUpdated = Ite..."/>
                 </Action>
                </Action>
               </Action>
@@ -16690,7 +16690,7 @@
       <Action Name="DeviceCount = Size(ConfiguredInputList)" Sym="ZOMHW-5832">
        <Action Name="MaxCount = 75" Sym="ZOMHW-5833">
         <Action Name="item = 0" Sym="ZOMHW-5834">
-         <Conditional ID="5767" Name="(item &lt; DeviceCount) &amp;&amp; (MaxCount &gt; 0)" Sym="ZOMHW-5835">
+         <Conditional ID="5774" Name="(item &lt; DeviceCount) &amp;&amp; (MaxCount &gt; 0)" Sym="ZOMHW-5835">
           <Branch Name="true" Sym="ZOMHW-5836">
            <Action Name="CaptureDeviceInput = GetElement(ConfiguredInputList,item)" Sym="ZOMHW-5837">
             <Action Name="&quot;REM Get the full details for this configured input source&quot;" Sym="ZOMHW-5838">
@@ -16708,10 +16708,10 @@
                         <Conditional Name="GetInfraredTuningPluginPortNumber(CaptureDeviceInput) &gt; 0" Sym="ZOMHW-5850">
                          <Branch Name="true" Sym="ZOMHW-5851">
                           <Action Name="TunerControlDesc = TunerControlDesc + &quot; COM&quot; + GetInfraredTuningPluginPortNumber(CaptureDeviceInput)" Sym="ZOMHW-5852">
-                           <Conditional ID="5785" Name="Size(GetInfraredTunerRemoteName(CaptureDeviceInput)) &gt; 0" Sym="ZOMHW-5853">
+                           <Conditional ID="5792" Name="Size(GetInfraredTunerRemoteName(CaptureDeviceInput)) &gt; 0" Sym="ZOMHW-5853">
                             <Branch Name="true" Sym="ZOMHW-5854">
                              <Action Name="TunerControlDesc = TunerControlDesc + &quot; &quot; + GetInfraredTunerRemoteName(CaptureDeviceInput)" Sym="ZOMHW-5855">
-                              <Action ID="5788" Name="InfoText = InfoText + TunerControlDesc" Sym="ZOMHW-5856">
+                              <Action ID="5795" Name="InfoText = InfoText + TunerControlDesc" Sym="ZOMHW-5856">
                                <Action Name="InfoText = InfoText + &quot;; Audio Input: &quot; + If(IsCaptureDeviceInputAudioVideo(CaptureDeviceInput), &quot;N/A&quot;, GetCaptureDeviceAudioSource(CaptureDevice))" Sym="ZOMHW-5857">
                                 <Action Name="SetElement( ConfiguredInputDetails, item, InfoText )" Sym="ZOMHW-5858"/>
                                </Action>
@@ -16720,21 +16720,21 @@
                             </Branch>
                             <Branch Name="false" Sym="ZOMHW-5859">
                              <Action Name="TunerControlDesc" Sym="ZOMHW-5860">
-                              <Action Ref="5788" Name="InfoText = InfoText + ..."/>
+                              <Action Ref="5795" Name="InfoText = InfoText + ..."/>
                              </Action>
                             </Branch>
                            </Conditional>
                           </Action>
                          </Branch>
                          <Branch Name="false" Sym="ZOMHW-5861">
-                          <Conditional Ref="5785" Name="Size(GetInfraredTunerR..."/>
+                          <Conditional Ref="5792" Name="Size(GetInfraredTunerR..."/>
                          </Branch>
                         </Conditional>
                        </Action>
                       </Branch>
                       <Branch Name="false" Sym="ZOMHW-5862">
                        <Action Name="TunerControlDesc = TunerControlDesc + &quot;N/A&quot;" Sym="ZOMHW-5863">
-                        <Action Ref="5788" Name="InfoText = InfoText + ..."/>
+                        <Action Ref="5795" Name="InfoText = InfoText + ..."/>
                        </Action>
                       </Branch>
                      </Conditional>
@@ -16747,10 +16747,10 @@
               </Action>
              </Action>
             </Action>
-            <Action Ref="5715" Name="ItemsToBeUpdated = Ite..."/>
+            <Action Ref="5722" Name="ItemsToBeUpdated = Ite..."/>
             <Action Name="item = item + 1" Sym="ZOMHW-5864">
              <Action Name="MaxCount = MaxCount - 1" Sym="ZOMHW-5865">
-              <Conditional Ref="5767" Name="(item &lt; DeviceCount) &amp;..."/>
+              <Conditional Ref="5774" Name="(item &lt; DeviceCount) &amp;..."/>
              </Action>
             </Action>
            </Action>
@@ -16844,8 +16844,8 @@
   <Attribute Name="TotalVideoDuration" Sym="ZOMHW-5887">
    <Value>-1</Value>
   </Attribute>
-  <Attribute Ref="5826" Name="STVName"/>
-  <Attribute Ref="5827" Name="STVVersion"/>
+  <Attribute Ref="5833" Name="STVName"/>
+  <Attribute Ref="5834" Name="STVVersion"/>
   <Attribute Name="DefaultMenuItem" Sym="ZOMHW-9182148">
    <Value>DefaultMenuItem</Value>
   </Attribute>
@@ -16873,7 +16873,7 @@
      <Attribute Name="DisableParentClip" Sym="NRCPU-701">
       <Value>true</Value>
      </Attribute>
-     <Menu Ref="4980" Name="Default Menu Theme"/>
+     <Menu Ref="4987" Name="Default Menu Theme"/>
      <Listener Name="" Sym="NRCPU-655">
       <ListenerEvent>Guide</ListenerEvent>
       <Action Name="DisableOutAnim = true" Sym="NRCPU-656"/>
@@ -16884,7 +16884,7 @@
      </Listener>
      <Listener Name="" Sym="NRCPU-663">
       <ListenerEvent>DVD</ListenerEvent>
-      <Action Ref="3353" Name="&quot;REM Play a DVD if the..."/>
+      <Action Ref="3360" Name="&quot;REM Play a DVD if the..."/>
      </Listener>
      <Listener Name="" Sym="NRCPU-664">
       <ListenerEvent>Recording Schedule</ListenerEvent>
@@ -16895,7 +16895,7 @@
       <Action Name="DisableOutAnim = true" Sym="NRCPU-667">
        <Conditional Name="IsCurrentMediaFileRecording()" Sym="NRCPU-668">
         <Branch Name="true" Sym="NRCPU-669">
-         <Action ID="5847" Name="&quot;REM Jump to playback screen &amp; seek to current time&quot;" Sym="NRCPU-670">
+         <Action ID="5854" Name="&quot;REM Jump to playback screen &amp; seek to current time&quot;" Sym="NRCPU-670">
           <Action Name="AddStaticContext(&quot;NeedCurrentTimeSeek&quot;, true )" Sym="NRCPU-671">
            <Action Ref="92" Name="&quot;REM Launch Video OSD&quot;"/>
           </Action>
@@ -16904,7 +16904,7 @@
         <Branch Name="else" Sym="NRCPU-672">
          <Action Name="&quot;REM Close current media &amp; start live TV&quot;" Sym="NRCPU-673">
           <Action Name="CloseAndWaitUntilClosed()" Sym="NRCPU-674">
-           <Action ID="5852" Name="&quot;REM If Stopping a downloaded video, cancel its download &amp; stop tracking the bandwidth info.&quot;" Sym="NRCPU-675">
+           <Action ID="5859" Name="&quot;REM If Stopping a downloaded video, cancel its download &amp; stop tracking the bandwidth info.&quot;" Sym="NRCPU-675">
             <Conditional Name="VideoDownloadMF != null" Sym="NRCPU-676">
              <Action Name="CancelFileDownload()" Sym="NRCPU-677">
               <Action Name="DeleteMF = VideoDownloadMF" Sym="NRCPU-678">
@@ -16927,7 +16927,7 @@
              </Action>
             </Conditional>
            </Action>
-           <Action Ref="5847" Name="&quot;REM Jump to playback ..."/>
+           <Action Ref="5854" Name="&quot;REM Jump to playback ..."/>
           </Action>
          </Action>
         </Branch>
@@ -16938,7 +16938,7 @@
       <ListenerEvent>Stop</ListenerEvent>
       <Action Name="&quot;REM Stop currently playing media. If that media was the one being downloaded, stop the download.&quot;" Sym="NRCPU-695">
        <Action Name="CloseAndWaitUntilClosed()" Sym="NRCPU-696">
-        <Action Ref="5852" Name="&quot;REM If Stopping a dow..."/>
+        <Action Ref="5859" Name="&quot;REM If Stopping a dow..."/>
         <Action Name="Refresh()" Sym="NRCPU-698"/>
        </Action>
       </Action>
@@ -17023,7 +17023,7 @@
       <BackgroundComponent>false</BackgroundComponent>
       <MouseTransparency>false</MouseTransparency>
       <Conditional Name="Focused &amp;&amp; !SubmenuOpen" Sym="MHCWJ-1061">
-       <Shape ID="3715" Name="Highlite" Sym="MHCWJ-1062">
+       <Shape ID="3722" Name="Highlite" Sym="MHCWJ-1062">
         <ForegroundColor>=gP3CAccent</ForegroundColor>
         <ForegroundAlpha>255</ForegroundAlpha>
         <FixedWidth>8</FixedWidth>
@@ -17031,7 +17031,7 @@
         <ShapeType>Rectangle</ShapeType>
         <ShapeFill>true</ShapeFill>
        </Shape>
-       <Shape ID="3716" Name="Highlite" Sym="MHCWJ-1063">
+       <Shape ID="3723" Name="Highlite" Sym="MHCWJ-1063">
         <ForegroundColor>=gP3CAccent</ForegroundColor>
         <ForegroundAlpha>131</ForegroundAlpha>
         <AnchorY>1.0</AnchorY>
@@ -17069,7 +17069,7 @@
       <BackgroundComponent>false</BackgroundComponent>
       <ZOffset>2</ZOffset>
       <MouseTransparency>false</MouseTransparency>
-      <Theme Ref="5893" Name="Text Center Justified ..."/>
+      <Theme Ref="5900" Name="Text Center Justified ..."/>
      </Text>
      <OptionsMenu Name="Dialog" Sym="NRCPU-3523">
       <Layout>Vertical</Layout>
@@ -17116,10 +17116,10 @@
        <Thickness>2</Thickness>
       </Shape>
       <Conditional Name="Focused" Sym="VFBWX-7400">
-       <Shape Ref="3715" Name="Highlite"/>
-       <Shape Ref="3716" Name="Highlite"/>
+       <Shape Ref="3722" Name="Highlite"/>
+       <Shape Ref="3723" Name="Highlite"/>
       </Conditional>
-      <Theme Ref="3254" Name="Text Center Justified ..."/>
+      <Theme Ref="3261" Name="Text Center Justified ..."/>
       <Listener Name="Left" Sym="NRCPU-3534">
        <Action Name="CloseOptionsMenu()" Sym="NRCPU-3535"/>
       </Listener>
@@ -17252,7 +17252,7 @@
      <ForegroundColor>=gP3CText</ForegroundColor>
      <FontSize>14</FontSize>
     </Theme>
-    <Theme ID="3981" Name="OSD Right Side Options Theme" Sym="UVJWK-444">
+    <Theme ID="3988" Name="OSD Right Side Options Theme" Sym="UVJWK-444">
      <TileBackgroundImage>false</TileBackgroundImage>
      <StretchBackgroundImage>false</StretchBackgroundImage>
      <ForegroundColor>0xFFFFFF</ForegroundColor>
@@ -17270,7 +17270,7 @@
       <VerticalAlignment>0.5</VerticalAlignment>
       <IgnoreThemeProps>false</IgnoreThemeProps>
       <BackgroundComponent>false</BackgroundComponent>
-      <Effect ID="3979" Name="Slide Down" Sym="PHNX2-4448">
+      <Effect ID="3986" Name="Slide Down" Sym="PHNX2-4448">
        <ForegroundAlpha>0.0</ForegroundAlpha>
        <EffectTrigger>MenuLoaded</EffectTrigger>
        <Duration>400</Duration>
@@ -17282,7 +17282,7 @@
        <StartRenderOffsetY>-0.3</StartRenderOffsetY>
        <Clipped>false</Clipped>
       </Effect>
-      <Effect ID="3980" Name="Slide Up" Sym="PHNX2-4449">
+      <Effect ID="3987" Name="Slide Up" Sym="PHNX2-4449">
        <BackgroundAlpha>0.0</BackgroundAlpha>
        <AnchorY>-0.3</AnchorY>
        <EffectTrigger>MenuUnloaded</EffectTrigger>
@@ -17332,10 +17332,10 @@
        <Thickness>2</Thickness>
       </Shape>
       <Conditional Name="Focused" Sym="NRCPU-3540">
-       <Shape Ref="3715" Name="Highlite"/>
-       <Shape Ref="3716" Name="Highlite"/>
+       <Shape Ref="3722" Name="Highlite"/>
+       <Shape Ref="3723" Name="Highlite"/>
       </Conditional>
-      <Theme Ref="3254" Name="Text Center Justified ..."/>
+      <Theme Ref="3261" Name="Text Center Justified ..."/>
      </Item>
     </Theme>
    </Panel>
@@ -17344,14 +17344,14 @@
  <Menu Name="_FONTS" Sym="NRCPU-3789">
   <Conditional Name="false" Sym="NRCPU-3790">
    <Panel Name="LEFT JUSTIFIED" Sym="NRCPU-4109">
-    <Theme ID="5927" Name="Text Left Justified Small (14)" Sym="MHCWJ-883">
+    <Theme ID="5934" Name="Text Left Justified Small (14)" Sym="MHCWJ-883">
      <TileBackgroundImage>false</TileBackgroundImage>
      <StretchBackgroundImage>false</StretchBackgroundImage>
      <ForegroundColor>=gP3CText</ForegroundColor>
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>14</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5928" Name=""/>
+     <Text Ref="5935" Name=""/>
     </Theme>
     <Theme ID="194" Name="Text Left Justified Medium (16)" Sym="NRCPU-4114">
      <TileBackgroundImage>false</TileBackgroundImage>
@@ -17360,7 +17360,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>16</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text ID="5928" Name="" Sym="NRCPU-796">
+     <Text ID="5935" Name="" Sym="NRCPU-796">
       <AnchorX>0.0</AnchorX>
       <AnchorY>0.5</AnchorY>
       <AutosizeText>false</AutosizeText>
@@ -17380,7 +17380,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>18</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5928" Name=""/>
+     <Text Ref="5935" Name=""/>
     </Theme>
     <Theme ID="189" Name="Text Left Justified XLarge (20)" Sym="NRCPU-3324">
      <TileBackgroundImage>false</TileBackgroundImage>
@@ -17389,7 +17389,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>20</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5928" Name=""/>
+     <Text Ref="5935" Name=""/>
     </Theme>
     <Theme ID="2743" Name="Text Left Justified XXLarge (24)" Sym="NRCPU-3325">
      <TileBackgroundImage>false</TileBackgroundImage>
@@ -17398,16 +17398,16 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>24</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5928" Name=""/>
+     <Text Ref="5935" Name=""/>
     </Theme>
-    <Theme ID="3245" Name="Text Left Justified XXXLarge (32)" Sym="PHNX2-4524">
+    <Theme ID="3252" Name="Text Left Justified XXXLarge (32)" Sym="PHNX2-4524">
      <TileBackgroundImage>false</TileBackgroundImage>
      <StretchBackgroundImage>false</StretchBackgroundImage>
      <ForegroundColor>=gP3CText</ForegroundColor>
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>32</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5928" Name=""/>
+     <Text Ref="5935" Name=""/>
     </Theme>
     <Theme Name="Text Left Justified Medium NO WRAP(16)" Sym="MHCWJ-2098">
      <TileBackgroundImage>false</TileBackgroundImage>
@@ -17458,7 +17458,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>16</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5928" Name=""/>
+     <Text Ref="5935" Name=""/>
     </Theme>
     <Action Name="&quot;REM HIGHLIGHTED&quot;" Sym="PHOENIX3-101"/>
     <Theme Name="Text Left Justified Small Highlight(14)" Sym="PHOENIX3-100">
@@ -17469,7 +17469,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>14</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5928" Name=""/>
+     <Text Ref="5935" Name=""/>
     </Theme>
     <Theme Name="Text Left Justified Medium Highlight(16)" Sym="PHOENIX3-353">
      <TileBackgroundImage>false</TileBackgroundImage>
@@ -17479,7 +17479,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>16</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5928" Name=""/>
+     <Text Ref="5935" Name=""/>
     </Theme>
    </Panel>
    <Panel Name="RIGHT JUSTIFIED" Sym="NRCPU-4112">
@@ -17490,7 +17490,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>14</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5937" Name="Untitled"/>
+     <Text Ref="5944" Name="Untitled"/>
     </Theme>
     <Theme Name="Text Right Justified Medium (16)" Sym="PHOENIX3-67">
      <TileBackgroundImage>false</TileBackgroundImage>
@@ -17499,7 +17499,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>16</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5937" Name="Untitled"/>
+     <Text Ref="5944" Name="Untitled"/>
     </Theme>
     <Theme Name="Text Right Justified Large(18)" Sym="NRCPU-3693">
      <TileBackgroundImage>false</TileBackgroundImage>
@@ -17508,7 +17508,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>18</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text ID="5937" Name="Untitled" Sym="NRCPU-3653">
+     <Text ID="5944" Name="Untitled" Sym="NRCPU-3653">
       <AnchorX>1.0</AnchorX>
       <AnchorY>0.5</AnchorY>
       <Insets>.005,0,.005,0</Insets>
@@ -17531,7 +17531,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>14</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5941" Name=""/>
+     <Text Ref="5948" Name=""/>
     </Theme>
     <Theme ID="469" Name="Text Center Justified Medium (16)" Sym="NRCPU-83">
      <TileBackgroundImage>false</TileBackgroundImage>
@@ -17540,7 +17540,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>16</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text ID="5941" Name="" Sym="NRCPU-84">
+     <Text ID="5948" Name="" Sym="NRCPU-84">
       <AnchorX>0.5</AnchorX>
       <AnchorY>0.5</AnchorY>
       <AutosizeText>false</AutosizeText>
@@ -17553,22 +17553,22 @@
       <MouseTransparency>false</MouseTransparency>
      </Text>
     </Theme>
-    <Theme ID="3254" Name="Text Center Justified Large (18)" Sym="NRCPU-1395">
+    <Theme ID="3261" Name="Text Center Justified Large (18)" Sym="NRCPU-1395">
      <TileBackgroundImage>false</TileBackgroundImage>
      <StretchBackgroundImage>false</StretchBackgroundImage>
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>18</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5941" Name=""/>
+     <Text Ref="5948" Name=""/>
     </Theme>
-    <Theme ID="3632" Name="Text Center Justified XXLarge (24)" Sym="NRCPU-3545">
+    <Theme ID="3639" Name="Text Center Justified XXLarge (24)" Sym="NRCPU-3545">
      <TileBackgroundImage>false</TileBackgroundImage>
      <StretchBackgroundImage>false</StretchBackgroundImage>
      <ForegroundColor>=gP3CText</ForegroundColor>
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>24</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5941" Name=""/>
+     <Text Ref="5948" Name=""/>
     </Theme>
     <Theme Name="Text Center Justified XXXLarge (32)" Sym="NRCPU-3633">
      <TileBackgroundImage>false</TileBackgroundImage>
@@ -17577,7 +17577,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>32</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5941" Name=""/>
+     <Text Ref="5948" Name=""/>
     </Theme>
     <Theme ID="2030" Name="Text Center Justified Tiny With Accent (12)" Sym="PHNX2-4461">
      <TileBackgroundImage>false</TileBackgroundImage>
@@ -17587,18 +17587,18 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>12</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5941" Name=""/>
+     <Text Ref="5948" Name=""/>
     </Theme>
-    <Theme ID="3635" Name="Text Center Justified Medium With Accent (16)" Sym="NRCPU-3536">
+    <Theme ID="3642" Name="Text Center Justified Medium With Accent (16)" Sym="NRCPU-3536">
      <TileBackgroundImage>false</TileBackgroundImage>
      <StretchBackgroundImage>false</StretchBackgroundImage>
      <ForegroundColor>=gP3CAccent</ForegroundColor>
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>16</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5941" Name=""/>
+     <Text Ref="5948" Name=""/>
     </Theme>
-    <Theme ID="5893" Name="Text Center Justified XLarge With Accent (20)" Sym="NRCPU-3533">
+    <Theme ID="5900" Name="Text Center Justified XLarge With Accent (20)" Sym="NRCPU-3533">
      <TileBackgroundImage>false</TileBackgroundImage>
      <StretchBackgroundImage>false</StretchBackgroundImage>
      <ForegroundColor>=gP3CAccent</ForegroundColor>
@@ -17606,14 +17606,14 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>20</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5941" Name=""/>
+     <Text Ref="5948" Name=""/>
     </Theme>
-    <Theme ID="4111" Name="Text Center Justified Shrink To Fit (40)" Sym="NRCPU-3426">
+    <Theme ID="4118" Name="Text Center Justified Shrink To Fit (40)" Sym="NRCPU-3426">
      <TileBackgroundImage>false</TileBackgroundImage>
      <StretchBackgroundImage>false</StretchBackgroundImage>
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>40</FontSize>
-     <Text ID="5943" Name="" Sym="NRCPU-3428">
+     <Text ID="5950" Name="" Sym="NRCPU-3428">
       <AnchorX>0.5</AnchorX>
       <AnchorY>0.5</AnchorY>
       <AutosizeText>true</AutosizeText>
@@ -17626,7 +17626,7 @@
       <MouseTransparency>false</MouseTransparency>
      </Text>
     </Theme>
-    <Theme ID="3212" Name="Text Center Justified Shrink To Fit With Accent(40)" Sym="NRCPU-3427">
+    <Theme ID="3219" Name="Text Center Justified Shrink To Fit With Accent(40)" Sym="NRCPU-3427">
      <TileBackgroundImage>false</TileBackgroundImage>
      <StretchBackgroundImage>false</StretchBackgroundImage>
      <ForegroundColor>=gP3CAccent</ForegroundColor>
@@ -17634,7 +17634,7 @@
      <FontFace>STVs\Phoenix\Skins\plite.ttf</FontFace>
      <FontSize>40</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5943" Name=""/>
+     <Text Ref="5950" Name=""/>
     </Theme>
    </Panel>
    <Panel Name="FONT ICONS" Sym="VFBWX-2751">
@@ -17645,7 +17645,7 @@
      <FontSize>24</FontSize>
      <FontStyle>Plain</FontStyle>
      <ForegroundShadowAlpha>0</ForegroundShadowAlpha>
-     <Text ID="5945" Name="" Sym="VFBWX-2681">
+     <Text ID="5952" Name="" Sym="VFBWX-2681">
       <VerticalAlignment>0.5</VerticalAlignment>
       <TextAlignment>0.5</TextAlignment>
       <TextShadow>false</TextShadow>
@@ -17656,14 +17656,14 @@
      <FontFace>STVs\Phoenix\Skins\MaterialIcons-Regular.ttf</FontFace>
      <FontSize>24</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5945" Name=""/>
+     <Text Ref="5952" Name=""/>
     </Theme>
     <Theme ID="1497" Name="FontIcon24 Red" Sym="VFBWX-2764">
      <ForegroundColor>=gP3CRed</ForegroundColor>
      <FontFace>STVs\Phoenix\Skins\MaterialIcons-Regular.ttf</FontFace>
      <FontSize>24</FontSize>
      <FontStyle>Plain</FontStyle>
-     <Text Ref="5945" Name=""/>
+     <Text Ref="5952" Name=""/>
     </Theme>
     <Theme ID="618" Name="FontIcon72 Highlite" Sym="VFBWX-2829">
      <ForegroundColor>=gP3CTextHighlite</ForegroundColor>
@@ -17685,7 +17685,7 @@
      <FontSize>24</FontSize>
      <FontStyle>Plain</FontStyle>
      <ForegroundShadowAlpha>0</ForegroundShadowAlpha>
-     <Text Ref="5945" Name=""/>
+     <Text Ref="5952" Name=""/>
     </Theme>
     <Theme ID="1595" Name="FontIcon12 Accent" Sym="VFBWX-6451">
      <ForegroundColor>=gP3CAccent</ForegroundColor>
@@ -17694,7 +17694,7 @@
      <FontSize>12</FontSize>
      <FontStyle>Plain</FontStyle>
      <ForegroundShadowAlpha>0</ForegroundShadowAlpha>
-     <Text Ref="5945" Name=""/>
+     <Text Ref="5952" Name=""/>
     </Theme>
    </Panel>
   </Conditional>
@@ -17779,48 +17779,48 @@
        <Action Name="fanartItem = GetElement(phoenix_media_GetAllChildren(FeaturedItem,1), 0)" Sym="VFBWX-2897">
         <Conditional Name="phoenix_umb_GetName( GetElement( phoenix_umb_GetGroupers( phoenix_umb_GetParent(FeaturedItem) ) , 0 ) )" Sym="PHOENIX3-647">
          <Branch Name="&quot;season&quot;" Sym="PHOENIX3-649">
-          <Action Ref="5965" Name="&quot;REM link here for ser..."/>
+          <Action Ref="5972" Name="&quot;REM link here for ser..."/>
          </Branch>
          <Branch Name="&quot;show&quot;" Sym="PHOENIX3-648">
-          <Action ID="5965" Name="&quot;REM link here for series info&quot;" Sym="PHOENIX3-651">
+          <Action ID="5972" Name="&quot;REM link here for series info&quot;" Sym="PHOENIX3-651">
            <Action Name="SeriesInfo = phoenix_media_GetSeriesInfo(fanartItem)" Sym="PHOENIX3-653">
             <Conditional Name="SeriesInfo != null" Sym="PHOENIX3-654">
              <Branch Name="true" Sym="PHOENIX3-655">
               <Action Name="myInfoBody = phoenix_series_GetDescription(SeriesInfo)" Sym="PHOENIX3-656">
-               <Action Ref="5971" Name="myInfoBody"/>
+               <Action Ref="5978" Name="myInfoBody"/>
               </Action>
              </Branch>
-             <Branch Ref="5972" Name="else"/>
+             <Branch Ref="5979" Name="else"/>
             </Conditional>
            </Action>
           </Action>
          </Branch>
-         <Branch ID="5972" Name="else" Sym="PHOENIX3-650">
+         <Branch ID="5979" Name="else" Sym="PHOENIX3-650">
           <Conditional Name="myInfoBody == &quot;&quot;" Sym="PHOENIX3-657">
            <Branch Name="true" Sym="PHOENIX3-658">
             <Action Name="theList = &quot;&quot;" Sym="PHOENIX3-670">
              <Action Name="childrens = phoenix_media_GetAllChildren(FeaturedItem, 7)" Sym="PHOENIX3-671">
               <Action Name="index = 0" Sym="PHOENIX3-672">
-               <Conditional ID="5978" Name="index &lt; 8 &amp;&amp; index &lt; Size(childrens)" Sym="PHOENIX3-673">
+               <Conditional ID="5985" Name="index &lt; 8 &amp;&amp; index &lt; Size(childrens)" Sym="PHOENIX3-673">
                 <Branch Name="true" Sym="PHOENIX3-674">
                  <Conditional Name="index != 0" Sym="PHOENIX3-675">
                   <Branch Name="true" Sym="PHOENIX3-676">
                    <Action Name="theList =  theList + &quot;\n&quot;" Sym="PHOENIX3-677">
-                    <Action ID="5983" Name="theList =  theList + (index + 1)+&quot;.  &quot; +phoenix_media_GetFormattedTitle(GetElement(childrens, index))" Sym="PHOENIX3-679">
+                    <Action ID="5990" Name="theList =  theList + (index + 1)+&quot;.  &quot; +phoenix_media_GetFormattedTitle(GetElement(childrens, index))" Sym="PHOENIX3-679">
                      <Action Name="index = index + 1" Sym="PHOENIX3-680">
-                      <Conditional Ref="5978" Name="index &lt; 8 &amp;&amp; index &lt; S..."/>
+                      <Conditional Ref="5985" Name="index &lt; 8 &amp;&amp; index &lt; S..."/>
                      </Action>
                     </Action>
                    </Action>
                   </Branch>
                   <Branch Name="else" Sym="PHOENIX3-678">
-                   <Action Ref="5983" Name="theList =  theList + (..."/>
+                   <Action Ref="5990" Name="theList =  theList + (..."/>
                   </Branch>
                  </Conditional>
                 </Branch>
                 <Branch Name="else" Sym="PHOENIX3-681">
                  <Action Name="myInfoBody = theList" Sym="PHOENIX3-682">
-                  <Action Ref="5971" Name="myInfoBody"/>
+                  <Action Ref="5978" Name="myInfoBody"/>
                  </Action>
                 </Branch>
                </Conditional>
@@ -17832,7 +17832,7 @@
          </Branch>
         </Conditional>
        </Action>
-       <Action ID="5971" Name="myInfoBody" Sym="VFBWX-2899">
+       <Action ID="5978" Name="myInfoBody" Sym="VFBWX-2899">
         <Text Name="" Sym="VFBWX-2900"/>
        </Action>
       </Action>
@@ -17866,7 +17866,7 @@
     </Attribute>
     <Conditional Name="hideIcons" Sym="VFBWX-2864">
      <Branch Name="null" Sym="VFBWX-2870">
-      <Panel ID="5996" Name="Icons" Sym="NRCPU-3771">
+      <Panel ID="6003" Name="Icons" Sym="NRCPU-3771">
        <Layout>Vertical</Layout>
        <FixedWidth>0.05</FixedWidth>
        <FixedHeight>1.0</FixedHeight>
@@ -17889,7 +17889,7 @@
        <Action Name="&quot;REM link here for HDTV icon (SageFeaturedItem)&quot;" Sym="NRCPU-3747">
         <Conditional Name="StringIndexOf(GetExtraAiringDetails(SageFeaturedItem),&quot;HDTV&quot;) != -1" Sym="NRCPU-3749">
          <Branch Name="true" Sym="VFBWX-2773">
-          <Action ID="6004" Name="phoenix_image_GetFontIcon(&quot;hd&quot;)" Sym="VFBWX-2760">
+          <Action ID="6011" Name="phoenix_image_GetFontIcon(&quot;hd&quot;)" Sym="VFBWX-2760">
            <Text Name="" Sym="VFBWX-2761">
             <Theme Ref="635" Name="FontIcon24 Highlite"/>
            </Text>
@@ -17898,11 +17898,11 @@
          <Branch Name="else" Sym="VFBWX-2774">
           <Conditional Name="StringIndexOf(GetMediaFileFormatDescription(GetMediaFileForAiring(SageFeaturedItem)), &quot;1080&quot;) != -1" Sym="VFBWX-2775">
            <Branch Name="true" Sym="VFBWX-2792">
-            <Action Ref="6004" Name="phoenix_image_GetFontI..."/>
+            <Action Ref="6011" Name="phoenix_image_GetFontI..."/>
            </Branch>
            <Branch Name="else" Sym="VFBWX-2793">
             <Conditional Name="StringIndexOf(GetMediaFileFormatDescription(GetMediaFileForAiring(SageFeaturedItem)), &quot;720&quot;) != -1" Sym="VFBWX-2794">
-             <Action Ref="6004" Name="phoenix_image_GetFontI..."/>
+             <Action Ref="6011" Name="phoenix_image_GetFontI..."/>
             </Conditional>
            </Branch>
           </Conditional>
@@ -17957,7 +17957,7 @@
       </Panel>
      </Branch>
      <Branch Name="false" Sym="VFBWX-2871">
-      <Panel Ref="5996" Name="Icons"/>
+      <Panel Ref="6003" Name="Icons"/>
      </Branch>
     </Conditional>
     <Panel Name="Text" Sym="NRCPU-3772">
@@ -18051,7 +18051,7 @@
        <Layout>HorizontalGrid</Layout>
        <FixedWidth>1.0</FixedWidth>
        <PadX>.01</PadX>
-       <Theme Ref="5927" Name="Text Left Justified Sm..."/>
+       <Theme Ref="5934" Name="Text Left Justified Sm..."/>
        <Action Name="&quot;REM link here for Original air date:  (SageFeaturedItem and FeaturedItem)&quot;" Sym="OLDTC-8115">
         <Conditional Name="!phoenix_media_IsLibraryFile(FeaturedItem) || IsTVFile(SageFeaturedItem)" Sym="OLDTC-8116">
          <Branch Name="true" Sym="OLDTC-8117">
@@ -18068,10 +18068,10 @@
          <Conditional Name="phoenix_media_GetEndTime(FeaturedItem) &lt; Time()" Sym="QISRJ-231445">
           <Branch Name="true" Sym="QISRJ-231446">
            <Action Name="PrefixText = &quot;Aired on: &quot;" Sym="QISRJ-231447">
-            <Action ID="6063" Name="StartTimeText = java_lang_String_replaceAll( PrintTimeShort(phoenix_media_GetStartTime(FeaturedItem)), &quot; &quot;, &quot;&quot; )" Sym="QISRJ-231448">
+            <Action ID="6070" Name="StartTimeText = java_lang_String_replaceAll( PrintTimeShort(phoenix_media_GetStartTime(FeaturedItem)), &quot; &quot;, &quot;&quot; )" Sym="QISRJ-231448">
              <Action Name="EndTimeText = java_lang_String_replaceAll( PrintTimeShort(phoenix_media_GetEndTime(FeaturedItem)), &quot; &quot;, &quot;&quot; )" Sym="QISRJ-231449">
               <Action Name="AiringTitle = PrefixText + DateFormat(&quot;EEE M/d/yyyy &quot;, GetAiringStartTime(SageFeaturedItem)) + &quot;\n&quot; + StartTimeText + &quot; - &quot; + EndTimeText" Sym="QISRJ-231450">
-               <Text ID="6066" Name="" Sym="QISRJ-231451">
+               <Text ID="6073" Name="" Sym="QISRJ-231451">
                 <AutosizeText>false</AutosizeText>
                 <WrapText>false</WrapText>
                 <TextShadow>false</TextShadow>
@@ -18089,12 +18089,12 @@
            <Conditional Name="phoenix_media_GetStartTime(FeaturedItem) &lt; Time()" Sym="QISRJ-231462">
             <Branch Name="true" Sym="QISRJ-231463">
              <Action Name="&quot;Currently Airing (until &quot; +  PrintTimeShort(GetScheduleEndTime(SageFeaturedItem)) + &quot;)&quot;" Sym="QISRJ-231465">
-              <Text Ref="6066" Name=""/>
+              <Text Ref="6073" Name=""/>
              </Action>
             </Branch>
             <Branch Name="else" Sym="QISRJ-231464">
              <Action Name="PrefixText = &quot;Airing on: &quot;" Sym="QISRJ-231453">
-              <Action Ref="6063" Name="StartTimeText = java_l..."/>
+              <Action Ref="6070" Name="StartTimeText = java_l..."/>
              </Action>
             </Branch>
            </Conditional>
@@ -18112,8 +18112,8 @@
               <Branch Name="true" Sym="QISRJ-207385">
                <Conditional Name="IsNotManualOrFavorite(mf)" Sym="QISRJ-207386">
                 <Branch Name="true" Sym="QISRJ-207387">
-                 <Action ID="6082" Name="date = &quot;&quot;" Sym="QISRJ-207388">
-                  <Action ID="6083" Name="duration + date" Sym="QISRJ-207389">
+                 <Action ID="6089" Name="date = &quot;&quot;" Sym="QISRJ-207388">
+                  <Action ID="6090" Name="duration + date" Sym="QISRJ-207389">
                    <Text Name="" Sym="QISRJ-207390">
                     <AutosizeText>false</AutosizeText>
                     <WrapText>false</WrapText>
@@ -18128,7 +18128,7 @@
                 </Branch>
                 <Branch Name="false" Sym="QISRJ-207393">
                  <Action Name="date = &quot;, Currently Recording&quot;" Sym="QISRJ-207394">
-                  <Action Ref="6083" Name="duration + date"/>
+                  <Action Ref="6090" Name="duration + date"/>
                  </Action>
                 </Branch>
                </Conditional>
@@ -18136,11 +18136,11 @@
               <Branch Name="else" Sym="QISRJ-207395">
                <Conditional Name="IsTVFile(mf) == false || extraProgramInfo" Sym="QISRJ-207396">
                 <Branch Name="true" Sym="QISRJ-207397">
-                 <Action Ref="6082" Name="date = &quot;&quot;"/>
+                 <Action Ref="6089" Name="date = &quot;&quot;"/>
                 </Branch>
                 <Branch Name="else" Sym="QISRJ-207398">
                  <Action Name="date = &quot; (Recorded on &quot; + PrintDate(phoenix_media_GetStartTime(FeaturedItem)) + &quot;)&quot;" Sym="QISRJ-207403">
-                  <Action Ref="6083" Name="duration + date"/>
+                  <Action Ref="6090" Name="duration + date"/>
                  </Action>
                 </Branch>
                </Conditional>
@@ -18191,13 +18191,13 @@
        <Conditional Name="showCat != null &amp;&amp; showCat != &quot;&quot;" Sym="QISRJ-207366">
         <Branch Name="true" Sym="QISRJ-207367">
          <Action Name="desc = &quot;(&quot; + showCat + &quot;) &quot; + phoenix_metadata_GetDescription(FeaturedItem)" Sym="QISRJ-207368">
-          <Text Ref="6100" Name=""/>
+          <Text Ref="6107" Name=""/>
          </Action>
         </Branch>
         <Branch Name="else" Sym="QISRJ-207378">
          <Conditional Name="phoenix_metadata_GetDescription(FeaturedItem) != &quot;&quot;" Sym="QISRJ-207379">
           <Action Name="desc = phoenix_metadata_GetDescription(FeaturedItem)" Sym="NRCPU-3167">
-           <Text ID="6100" Name="" Sym="NRCPU-3731">
+           <Text ID="6107" Name="" Sym="NRCPU-3731">
             <AutosizeText>false</AutosizeText>
             <WrapText>false</WrapText>
             <TextShadow>false</TextShadow>
@@ -18219,24 +18219,24 @@
      <Conditional Name="episode &lt; 10" Sym="NRCPU-3300">
       <Branch Name="true" Sym="NRCPU-3301">
        <Action Name="episode = &quot;0&quot; + episode" Sym="NRCPU-3302">
-        <Action ID="6109" Name="season = phoenix_metadata_GetSeasonNumber(item)" Sym="NRCPU-3303">
+        <Action ID="6116" Name="season = phoenix_metadata_GetSeasonNumber(item)" Sym="NRCPU-3303">
          <Conditional Name="season &lt; 10" Sym="NRCPU-3304">
           <Branch Name="true" Sym="NRCPU-3305">
            <Action Name="season = &quot;0&quot; + season" Sym="NRCPU-3306">
-            <Action ID="6113" Name=" &quot;S&quot; + season + &quot;E&quot; + episode" Sym="NRCPU-3307">
+            <Action ID="6120" Name=" &quot;S&quot; + season + &quot;E&quot; + episode" Sym="NRCPU-3307">
              <Text Name="" Sym="PHNX2-4540"/>
             </Action>
            </Action>
           </Branch>
           <Branch Name="else" Sym="NRCPU-3309">
-           <Action Ref="6113" Name=" &quot;S&quot; + season + &quot;E&quot; + ..."/>
+           <Action Ref="6120" Name=" &quot;S&quot; + season + &quot;E&quot; + ..."/>
           </Branch>
          </Conditional>
         </Action>
        </Action>
       </Branch>
       <Branch Name="else" Sym="NRCPU-3310">
-       <Action Ref="6109" Name="season = phoenix_metad..."/>
+       <Action Ref="6116" Name="season = phoenix_metad..."/>
       </Branch>
      </Conditional>
     </Action>
@@ -18303,7 +18303,7 @@
      <Action Name="&quot;REM Minimize the thread's priority.&quot;" Sym="VFBWX-3028">
       <Action Name="java_lang_Thread_setPriority(java_lang_Thread_currentThread(), java_lang_Thread_MIN_PRIORITY)" Sym="VFBWX-3029">
        <Action Name="counter = 0" Sym="VFBWX-3118">
-        <Action ID="6136" Name="Wait(TimerDuration/2)" Sym="VFBWX-3030">
+        <Action ID="6143" Name="Wait(TimerDuration/2)" Sym="VFBWX-3030">
          <Conditional Name="ThreadRunning" Sym="VFBWX-3034">
           <Branch Name="true" Sym="VFBWX-3038">
            <Action Name="counter = counter + 1" Sym="VFBWX-3109">
@@ -18321,7 +18321,7 @@
               <Action Name="RefreshArea(&quot;banner1&quot;)" Sym="VFBWX-3117"/>
              </Branch>
             </Conditional>
-            <Action Ref="6136" Name="Wait(TimerDuration/2)"/>
+            <Action Ref="6143" Name="Wait(TimerDuration/2)"/>
            </Action>
           </Branch>
          </Conditional>
@@ -18449,10 +18449,10 @@
   <ForegroundColor>0xFFFFFF</ForegroundColor>
   <ForegroundShadowColor>0x000000</ForegroundShadowColor>
   <ForegroundShadowAlpha>130</ForegroundShadowAlpha>
-  <Attribute ID="5826" Name="STVName" Sym="OPUS4A-179705">
+  <Attribute ID="5833" Name="STVName" Sym="OPUS4A-179705">
    <Value>"PhoenixLite"</Value>
   </Attribute>
-  <Attribute ID="5827" Name="STVVersion" Sym="OPUS4A-179706">
+  <Attribute ID="5834" Name="STVVersion" Sym="OPUS4A-179706">
    <Value>"106"</Value>
   </Attribute>
   <Listener Name="" Sym="NRCPU-779">
@@ -18465,7 +18465,7 @@
    </Action>
   </Listener>
   <Listener Name="Info" Sym="UVJWK-412">
-   <Menu Ref="5073" Name="System Info"/>
+   <Menu Ref="5080" Name="System Info"/>
   </Listener>
  </Theme>
  <Hook Name="MediaPlayerFileLoadComplete" Sym="BASE-88425">
@@ -18507,7 +18507,7 @@
      <WrapText>true</WrapText>
      <TextAlignment>0.5</TextAlignment>
      <TextShadow>false</TextShadow>
-     <Theme Ref="3635" Name="Text Center Justified ..."/>
+     <Theme Ref="3642" Name="Text Center Justified ..."/>
     </Text>
    </Action>
    <Panel Name="" Sym="OLDTC-178">
@@ -18655,7 +18655,7 @@
    </Action>
   </Action>
  </Hook>
- <Hook ID="6250" Name="AfterMenuLoad" Sym="BASE-88476">
+ <Hook ID="6257" Name="AfterMenuLoad" Sym="BASE-88476">
   <Action Name="Fork()" Sym="BASE-88477">
    <Action Name="Wait(GetScheduleStartTime(AiringToRecord) - Time())" Sym="BASE-88478">
     <Conditional Name="PopupStillActive &amp;&amp; false" Sym="BASE-88479">
@@ -18664,7 +18664,7 @@
    </Action>
   </Action>
  </Hook>
- <Hook ID="6255" Name="BeforeMenuUnload" Sym="BASE-88481">
+ <Hook ID="6262" Name="BeforeMenuUnload" Sym="BASE-88481">
   <Action Name="PopupStillActive = false" Sym="BASE-88482"/>
  </Hook>
  <Hook Name="DenyChannelChangeToRecord" Sym="BASE-88483">
@@ -18678,8 +18678,8 @@
     <Attribute Name="ShowAdvancedOptions" Sym="OLDTC-36">
      <Value>false</Value>
     </Attribute>
-    <Hook Ref="6250" Name="AfterMenuLoad"/>
-    <Hook Ref="6255" Name="BeforeMenuUnload"/>
+    <Hook Ref="6257" Name="AfterMenuLoad"/>
+    <Hook Ref="6262" Name="BeforeMenuUnload"/>
     <Listener Name="Options" Sym="OLDTC-35">
      <Conditional Name="ShowAdvancedOptions" Sym="OLDTC-41">
       <Branch Name="true" Sym="OLDTC-42">
@@ -18719,7 +18719,7 @@
      <Branch Name="false" Sym="OLDTC-39">
       <Action Name="&quot;SageTV will change the channel at &quot; + PrintTimeShort(GetScheduleStartTime(AiringToRecord)) + &quot; to record &quot; + GetAiringTitle(AiringToRecord) + &quot;!\n  &quot;" Sym="BASE-88486">
        <Text Name="text" Sym="BASE-88487">
-        <Theme Ref="3635" Name="Text Center Justified ..."/>
+        <Theme Ref="3642" Name="Text Center Justified ..."/>
        </Text>
       </Action>
       <Item Name="OK" Sym="BASE-88488">

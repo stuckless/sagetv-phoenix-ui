@@ -44,7 +44,7 @@
 		   <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
 		   <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
 		</menuItem>
-		<menuItem label="Sage Video Sources" visible="true" icon="input">
+		<menuItem label="Sage Video Sources" visible="true" icon="settings_input_antenna">
 		   <description>Default STV Video Setup Menu</description>
 		   <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
 		   <eval>AddGlobalContext("gTargetMenuName", "Setup Wizard - Summary Page")</eval>
@@ -59,7 +59,7 @@
 		   <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
 		   <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
 		</menuItem>
-		<menuItem name="plite.settings.reload" label="Reload Default UI" visible="true" icon="clear">
+		<menuItem name="plite.settings.reload" label="Reload Default UI" visible="true" icon="exit_to_app">
 		   <eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to reload the default UI?" )</eval>
 		   <eval>AddGlobalContext("gNativeConfirmYes", "Yes")</eval>
 		   <eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
