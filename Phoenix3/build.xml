@@ -6,10 +6,10 @@
 
 	<property name="dist.dir" value="${basedir}/target" />
 
-	<property name="p3_buildversion" value="103"/>
+	<property name="p3_buildversion" value="106"/>
 	<property name="lite_buildversion" value="001"/>
 
-	<property name="buildversion" value="104"/>
+	<property name="buildversion" value="106"/>
 	<property name="baseversion" value="3.0.${buildversion}"/>
 	
 	<property name="stv.name" value="phoenix-stv" />
@@ -36,7 +36,7 @@
 
 		<!-- zip stv -->
 		<zip destfile="${dist.dir}/dist/${stv.name}-${stv.version}.zip">
-			<zipfileset dir="${dist.dir}/STV/" prefix="SageTV7/" includes="Phoenix3.xml"></zipfileset>
+			<zipfileset dir="${dist.dir}/STV/" prefix="SageTV7/" includes="Phoenix3.xml,PhoenixLite.xml"></zipfileset>
 			<zipfileset dir="STVs/Phoenix/Menus" prefix="Phoenix/Menus"></zipfileset>
 			<zipfileset dir="STVs/Phoenix/Skins" prefix="Phoenix/Skins"></zipfileset>
 			<zipfileset dir="STVs/Phoenix/Configuration" prefix="Phoenix/Configuration"></zipfileset>
