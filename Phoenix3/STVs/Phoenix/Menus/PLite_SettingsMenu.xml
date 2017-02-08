@@ -52,13 +52,16 @@
 		   <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
 		   <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
 		</menuItem>
-		<menuItem name="plite.settings.visit" label="Visit Default UI" visible="true" icon="forward" >
+		<menuItem name="plite.settings.visit" label="Visit Default UI" visible="true" icon="directions_walk" >
 		   <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
 		   <eval>AddGlobalContext("gTargetMenuName", "Main Menu")</eval>
 		   <eval>AddGlobalContext("gReloadCustomSTVOnHome", true)</eval>
 		   <eval>AddGlobalContext("gReloadCustomSTVWithoutConfirm", true)</eval>
 		   <eval>LoadSTVFile(GetDefaultSTVFile())</eval>
 		</menuItem>
+		<menuItem name="plite.settings.reset" label="Reset Customizations" visible="true" icon="layers_clear" >
+		   <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-256233")</eval>
+		</menuItem>		
 		<menuItem name="plite.settings.reload" label="Reload Default UI" visible="true" icon="exit_to_app">
 		   <eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to reload the default UI?" )</eval>
 		   <eval>AddGlobalContext("gNativeConfirmYes", "Yes")</eval>
