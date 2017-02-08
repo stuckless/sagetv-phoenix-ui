@@ -4,7 +4,6 @@
 	<menu label="Settings" name="plite.settings" type="Options" icon="settings">
 		<menuItem name="plite.settings.scan" label="${If(IsDoingLibraryImportScan(),&quot;Scanning Libraries...&quot;,&quot;Start Library Scan&quot;)}" visible="true" icon="loop">
 		   <eval>CloseOptionsMenu()</eval>
-		   <eval>CloseOptionsMenu()</eval>
 		   <eval>RunLibraryImportScan( false )</eval>
 		   <eval>Refresh()</eval>
 		</menuItem>
@@ -16,7 +15,6 @@
 			<screen name="System Info" />
 		 </menuItem>
 		 <menuItem label="Scale Fanart" visible="true" name="plite.settings.fanart" icon="photo_size_select_large">
-		   <eval>CloseOptionsMenu()</eval>
 		   <eval>CloseOptionsMenu()</eval>
 		   <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-254176")</eval>
 		</menuItem>
@@ -61,6 +59,8 @@
 		</menuItem>
 		<menuItem name="plite.settings.reset" label="Reset Customizations" visible="true" icon="layers_clear" >
 		   <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-256233")</eval>
+		   <eval>CloseOptionsMenu()</eval>
+		   <eval>Refresh()</eval>
 		</menuItem>		
 		<menuItem name="plite.settings.reload" label="Reload Default UI" visible="true" icon="exit_to_app">
 		   <eval>AddGlobalContext("gNativeConfirmPrompt", "Are you sure you wish to reload the default UI?" )</eval>
