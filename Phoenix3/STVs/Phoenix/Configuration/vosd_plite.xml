@@ -27,5 +27,12 @@
                         <option name="Inverted" value="false"/>
                   </options>
             </field>
+            <field key="showTransportButtons" label="Show media transport buttons" defaultValue="true" type="boolean">
+                  <description>When Yes, rewind / skip / stop buttons are shown with the progress bar.</description>
+                  <options>
+                        <option name="Yes" value="true"/>
+                        <option name="No" value="false"/>
+                  </options>
+            </field>
 		</group>
 </configuration>

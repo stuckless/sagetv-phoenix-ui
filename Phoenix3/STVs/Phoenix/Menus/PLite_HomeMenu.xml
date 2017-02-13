@@ -15,7 +15,7 @@
 				<eval>AddGlobalContext("gNativeConfirmNo", "Cancel")</eval>
 				<eval>AddGlobalContext("gNativeConfirmYesAction", "Exit()")</eval>
 				<eval>AddGlobalContext("gNativeConfirmNoAction", null)</eval>
-				<eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-253429")</eval>
+				<eval>ExecuteWidgetChainInCurrentMenuContext("PLITE-7752")</eval>
 	</menuItem>
 		
 	</menu>

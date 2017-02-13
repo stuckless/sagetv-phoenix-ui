@@ -7,9 +7,9 @@
 	<property name="dist.dir" value="${basedir}/target" />
 
 	<property name="p3_buildversion" value="106"/>
-	<property name="lite_buildversion" value="108"/>
+	<property name="lite_buildversion" value="109"/>
 
-	<property name="buildversion" value="108"/>
+	<property name="buildversion" value="109"/>
 	<property name="baseversion" value="3.0.${buildversion}"/>
 	
 	<property name="stv.name" value="phoenix-stv" />

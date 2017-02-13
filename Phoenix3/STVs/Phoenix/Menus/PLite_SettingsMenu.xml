@@ -18,6 +18,16 @@
 		   <eval>CloseOptionsMenu()</eval>
 		   <eval>ExecuteWidgetChainInCurrentMenuContext("PHNX-254176")</eval>
 		</menuItem>
+		<menuItem label="Configure Weather" visible="true" icon="cloud">
+		   <description>Configure Weather Options</description>
+		   <eval>AddGlobalContext("ConfigGroupName", "p3/weather")</eval>
+		   <eval>ExecuteWidgetChainInCurrentMenuContext("MHCWJ-1845")</eval>
+		</menuItem>
+		<menuItem label="UI Options" visible="true" icon="build">
+		   <description>Other Options</description>
+		   <eval>AddGlobalContext("ConfigGroupName", "plite/ui")</eval>
+		   <eval>ExecuteWidgetChainInCurrentMenuContext("MHCWJ-1845")</eval>
+		</menuItem>		
 		<menuItem label="Resolve Conflicts" name="plite.settings.conflicts" visible="${AreThereUnresolvedConflicts()==true}" icon="new_releases">
             <description>Resolve recording conflicts</description>
             <eval>AddGlobalContext("gCurCustomSTVFilePath", GetCurrentSTVFile() )</eval>
