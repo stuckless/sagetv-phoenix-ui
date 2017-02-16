@@ -43,6 +43,38 @@
             <option name="No" value="false"/>
          </options>
 	  </field>
+	  
+      <field fullkey="plite/screensaver/type" label="Screensaver type" defaultValue="photos" type="choice">
+         <description>Select the way video is shown when other menus are active.</description>
+         <options>
+            <option name="Imported Photos" value="photos"/>
+            <option name="Fanart Backgrounds" value="fanart"/>
+            <option name="Weather Backgrounds" value="backgrounds"/>
+         </options>
+      </field>
+	  
+	 <field fullkey="screen_saver_wait_time" label="Screensaver timeout" defaultValue="1200000" type="choice">
+         <description>Time to wait before the screen saver kicks in.</description>
+         <options>
+            <option name="20 minutes" value="1200000"/>
+            <option name="10 minutes" value="600000"/>
+            <option name="5 minutes" value="300000"/>
+            <option name="2 minutes" value="120000"/>
+         </options>
+      </field>
+
+      <field fullkey="plite/screensaver/slideduration" label="Screensaver slide duration" defaultValue="10000" type="choice">
+         <description>Time, in milliseconds, for each picture to be displayed</description>
+         <options>
+            <option name="5 minutes"  value="300000"/>
+            <option name="1 minute"   value="60000"/>
+            <option name="30 seconds" value="30000"/>
+            <option name="10 seconds" value="10000"/>
+         </options>
+	 </field>
+	  
+	  
+	  
 
    </group>
 </configuration>
