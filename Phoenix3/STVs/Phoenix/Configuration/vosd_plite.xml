@@ -13,11 +13,18 @@
             <field key="autoskipactivitybuffer" label="Auto Skip Activity Buffer" defaultValue="3000" type="int" visible="${GetProperty(&quot;phoenix2/vosd/autoComskip&quot;, false)==true}">
                   <description>Duration (in milliseconds) to disable automatic comskip after user activity.</description>
             </field>			
-            <field key="comskipBlind" label="Comskip Blind Skip" defaultValue="false" type="boolean">
+            <field key="comskipBlind" label="Comskip Blind Skip" defaultValue="false" type="boolean" visible="${GetProperty(&quot;plite/vosd/autoComskip&quot;, false)==false}">
                   <description>When enabled, comskip will skip commercials (manually) without showing the timebar first.</description>
                   <options>
                         <option name="Enabled" value="true"/>
                         <option name="Disabled" value="false"/>
+                  </options>
+            </field>
+            <field key="autoskipnotification" label="Show message after auto comskip" defaultValue="true" type="boolean">
+                  <description>Show the 'skipping commercials...' message when commercials are automatically skipped</description>
+                  <options>
+                        <option name="Yes" value="true"/>
+                        <option name="No" value="false"/>
                   </options>
             </field>
             <field key="miniguideNavigation" label="Miniguide Navigation Direction" defaultValue="true" type="boolean">
