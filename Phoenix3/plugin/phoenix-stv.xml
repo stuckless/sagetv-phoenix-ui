@@ -20,7 +20,7 @@ Phoenix is a STV replacement for SageTV9 providing the following features
 
   <Dependency>
     <Plugin>phoenix-core</Plugin>
-    <MinVersion>3.0.0</MinVersion>
+    <MinVersion>3.0.7</MinVersion>
   </Dependency>
 
   <PluginType>STV</PluginType>
